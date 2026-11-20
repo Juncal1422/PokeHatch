@@ -1,0 +1,1642 @@
+
+ui.png
+size: 256, 512
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+air-balloon
+  rotate: false
+  xy: 142, 166
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+amulet-coin
+  rotate: false
+  xy: 2, 169
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: -1
+aqua-suit
+  rotate: false
+  xy: 200, 480
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+azure-flute
+  rotate: false
+  xy: 186, 146
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+black-belt
+  rotate: false
+  xy: 234, 120
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+black-flute
+  rotate: false
+  xy: 25, 51
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+black-sludge
+  rotate: false
+  xy: 38, 74
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+blue-card
+  rotate: false
+  xy: 164, 452
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+blue-flute
+  rotate: false
+  xy: 25, 28
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+blue-scarf
+  rotate: false
+  xy: 196, 448
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+button
+  rotate: false
+  xy: 164, 484
+  size: 34, 26
+  split: 4, 4, 3, 3
+  orig: 34, 26
+  offset: 0, 0
+  index: -1
+button-glint
+  rotate: false
+  xy: 238, 143
+  size: 16, 32
+  orig: 16, 32
+  offset: 0, 0
+  index: -1
+card-key
+  rotate: false
+  xy: 164, 420
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+case
+  rotate: false
+  xy: 196, 416
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+casteliacone
+  rotate: false
+  xy: 164, 388
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+charcoal
+  rotate: false
+  xy: 118, 121
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+cherish-ball
+  rotate: false
+  xy: 228, 430
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+choice-band
+  rotate: false
+  xy: 232, 456
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+choice-scarf
+  rotate: false
+  xy: 214, 153
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+choice-specs
+  rotate: false
+  xy: 186, 108
+  size: 22, 16
+  orig: 22, 16
+  offset: 0, 0
+  index: -1
+clear-bell
+  rotate: false
+  xy: 196, 384
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+coin-case
+  rotate: false
+  xy: 210, 130
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+damp-rock
+  rotate: false
+  xy: 2, 119
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+dawn-stone
+  rotate: false
+  xy: 134, 24
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+deep-sea-scale
+  rotate: false
+  xy: 177, 45
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+deep-sea-tooth
+  rotate: false
+  xy: 48, 169
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+devon-parts
+  rotate: false
+  xy: 164, 356
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+devon-scuba-gear
+  rotate: false
+  xy: 196, 352
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+discount-coupon
+  rotate: false
+  xy: 226, 281
+  size: 28, 17
+  orig: 28, 17
+  offset: 0, 0
+  index: -1
+dowsing-machine
+  rotate: false
+  xy: 164, 324
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+dragon-fang
+  rotate: false
+  xy: 90, 5
+  size: 19, 21
+  orig: 19, 21
+  offset: 0, 0
+  index: -1
+dragon-scale
+  rotate: false
+  xy: 210, 92
+  size: 22, 16
+  orig: 22, 16
+  offset: 0, 0
+  index: -1
+dragon-skull
+  rotate: false
+  xy: 196, 320
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+dream-ball
+  rotate: false
+  xy: 228, 404
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+dusk-stone
+  rotate: false
+  xy: 134, 45
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+electirizer
+  rotate: false
+  xy: 140, 109
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+enigma-stone
+  rotate: false
+  xy: 2, 318
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+eon-flute
+  rotate: false
+  xy: 44, 5
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+everstone
+  rotate: false
+  xy: 34, 318
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+exp-share
+  rotate: false
+  xy: 66, 318
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+explorer-kit
+  rotate: false
+  xy: 2, 50
+  size: 21, 22
+  orig: 21, 22
+  offset: 0, 0
+  index: -1
+fairy-feather
+  rotate: false
+  xy: 2, 350
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+fire-stone
+  rotate: false
+  xy: 234, 97
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+flame-orb
+  rotate: false
+  xy: 2, 74
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+focus-band
+  rotate: false
+  xy: 2, 145
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+full-incense
+  rotate: false
+  xy: 50, 122
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+full-restore
+  rotate: false
+  xy: 98, 318
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+go-goggles
+  rotate: false
+  xy: 228, 378
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+good-rod
+  rotate: false
+  xy: 130, 318
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+gracidea
+  rotate: false
+  xy: 162, 292
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+great-ball
+  rotate: false
+  xy: 228, 352
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+green-scarf
+  rotate: false
+  xy: 194, 288
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+gs-ball
+  rotate: false
+  xy: 2, 286
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+hard-stone
+  rotate: false
+  xy: 199, 30
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+heat-rock
+  rotate: false
+  xy: 50, 143
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+hyper-potion
+  rotate: false
+  xy: 34, 286
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+ice-stone
+  rotate: false
+  xy: 116, 99
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+iris-ticket
+  rotate: false
+  xy: 228, 326
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+journal
+  rotate: false
+  xy: 26, 145
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+kings-rock
+  rotate: false
+  xy: 2, 26
+  size: 21, 22
+  orig: 21, 22
+  offset: 0, 0
+  index: -1
+lava-cookie
+  rotate: false
+  xy: 66, 286
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+lax-incense
+  rotate: false
+  xy: 133, 66
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+leaf-stone
+  rotate: false
+  xy: 95, 100
+  size: 19, 21
+  orig: 19, 21
+  offset: 0, 0
+  index: -1
+leftovers
+  rotate: false
+  xy: 148, 2
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+lemonade
+  rotate: false
+  xy: 98, 286
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+life-orb
+  rotate: false
+  xy: 130, 286
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+light-ball
+  rotate: false
+  xy: 20, 74
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+linking-cord
+  rotate: false
+  xy: 95, 123
+  size: 21, 18
+  orig: 21, 18
+  offset: 0, 0
+  index: -1
+luck-incense
+  rotate: false
+  xy: 111, 56
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+lucky-egg
+  rotate: false
+  xy: 163, 10
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+lustrous-orb
+  rotate: false
+  xy: 162, 260
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+macho-brace
+  rotate: false
+  xy: 48, 51
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+magma-emblem
+  rotate: false
+  xy: 228, 300
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+magma-stone
+  rotate: false
+  xy: 194, 256
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+magmarizer
+  rotate: false
+  xy: 162, 101
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+magnet
+  rotate: false
+  xy: 226, 33
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+master-ball
+  rotate: false
+  xy: 226, 255
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+max-potion
+  rotate: false
+  xy: 2, 254
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+metal-coat
+  rotate: false
+  xy: 115, 34
+  size: 17, 20
+  orig: 17, 20
+  offset: 0, 0
+  index: -1
+metronome
+  rotate: false
+  xy: 94, 53
+  size: 15, 20
+  orig: 15, 20
+  offset: 0, 0
+  index: -1
+miracle-seed
+  rotate: false
+  xy: 180, 18
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+moon-stone
+  rotate: false
+  xy: 25, 169
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: -1
+mystic-water
+  rotate: false
+  xy: 111, 7
+  size: 18, 21
+  orig: 18, 21
+  offset: 0, 0
+  index: -1
+nugget
+  rotate: false
+  xy: 146, 131
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+odd-stone
+  rotate: false
+  xy: 34, 254
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+old-gateau
+  rotate: false
+  xy: 66, 254
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+old-rod
+  rotate: false
+  xy: 188, 169
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1
+oval-charm
+  rotate: false
+  xy: 2, 2
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1
+oval-stone
+  rotate: false
+  xy: 2, 100
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+parcel
+  rotate: false
+  xy: 98, 254
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+pearl
+  rotate: false
+  xy: 26, 108
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+pink-scarf
+  rotate: false
+  xy: 130, 254
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+poke-ball
+  rotate: false
+  xy: 226, 229
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+poke-coin
+  rotate: false
+  xy: 232, 480
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+poke-flute
+  rotate: false
+  xy: 72, 108
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+potion
+  rotate: false
+  xy: 162, 228
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+power-anklet
+  rotate: false
+  xy: 26, 122
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+power-band
+  rotate: false
+  xy: 74, 143
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+power-belt
+  rotate: false
+  xy: 98, 143
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+power-bracer
+  rotate: false
+  xy: 122, 143
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+power-lens
+  rotate: false
+  xy: 70, 166
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+power-weight
+  rotate: false
+  xy: 162, 123
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+prism-scale
+  rotate: false
+  xy: 61, 93
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+protector
+  rotate: false
+  xy: 138, 87
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+punching-glove
+  rotate: false
+  xy: 194, 224
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+pure-incense
+  rotate: false
+  xy: 206, 71
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+rage-candy-bar
+  rotate: false
+  xy: 2, 222
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+rare-bone
+  rotate: false
+  xy: 184, 86
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+rare-candy
+  rotate: false
+  xy: 48, 28
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+rare-incense
+  rotate: false
+  xy: 34, 222
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+reaper-cloth
+  rotate: false
+  xy: 234, 74
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+red-flute
+  rotate: false
+  xy: 67, 5
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+red-scarf
+  rotate: false
+  xy: 66, 222
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+relic-copper
+  rotate: false
+  xy: 40, 111
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+relic-gold
+  rotate: false
+  xy: 55, 111
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+relic-silver
+  rotate: false
+  xy: 72, 132
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+reset-urge
+  rotate: false
+  xy: 98, 222
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+rich-mulch
+  rotate: false
+  xy: 130, 222
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+rock-incense
+  rotate: false
+  xy: 182, 65
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+rose-incense
+  rotate: false
+  xy: 155, 58
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+scope-lens
+  rotate: false
+  xy: 162, 196
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+sea-incense
+  rotate: false
+  xy: 228, 53
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+settings
+  rotate: false
+  xy: 146, 147
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+sharp-beak
+  rotate: false
+  xy: 94, 30
+  size: 19, 21
+  orig: 19, 21
+  offset: 0, 0
+  index: -1
+shiny-charm
+  rotate: false
+  xy: 23, 2
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1
+shiny-stone
+  rotate: false
+  xy: 155, 37
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+silk-scarf
+  rotate: false
+  xy: 94, 166
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+silph-scope
+  rotate: false
+  xy: 226, 203
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+silver-powder
+  rotate: false
+  xy: 20, 93
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+silver-wing
+  rotate: false
+  xy: 194, 192
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+slowpoke-tail
+  rotate: false
+  xy: 2, 190
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+soft-sand
+  rotate: false
+  xy: 186, 126
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+soot-sack
+  rotate: false
+  xy: 226, 177
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+soothe-bell
+  rotate: false
+  xy: 131, 2
+  size: 15, 20
+  orig: 15, 20
+  offset: 0, 0
+  index: -1
+star-piece
+  rotate: false
+  xy: 44, 93
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+stardust
+  rotate: false
+  xy: 210, 110
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+sun-stone
+  rotate: false
+  xy: 118, 166
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+super-potion
+  rotate: false
+  xy: 34, 190
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+talisman
+  rotate: false
+  xy: 66, 190
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+thunder-stone
+  rotate: false
+  xy: 160, 79
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+town-map
+  rotate: false
+  xy: 162, 146
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+toxic-orb
+  rotate: false
+  xy: 98, 190
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+ultra-ball
+  rotate: false
+  xy: 162, 170
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+up-grade
+  rotate: false
+  xy: 60, 74
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+water-stone
+  rotate: false
+  xy: 111, 77
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+wave-incense
+  rotate: false
+  xy: 204, 50
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+white-flute
+  rotate: false
+  xy: 71, 51
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+wise-glasses
+  rotate: false
+  xy: 82, 75
+  size: 21, 15
+  orig: 21, 15
+  offset: 0, 0
+  index: -1
+yellow-flute
+  rotate: false
+  xy: 71, 28
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+yellow-scarf
+  rotate: false
+  xy: 130, 190
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+
+ui2.png
+size: 512, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+eggs/egg
+  rotate: false
+  xy: 2, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg1
+  rotate: false
+  xy: 32, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg10
+  rotate: false
+  xy: 302, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg11
+  rotate: false
+  xy: 332, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg12
+  rotate: false
+  xy: 362, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg14
+  rotate: false
+  xy: 392, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg2
+  rotate: false
+  xy: 62, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg3
+  rotate: false
+  xy: 92, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg4
+  rotate: false
+  xy: 122, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg5
+  rotate: false
+  xy: 152, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg6
+  rotate: false
+  xy: 182, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg7
+  rotate: false
+  xy: 212, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg8
+  rotate: false
+  xy: 242, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+eggs/egg9
+  rotate: false
+  xy: 272, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+
+ui3.png
+size: 512, 128
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+medals/badge-Balance
+  rotate: false
+  xy: 2, 38
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Basic
+  rotate: false
+  xy: 426, 4
+  size: 12, 42
+  orig: 12, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Beacon
+  rotate: false
+  xy: 2, 2
+  size: 36, 34
+  orig: 36, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Bolt
+  rotate: false
+  xy: 120, 38
+  size: 20, 44
+  orig: 20, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Boulder
+  rotate: false
+  xy: 376, 48
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Cascade
+  rotate: false
+  xy: 448, 44
+  size: 26, 38
+  orig: 26, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Coal
+  rotate: false
+  xy: 40, 2
+  size: 36, 34
+  orig: 36, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Cobble
+  rotate: false
+  xy: 300, 46
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+medals/badge-Dynamo
+  rotate: false
+  xy: 46, 38
+  size: 32, 42
+  orig: 32, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Earth
+  rotate: false
+  xy: 118, 2
+  size: 36, 34
+  orig: 36, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Feather
+  rotate: false
+  xy: 352, 84
+  size: 36, 42
+  orig: 36, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Fen
+  rotate: false
+  xy: 412, 48
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Fog
+  rotate: false
+  xy: 182, 88
+  size: 42, 38
+  orig: 42, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Forest
+  rotate: false
+  xy: 466, 90
+  size: 40, 36
+  orig: 40, 36
+  offset: 0, 0
+  index: -1
+medals/badge-Freeze
+  rotate: false
+  xy: 186, 2
+  size: 18, 44
+  orig: 18, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Glacier
+  rotate: false
+  xy: 390, 84
+  size: 36, 42
+  orig: 36, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Heat
+  rotate: false
+  xy: 2, 82
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Hive
+  rotate: false
+  xy: 270, 86
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+medals/badge-Icicle
+  rotate: false
+  xy: 338, 14
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+medals/badge-Insect
+  rotate: false
+  xy: 206, 2
+  size: 18, 44
+  orig: 18, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Jet
+  rotate: false
+  xy: 226, 2
+  size: 14, 44
+  orig: 14, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Knuckle
+  rotate: false
+  xy: 260, 48
+  size: 38, 36
+  orig: 38, 36
+  offset: 0, 0
+  index: -1
+medals/badge-Legend
+  rotate: false
+  xy: 156, 2
+  size: 28, 44
+  orig: 28, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Marsh
+  rotate: false
+  xy: 476, 14
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Mind
+  rotate: false
+  xy: 226, 88
+  size: 42, 38
+  orig: 42, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Mine
+  rotate: false
+  xy: 338, 48
+  size: 36, 34
+  orig: 36, 34
+  offset: 0, 0
+  index: -1
+medals/badge-Mineral
+  rotate: false
+  xy: 80, 44
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Plain
+  rotate: false
+  xy: 48, 84
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Quake
+  rotate: false
+  xy: 408, 4
+  size: 16, 42
+  orig: 16, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Rain
+  rotate: false
+  xy: 312, 84
+  size: 38, 42
+  orig: 38, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Rainbow
+  rotate: false
+  xy: 142, 48
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Relic
+  rotate: false
+  xy: 258, 10
+  size: 38, 36
+  orig: 38, 36
+  offset: 0, 0
+  index: -1
+medals/badge-Rising
+  rotate: false
+  xy: 428, 84
+  size: 36, 42
+  orig: 36, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Soul
+  rotate: false
+  xy: 476, 50
+  size: 34, 38
+  orig: 34, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Stone
+  rotate: false
+  xy: 92, 84
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+medals/badge-Storm
+  rotate: false
+  xy: 136, 88
+  size: 44, 38
+  orig: 44, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Thunder
+  rotate: false
+  xy: 182, 48
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Trio
+  rotate: false
+  xy: 242, 2
+  size: 14, 44
+  orig: 14, 44
+  offset: 0, 0
+  index: -1
+medals/badge-Volcano
+  rotate: false
+  xy: 222, 48
+  size: 36, 38
+  orig: 36, 38
+  offset: 0, 0
+  index: -1
+medals/badge-Zephyr
+  rotate: false
+  xy: 80, 2
+  size: 36, 40
+  orig: 36, 40
+  offset: 0, 0
+  index: -1
+medals/badge-case
+  rotate: false
+  xy: 376, 16
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+
+ui4.png
+size: 1024, 512
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+ui/arrows
+  rotate: false
+  xy: 930, 414
+  size: 32, 96
+  orig: 32, 96
+  offset: 0, 0
+  index: -1
+ui/background-blue
+  rotate: false
+  xy: 218, 350
+  size: 240, 160
+  orig: 240, 160
+  offset: 0, 0
+  index: -1
+ui/background-pink
+  rotate: false
+  xy: 460, 350
+  size: 240, 160
+  orig: 240, 160
+  offset: 0, 0
+  index: -1
+ui/box-abissal
+  rotate: false
+  xy: 702, 382
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-amorph
+  rotate: false
+  xy: 816, 382
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-field
+  rotate: false
+  xy: 816, 382
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-bug
+  rotate: false
+  xy: 156, 164
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-coast
+  rotate: false
+  xy: 156, 34
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-dragon
+  rotate: false
+  xy: 270, 220
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-fairy
+  rotate: false
+  xy: 270, 90
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-flying
+  rotate: false
+  xy: 384, 220
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-grass
+  rotate: false
+  xy: 384, 90
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-humanoid
+  rotate: false
+  xy: 498, 220
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-mineral
+  rotate: false
+  xy: 498, 90
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-monster
+  rotate: false
+  xy: 612, 220
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-sea
+  rotate: false
+  xy: 612, 90
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/box-standard
+  rotate: false
+  xy: 726, 252
+  size: 112, 128
+  orig: 112, 128
+  offset: 0, 0
+  index: -1
+ui/click
+  rotate: false
+  xy: 726, 218
+  size: 96, 32
+  orig: 96, 32
+  offset: 0, 0
+  index: -1
+ui/empty-bar
+  rotate: false
+  xy: 270, 34
+  size: 50, 4
+  orig: 50, 4
+  offset: 0, 0
+  index: -1
+ui/filler-bar
+  rotate: false
+  xy: 218, 340
+  size: 48, 8
+  orig: 48, 8
+  offset: 0, 0
+  index: -1
+ui/header-breeder
+  rotate: false
+  xy: 270, 65
+  size: 124, 23
+  orig: 124, 23
+  offset: 0, 0
+  index: -1
+ui/header-pokedex
+  rotate: false
+  xy: 270, 40
+  size: 124, 23
+  orig: 124, 23
+  offset: 0, 0
+  index: -1
+ui/header-shop
+  rotate: false
+  xy: 156, 9
+  size: 124, 23
+  orig: 124, 23
+  offset: 0, 0
+  index: -1
+ui/lateral-pokeball
+  rotate: false
+  xy: 2, 294
+  size: 214, 216
+  orig: 214, 216
+  offset: 0, 0
+  index: -1
+ui/menu
+  rotate: false
+  xy: 2, 116
+  size: 152, 176
+  orig: 152, 176
+  offset: 0, 0
+  index: -1
+ui/menu-tab
+  rotate: false
+  xy: 2, 2
+  size: 152, 112
+  orig: 152, 112
+  offset: 0, 0
+  index: -1

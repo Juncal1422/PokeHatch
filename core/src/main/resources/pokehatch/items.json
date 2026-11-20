@@ -1044,6 +1044,23 @@
     "evolution": false
   },
   {
+    "id": "golden-egg",
+    "name": "Huevo dorado",
+    "desc": "Reduce un 75 % la dificultad de los huevos y duplica la potencia de cada clic y tic de incubadora.",
+    "price": 0,
+    "kind": "drop",
+    "section": "Huevos",
+    "source": "Completa la Pokédex con todos los Pokémon shiny",
+    "gate": {},
+    "click": 0,
+    "rate": 0,
+    "choice": 0,
+    "scent": [],
+    "scarf": [],
+    "group": 0,
+    "evolution": false
+  },
+  {
     "id": "green-scarf",
     "name": "Pañuelo Verde",
     "desc": "Aumenta en 0,1 puntos porcentuales la probabilidad shiny en Bicho, Planta, Campo",

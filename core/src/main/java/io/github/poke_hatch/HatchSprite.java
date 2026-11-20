@@ -10,7 +10,7 @@ import com.badlogic.gdx.utils.Scaling;
 final class HatchSprite extends Image {
   private Drawable nextEgg;
   private float age = 1;
-  private static final float END = .58f;
+  private static final float END = .5f;
 
   HatchSprite(Drawable egg) {
     super(egg, Scaling.fit);
@@ -26,14 +26,14 @@ final class HatchSprite extends Image {
     return age < END;
   }
 
-  void reveal(Drawable baby) {
+  void reveal(Drawable baby, float targetScale) {
     clearActions();
     setRotation(0);
     setOrigin(getWidth() / 2, 0);
     age = 0;
     setScale(.05f);
     setDrawable(baby);
-    addAction(Actions.scaleTo(1, 1, .5f, Interpolation.elasticOut));
+    addAction(Actions.scaleTo(targetScale, targetScale, .5f, Interpolation.elasticOut));
   }
 
   @Override

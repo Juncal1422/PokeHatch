@@ -9,27 +9,38 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.StringJoiner;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.ParticleEmitter;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
+import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
-import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
+import com.badlogic.gdx.scenes.scene2d.ui.Cell;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -47,6 +58,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.BaseDrawable;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.utils.TimeUtils;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
@@ -54,35 +66,59 @@ import io.github.poke_hatch.Catalog.Item;
 import io.github.poke_hatch.Catalog.Species;
 import static io.github.poke_hatch.Catalog.contains;
 
-/** Persistent navigation and input actors. Simulation updates only the affected widgets. */
+/**
+ * Persistent navigation and input actors. Simulation updates only the affected
+ * widgets.
+ */
 public final class FirstScreen extends ScreenAdapter implements GameEngine.Listener {
   private static final float DETAIL_FRAME = .025f;
+  private static final int CURSOR_FRAME_MILLIS = 60;
+  private static final int CURSOR_FRAME_WIDTH = 24;
+  private static final int CURSOR_FRAME_HEIGHT = 32;
+  private static final int CURSOR_FRAME_COUNT = 4;
+  private static final int CURSOR_IMAGE_SIZE = 32;
+  private static final int[] CURSOR_CLICK_FRAMES = { 1, 2, 3 };
+  private static final float FARM_EGG_SIZE = 100;
+  private static final float HATCH_SPRITE_SIZE = 304;
+  private static final int[] MENU_TAB_FRAME_Y = { 0, 23, 46, 69, 92 };
+  private static final int MENU_TAB_FRAME_HEIGHT = 20;
+  private static final Color UNAVAILABLE_BADGE_TINT = new Color(.16f, .17f, .16f, 1);
   private static final float[][] COIN_TRAJECTORIES = {
-    {-42, 52}, {42, 52}, {0, 76}, {-24, 90}, {24, 90}
+      { -42, 52 }, { 42, 52 }, { 0, 76 }, { -24, 90 }, { 24, 90 }
   };
-  private static final float[][] HP_COLORS = {
-    {1, .67f, .52f, .89f, .35f, .31f},
-    {1, .91f, .53f, .93f, .7f, .25f},
-    {.53f, .93f, .67f, .25f, .73f, .48f}
+  private static final float[] FAIRY_SPARKLE_COLOR = { 1, .34f, .7f };
+  private static final float[][] MINERAL_SPARKLE_COLORS = {
+      { .35f, .82f, 1 },
+      { .78f, .38f, .92f },
+      { 1, .62f, .2f },
+      { .35f, .9f, .45f }
   };
   private final Main app;
   private final Stage stage = new Stage(new ScreenViewport());
   private final Catalog catalog = new Catalog();
   private final SaveStore store = new SaveStore(catalog);
   private final GameEngine game = new GameEngine(catalog, store.load());
-  private final Table root = new Table(),
-      content = new Table(),
-      births = new Table(),
-      coins = new Table(),
-      effects = new Table();
+  private final Table root = new Table();
+  private final Table farmContent = new Table();
+  private final Table menuContent = new Table();
+  private final Table dexContent = new Table();
+  private final Table births = new Table();
+  private final Table coins = new Table();
+  private final Table effects = new Table();
+  private Table content = menuContent;
+  private Table fieldPanel, menuPanel, dexDrawer;
+  private Cell<?> menuTabsCell;
   private final List<Runnable> bindings = new ArrayList<>();
+  private final List<Dialog> dialogs = new ArrayList<>();
   private final List<Actor> floatingCoins = new ArrayList<>();
   private final Map<Actor, Float> birthTargets = new IdentityHashMap<>();
-  private final String[] revealedNames = new String[9];
   private final HatchSprite[] eggs = new HatchSprite[9];
-  private final TextButton[] navButtons = new TextButton[5];
+  private final Image[] menuIcons = new Image[5];
+  private Texture[] menuTabTextures;
+  private TextureRegion[] menuTabRegions;
+  private Table menuTabs;
   private Table cards;
-  private int cardCount, columns = 3;
+  private int cardCount, cardColumns = 3, columns = 3;
   private final int[] eggGroups = new int[9];
   private Drawable neutralGroupPanel;
   private Drawable activeGroupPanel;
@@ -93,40 +129,56 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   private Drawable repeatCoinPanel;
   private Drawable shinyCoinPanel;
   private Drawable silverCoinPanel;
-  private final String[] tabs = {"Criadero", "Pokédex", "Tienda", "Mochila", "Ajustes"};
-  private final String[] shops = {
-    "Criadero", "Mejoras", "Evolutivos", "Incubadoras", "Beneficios Temporales"
-  };
+  private final String[] tabs = { "Criadero", "Tienda", "Piedra Alba", "Magmatizador", "Mochila" };
+  private final String[] menuIconKeys = { "egg", "coin-case", "dawn-stone", "magmarizer", "explorer-kit" };
   private final String[] sections = {
-    "Económicos", "Cuidador", "Crianza", "Huevos", "Optimización", "Evolutivos"
+      "Económicos", "Cuidador", "Crianza", "Huevos", "Optimización", "Evolutivos"
   };
   private final String[] flutes = {
-    "blue-flute",
-    "yellow-flute",
-    "red-flute",
-    "black-flute",
-    "white-flute",
-    "azure-flute",
-    "poke-flute",
-    "eon-flute"
+      "blue-flute",
+      "yellow-flute",
+      "red-flute",
+      "black-flute",
+      "white-flute",
+      "azure-flute",
+      "poke-flute",
+      "eon-flute"
   };
   private Skin skin;
-  private TextureRegion hpPixel;
+  private Texture emptyBarTexture;
+  private Texture[] fillBarTextures;
+  private TextureRegion emptyBarRegion;
+  private TextureRegion[] fillBarRegions;
+  private TextureRegion buttonGlint;
+  private Texture eggParticleTexture;
+  private TextureRegion particlePixel, particleDot, particleBubble, particleFlower, particleDrop;
+  private BitmapFont bodyFont, headingFont, brandFont;
+  private ParticleEffect eggClickParticleTemplate;
+  private ParticleEffectPool eggClickParticlePool;
+  private Cursor idleCursor, activeCursor;
+  private Cursor[] cursorFrames;
   private TextButton.TextButtonStyle affordablePurchaseStyle;
   private TextButton.TextButtonStyle lockedPurchaseStyle;
+  private TextButton.TextButtonStyle pixelAffordablePurchaseStyle;
+  private TextButton.TextButtonStyle pixelBuyPurchaseStyle;
   private Table wallet;
   private Label coinBalance, rcBalance;
-  private ScrollPane scroll;
-  private int tab, shop, slot, lastStep, gen, group, lastRevision = -1;
+  private ScrollPane scroll, dexScroll;
+  private Image dexToggle;
+  private TextButton settingsButton;
+  private int tab = 2, shop, slot, lastStep, gen, group, lastRevision = -1;
   private boolean registeredOnly, shinyOnly, readyOnly, paused;
-  private boolean walletBuilt, walletShowsRc, gsBallListed;
+  private boolean walletBuilt, walletShowsRc, gsBallListed, cursorPressed, dexOpen;
+  private long cursorClickStart = -1;
   private String search = "";
   private DexGrid dexList;
   private Label dexResults;
-  private Label farmStatus;
   private float elapsed, saveTime;
   private Runnable detailUpdate;
   private Dialog activeDetail;
+  private Dialog farmDetailsDialog;
+  private Runnable farmDetailsUpdate;
+  private Dialog settingsDialog;
 
   FirstScreen(Main app) {
     this.app = app;
@@ -135,80 +187,92 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
   @Override
   public void show() {
+    resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     skin = new Skin(Gdx.files.internal("interface/skin.json"));
-    configureFont(skin.getFont("Terminal"), 1.08f);
-    configureFont(skin.getFont("Pixel"), 2.25f);
-    configureFont(skin.getFont("Brand"), 1.08f);
+    TextureAtlas uiAtlas = app.getAssets().get("interface/ui.atlas", TextureAtlas.class);
+    skin.addRegions(uiAtlas);
+    buttonGlint = skin.getRegion("button-glint");
+    initializeFonts();
+    initializeButtonStyles();
+    initializeEggClickParticles();
+    initializeCursor();
+    initializeProgressBars();
+    initializeMenuTabSprites();
     neutralGroupPanel = skin.getDrawable("panel");
     activeGroupPanel = skin.newDrawable("panel", new Color(.72f, .9f, .68f, 1));
     inactiveGroupPanel = skin.newDrawable("panel", new Color(.68f, .72f, .7f, 1));
     hatchedGroupPanel = skin.newDrawable("panel", new Color(.82f, .9f, .95f, 1));
     completeGroupPanel = skin.newDrawable("panel", new Color(1, .9f, .58f, 1));
-    TextureRegion panelRegion = skin.getRegion("panel");
-    hpPixel =
-        new TextureRegion(
-            panelRegion.getTexture(),
-            panelRegion.getRegionX() + 8,
-            panelRegion.getRegionY() + 8,
-            1,
-            1);
     firstCoinPanel = skin.newDrawable("panel", new Color(.42f, .9f, .94f, 1));
     repeatCoinPanel = skin.getDrawable("canvas");
     shinyCoinPanel = skin.newDrawable("panel", new Color(1, .77f, .24f, 1));
     silverCoinPanel = skin.newDrawable("panel", new Color(.78f, .84f, .9f, 1));
     affordablePurchaseStyle = coloredPurchaseStyle(new Color(.5f, .86f, .54f, 1));
     lockedPurchaseStyle = coloredPurchaseStyle(new Color(.94f, .42f, .37f, 1));
+    pixelAffordablePurchaseStyle =
+        coloredPurchaseStyle(new Color(.5f, .86f, .54f, 1), headingFont);
+    pixelBuyPurchaseStyle = pixelBuyPurchaseStyle();
     TooltipManager.getInstance().initialTime = .25f;
-    stage.addActor(root);
     root.setFillParent(true);
-    root.setBackground(skin.getDrawable("canvas"));
-    Table head = new Table();
-    head.setBackground(skin.getDrawable("pine"));
-    head.pad(10, 16, 10, 16);
-    head.add(icon("egg")).size(28).padRight(10);
-    head.add(new Label("PokéHatch", skin, "brand")).expandX().left();
+
+    fieldPanel = new Table();
+    fieldPanel.setBackground(skin.getDrawable("ui/box-standard"));
+    farmContent.top().left();
+    ScrollPane fieldScroll = new ScrollPane(farmContent, skin);
+    fieldScroll.setScrollingDisabled(true, false);
+    fieldScroll.setFadeScrollBars(false);
+    fieldPanel.add(fieldScroll).grow();
+
+    menuPanel = new Table();
+    menuPanel.setBackground(skin.getDrawable("ui/menu"));
+    menuPanel.top();
     wallet = new Table();
-    head.add(wallet).right();
-    root.add(head).growX().row();
-    Table nav = new Table();
-    nav.setBackground(skin.getDrawable("panel"));
-    nav.pad(3, 8, 3, 8);
-    String[] icons = {"egg", "poke-ball", "coin-case", "explorer-kit", "go-goggles"};
+    menuTabs = new Table();
+    menuTabs.setBackground(
+        new BaseDrawable() {
+          @Override
+          public void draw(
+              com.badlogic.gdx.graphics.g2d.Batch batch, float x, float y, float width, float height) {
+            batch.draw(menuTabRegions[selectedMenuIndex()], x, y, width, height);
+          }
+        });
     for (int i = 0; i < tabs.length; i++) {
       final int n = i;
-      TextButton b =
-          navButtons[i] =
-              button(
-                  tabs[i],
-                  () -> {
-                    tab = n;
-                    rebuild();
-                  });
-      Label title = b.getLabel();
-      b.clearChildren();
-      b.add(icon(icons[i])).size(19).padRight(5);
-      b.add(title);
-      nav.add(b).expandX().fillX().height(34).pad(1);
+      Image menuIcon = menuIcons[i] = icon(menuIconKeys[i]);
+      TextTooltip tooltip = new TextTooltip(tabs[i], skin);
+      tooltip.setInstant(false);
+      menuIcon.addListener(tooltip);
+      click(menuIcon, () -> selectMenu(n));
+      menuTabs.add(menuIcon).expandX().fill().pad(2);
     }
-    root.add(nav).growX().row();
-    scroll = new ScrollPane(content, skin);
+    menuTabsCell = menuPanel.add(menuTabs).growX();
+    layoutMenuTabs();
+    Table walletRow = new Table();
+    walletRow.add(wallet).right();
+    menuPanel.add(walletRow).growX().pad(4, 8, 2, 8).row();
+    scroll = new ScrollPane(menuContent, skin);
     scroll.setScrollingDisabled(true, false);
     scroll.setFadeScrollBars(false);
-    root.add(scroll).grow();
-    for (Table rail : new Table[] {births, coins}) {
+    menuPanel.add(scroll).grow();
+    layoutPanels();
+    stage.addActor(root);
+    for (Table rail : new Table[] { births, coins }) {
       rail.setTouchable(Touchable.disabled);
       stage.addActor(rail);
     }
     effects.setFillParent(true);
     effects.setTouchable(Touchable.disabled);
     stage.addActor(effects);
+    buildDexDrawer();
+    buildSettingsButton();
     stage.getRoot()
         .addCaptureListener(
             new InputListener() {
               @Override
               public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Dialog detail = activeDetail;
-                if (detail == null || !detail.isVisible()) return false;
+                if (detail == null || !detail.isVisible())
+                  return false;
                 float halfWidth = detail.getWidth() * detail.getScaleX() / 2;
                 float halfHeight = detail.getHeight() * detail.getScaleY() / 2;
                 float centerX = detail.getX() + detail.getOriginX();
@@ -216,7 +280,8 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
                 if (event.getStageX() >= centerX - halfWidth
                     && event.getStageX() <= centerX + halfWidth
                     && event.getStageY() >= centerY - halfHeight
-                    && event.getStageY() <= centerY + halfHeight) return false;
+                    && event.getStageY() <= centerY + halfHeight)
+                  return false;
                 detail.hide();
                 event.stop();
                 return true;
@@ -225,27 +290,479 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     Gdx.input.setInputProcessor(stage);
     updateWallet();
     rebuild();
-    if (store.blocked) message("Guardado ilegible. Puedes iniciar una partida desde Ajustes.");
+    if (store.blocked)
+      message("Guardado ilegible. Puedes iniciar una partida desde Ajustes.");
   }
 
-  private void configureFont(BitmapFont font, float scale) {
-    font.getRegion()
-        .getTexture()
-        .setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-    font.setUseIntegerPositions(true);
-    font.getData().setScale(scale);
+  private void initializeFonts() {
+    bodyFont = generateFont("fonts/Terminal.ttf", 16, Texture.TextureFilter.Linear);
+    headingFont = generateFont("fonts/Pixel.ttf", 22, Texture.TextureFilter.Nearest);
+    brandFont = generateFont("fonts/Pixel.ttf", 26, Texture.TextureFilter.Nearest);
+  }
+
+  private void initializeMenuTabSprites() {
+    Pixmap source = new Pixmap(Gdx.files.internal("art/ui/menu-tab.png"));
+    try {
+      menuTabTextures = new Texture[MENU_TAB_FRAME_Y.length];
+      menuTabRegions = new TextureRegion[MENU_TAB_FRAME_Y.length];
+      for (int i = 0; i < MENU_TAB_FRAME_Y.length; i++) {
+        Pixmap frame =
+            new Pixmap(source.getWidth(), MENU_TAB_FRAME_HEIGHT, Pixmap.Format.RGBA8888);
+        frame.setBlending(Pixmap.Blending.None);
+        for (int y = 0; y < MENU_TAB_FRAME_HEIGHT; y++)
+          for (int x = 0; x < source.getWidth(); x++)
+            frame.drawPixel(x, y, source.getPixel(x, MENU_TAB_FRAME_Y[i] + y));
+        menuTabTextures[i] = new Texture(frame);
+        menuTabTextures[i].setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        menuTabRegions[i] = new TextureRegion(menuTabTextures[i]);
+        frame.dispose();
+      }
+    } finally {
+      source.dispose();
+    }
+  }
+
+  private void initializeProgressBars() {
+    Pixmap empty = new Pixmap(Gdx.files.internal("art/ui/empty-bar.png"));
+    try {
+      makeWhiteTransparent(empty);
+      emptyBarTexture = new Texture(empty);
+      emptyBarTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+      emptyBarRegion = new TextureRegion(emptyBarTexture);
+    } finally {
+      empty.dispose();
+    }
+
+    Pixmap source = new Pixmap(Gdx.files.internal("art/ui/filler-bar.png"));
+    try {
+      int[] rows = { 0, 3, 6 };
+      fillBarTextures = new Texture[rows.length];
+      fillBarRegions = new TextureRegion[rows.length];
+      for (int i = 0; i < rows.length; i++) {
+        Pixmap band = new Pixmap(source.getWidth(), 2, Pixmap.Format.RGBA8888);
+        band.setBlending(Pixmap.Blending.None);
+        for (int y = 0; y < 2; y++)
+          for (int x = 0; x < source.getWidth(); x++)
+            band.drawPixel(x, y, source.getPixel(x, rows[i] + y));
+        fillBarTextures[i] = new Texture(band);
+        fillBarTextures[i].setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        fillBarRegions[i] = new TextureRegion(fillBarTextures[i]);
+        band.dispose();
+      }
+    } finally {
+      source.dispose();
+    }
+  }
+
+  private void makeWhiteTransparent(Pixmap pixmap) {
+    for (int y = 0; y < pixmap.getHeight(); y++)
+      for (int x = 0; x < pixmap.getWidth(); x++) {
+        int rgba = pixmap.getPixel(x, y);
+        if (((rgba >>> 24) & 0xff) == 255
+            && ((rgba >>> 16) & 0xff) == 255
+            && ((rgba >>> 8) & 0xff) == 255)
+          pixmap.drawPixel(x, y, 0);
+      }
+  }
+
+  private void layoutPanels() {
+    root.clearChildren();
+    float width = stage.getViewport().getWorldWidth();
+    root.add(fieldPanel).width(width * .6f).growY();
+    root.add(menuPanel).width(width * .4f).growY();
+  }
+
+  private void layoutMenuTabs() {
+    float width = stage.getViewport().getWorldWidth() * .4f;
+    menuTabsCell.height(Math.max(42, width * MENU_TAB_FRAME_HEIGHT / 152f));
+    menuPanel.invalidateHierarchy();
+  }
+
+  private int selectedMenuIndex() {
+    return tab == 3 ? 4 : Math.max(0, Math.min(3, shop));
+  }
+
+  private void selectMenu(int index) {
+    if (index == 4) {
+      tab = 3;
+    } else {
+      tab = 2;
+      shop = index;
+    }
+    rebuild();
+  }
+
+  private void buildDexDrawer() {
+    dexDrawer = new Table();
+    dexDrawer.setBackground(skin.getDrawable("canvas"));
+    dexDrawer.pad(4);
+    Table header = new Table();
+    header.setBackground(skin.getDrawable("pine"));
+    Label title = new Label("Pokédex", skin, "light");
+    header.add(title).growX().center();
+    dexDrawer.add(header).growX().height(40).row();
+
+    dexScroll = new ScrollPane(dexContent, skin);
+    dexScroll.setScrollingDisabled(true, false);
+    dexScroll.setFadeScrollBars(false);
+    dexDrawer.add(dexScroll).grow();
+    stage.addActor(dexDrawer);
+
+    dexToggle = icon("ui/lateral-pokeball");
+    dexToggle.setSize(58, 58);
+    dexToggle.addListener(
+        new ClickListener() {
+          @Override
+          public void clicked(InputEvent event, float x, float y) {
+            toggleDex();
+          }
+        });
+    stage.addActor(dexToggle);
+    positionDexDrawer();
+  }
+
+  private void buildSettingsButton() {
+    settingsButton = new TextButton("", skin);
+    settingsButton.setStyle(skin.get("default", TextButton.TextButtonStyle.class));
+    settingsButton.add(icon("settings")).size(34);
+    settingsButton.setSize(56, 56);
+    click(settingsButton, this::openSettingsDialog);
+    stage.addActor(settingsButton);
+    positionSettingsButton();
+  }
+
+  private void positionSettingsButton() {
+    settingsButton.setSize(56, 56);
+    settingsButton.setPosition(12, 12);
+  }
+
+  private float dexDrawerWidth() {
+    return stage.getViewport().getWorldWidth() * .6f;
+  }
+
+  private void positionDexDrawer() {
+    float width = dexDrawerWidth();
+    float height = stage.getViewport().getWorldHeight();
+    dexDrawer.clearActions();
+    dexDrawer.setSize(width, height);
+    dexToggle.setSize(116, 116);
+    float toggleOffset = dexToggle.getWidth() * .5862f;
+    dexDrawer.setPosition(dexOpen ? 0 : -width + toggleOffset, 0);
+    dexDrawer.setVisible(dexOpen);
+    dexDrawer.setTouchable(dexOpen ? Touchable.enabled : Touchable.disabled);
+    syncDexToggle();
+    dexToggle.setY((height - dexToggle.getHeight()) / 2);
+  }
+
+  private void syncDexToggle() {
+    float toggleOffset = dexToggle.getWidth() * .5862f;
+    float x = Math.max(-7, dexDrawer.getX() + dexDrawer.getWidth() - toggleOffset);
+    dexToggle.setX(x);
+  }
+
+  private void toggleDex() {
+    if (activeDetail != null)
+      activeDetail.hide();
+    float width = dexDrawerWidth();
+    float height = stage.getViewport().getWorldHeight();
+    float toggleOffset = dexToggle.getWidth() * .5862f;
+    dexOpen = !dexOpen;
+    if (dexOpen) {
+      buildDexContent();
+      dexScroll.setScrollY(0);
+      dexDrawer.clearActions();
+      dexDrawer.setVisible(true);
+      dexDrawer.setTouchable(Touchable.enabled);
+      dexDrawer.setPosition(-width + toggleOffset, 0);
+      dexDrawer.setSize(width, height);
+      dexDrawer.addAction(
+          Actions.sequence(
+              Actions.moveBy(-7, 0, .06f),
+              Actions.moveTo(0, 0, .24f, Interpolation.swingOut)));
+    } else {
+      dexDrawer.clearActions();
+      dexDrawer.setTouchable(Touchable.disabled);
+      dexDrawer.addAction(
+          Actions.sequence(
+              Actions.moveTo(-width + toggleOffset, 0, .24f, Interpolation.swingIn),
+              Actions.visible(false)));
+    }
+    syncDexToggle();
+    dexToggle.setY((height - dexToggle.getHeight()) / 2);
+  }
+
+  private void openSettingsDialog() {
+    if (settingsDialog != null && settingsDialog.isVisible()) {
+      settingsDialog.toFront();
+      return;
+    }
+
+    Table previousContent = content;
+    Table previousCards = cards;
+    int previousCardCount = cardCount;
+    int previousCardColumns = cardColumns;
+    int previousTab = tab;
+    Table settingsContent = new Table();
+    settingsContent.top().left().pad(8);
+    content = settingsContent;
+    cards = null;
+    tab = 4;
+    settings();
+    content = previousContent;
+    cards = previousCards;
+    cardCount = previousCardCount;
+    cardColumns = previousCardColumns;
+    tab = previousTab;
+
+    Dialog dialog =
+        new Dialog("", skin) {
+          @Override
+          public void hide() {
+            super.hide();
+            if (settingsDialog == this)
+              settingsDialog = null;
+          }
+        };
+    addDialogHeader(dialog, "Ajustes");
+    ScrollPane settingsScroll = new ScrollPane(settingsContent, skin);
+    settingsScroll.setScrollingDisabled(true, false);
+    settingsScroll.setFadeScrollBars(false);
+    float width = Math.max(1, Math.min(780, stage.getViewport().getWorldWidth() - 48));
+    float height = Math.max(1, Math.min(600, stage.getViewport().getWorldHeight() - 112));
+    dialog.getContentTable().add(settingsScroll).width(width).height(height).pad(0).row();
+    dialog.button("Cerrar", false);
+    styleDialogButtons(dialog);
+    dialog.setKeepWithinStage(true);
+    settingsDialog = dialog;
+    dialog.show(stage);
+    fitDialog(dialog);
+    registerDialog(dialog);
+  }
+
+  private void registerDialog(Dialog dialog) {
+    dialogs.remove(dialog);
+    dialogs.add(dialog);
+  }
+
+  private void bringDialogsToFront() {
+    for (int i = dialogs.size() - 1; i >= 0; i--)
+      if (!dialogs.get(i).isVisible())
+        dialogs.remove(i);
+    for (Dialog dialog : dialogs)
+      dialog.toFront();
+  }
+
+  private void buildDexContent() {
+    content = dexContent;
+    dexContent.clearChildren();
+    dexContent.top().left().pad(8, screenMargin(), 8, screenMargin());
+    cards = null;
+    dexList = null;
+    dexResults = null;
+    dex();
+    content = menuContent;
+    skin.add("GeneratedTerminal", bodyFont, BitmapFont.class);
+    skin.add("GeneratedPixel", headingFont, BitmapFont.class);
+    skin.add("GeneratedBrand", brandFont, BitmapFont.class);
+
+    skin.get("default", Label.LabelStyle.class).font = bodyFont;
+    skin.get("light", Label.LabelStyle.class).font = bodyFont;
+    skin.get("pixel", Label.LabelStyle.class).font = headingFont;
+    skin.get("brand", Label.LabelStyle.class).font = brandFont;
+    for (String name : new String[] { "default", "buy", "active" })
+      skin.get(name, TextButton.TextButtonStyle.class).font = bodyFont;
+    skin.get("default", com.badlogic.gdx.scenes.scene2d.ui.List.ListStyle.class).font = bodyFont;
+    skin.get("default", SelectBox.SelectBoxStyle.class).font = bodyFont;
+    skin.get("default", TextField.TextFieldStyle.class).font = bodyFont;
+    skin.get("default", CheckBox.CheckBoxStyle.class).font = bodyFont;
+    skin.get("default", com.badlogic.gdx.scenes.scene2d.ui.Window.WindowStyle.class).titleFont =
+        bodyFont;
+  }
+
+  private BitmapFont generateFont(String path, int size, Texture.TextureFilter filter) {
+    FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(path));
+    try {
+      FreeTypeFontParameter parameters = new FreeTypeFontParameter();
+      parameters.size = size;
+      parameters.characters =
+          FreeTypeFontGenerator.DEFAULT_CHARS + "áéíóúÁÉÍÓÚñÑüÜ¿¡♀♂";
+      parameters.hinting = FreeTypeFontGenerator.Hinting.Full;
+      parameters.kerning = true;
+      parameters.minFilter = filter;
+      parameters.magFilter = filter;
+      BitmapFont font = generator.generateFont(parameters);
+      font.setUseIntegerPositions(true);
+      return font;
+    } finally {
+      generator.dispose();
+    }
+  }
+
+  private void initializeButtonStyles() {
+    setButtonStyle("default", new Color(.56f, .82f, .54f, 1));
+    setButtonStyle("buy", new Color(.96f, .76f, .34f, 1));
+    setButtonStyle("active", new Color(.55f, .78f, .88f, 1));
+  }
+
+  private void setButtonStyle(String name, Color color) {
+    TextButton.TextButtonStyle style = skin.get(name, TextButton.TextButtonStyle.class);
+    style.up = skin.newDrawable("button", color);
+    style.over = reflective(skin.newDrawable("button", new Color(color).lerp(Color.WHITE, .2f)));
+    style.down = skin.newDrawable("button", new Color(color).lerp(Color.BLACK, .18f));
+    style.disabled = skin.newDrawable("button", new Color(.68f, .7f, .65f, 1));
+  }
+
+  private Drawable reflective(Drawable background) {
+    return new BaseDrawable(background) {
+      @Override
+      public void draw(Batch batch, float x, float y, float width, float height) {
+        background.draw(batch, x, y, width, height);
+        Color color = batch.getColor();
+        float red = color.r, green = color.g, blue = color.b, alpha = color.a;
+        float shineWidth = Math.min(width, Math.max(8, width * .18f));
+        float progress = (TimeUtils.millis() % 1700L) / 1700f;
+        batch.setColor(red, green, blue, alpha * .45f);
+        batch.draw(
+            buttonGlint,
+            x + (width - shineWidth) * progress,
+            y,
+            shineWidth,
+            height);
+        batch.setColor(red, green, blue, alpha);
+      }
+    };
+  }
+
+  private void initializeEggClickParticles() {
+    initializeEggParticleSprites();
+    eggClickParticleTemplate = new ParticleEffect();
+    eggClickParticleTemplate.load(
+        Gdx.files.internal("effects/egg-click.p"), Gdx.files.internal("effects"));
+    eggClickParticlePool = new ParticleEffectPool(eggClickParticleTemplate, 2, 16);
+  }
+
+  private void initializeEggParticleSprites() {
+    Pixmap sprites = new Pixmap(128, 32, Pixmap.Format.RGBA8888);
+    try {
+      sprites.setBlending(Pixmap.Blending.None);
+      sprites.setColor(Color.WHITE);
+      sprites.drawPixel(0, 0);
+      sprites.fillCircle(8, 8, 5);
+      sprites.setColor(1, 1, 1, .6f);
+      sprites.drawCircle(24, 8, 6);
+      sprites.setColor(Color.WHITE);
+      sprites.drawLine(20, 5, 22, 3);
+      sprites.fillCircle(44, 4, 3);
+      sprites.fillCircle(51, 9, 3);
+      sprites.fillCircle(49, 16, 3);
+      sprites.fillCircle(39, 16, 3);
+      sprites.fillCircle(37, 9, 3);
+      sprites.fillCircle(44, 11, 3);
+      sprites.fillTriangle(64, 1, 58, 10, 70, 10);
+      sprites.fillCircle(64, 15, 6);
+      eggParticleTexture = new Texture(sprites);
+    } finally {
+      sprites.dispose();
+    }
+    eggParticleTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+    particlePixel = new TextureRegion(eggParticleTexture, 0, 0, 1, 1);
+    particleDot = new TextureRegion(eggParticleTexture, 2, 2, 12, 12);
+    particleBubble = new TextureRegion(eggParticleTexture, 16, 0, 16, 16);
+    particleFlower = new TextureRegion(eggParticleTexture, 32, 0, 24, 24);
+    particleDrop = new TextureRegion(eggParticleTexture, 56, 0, 16, 24);
+  }
+
+  private void initializeCursor() {
+    if (Gdx.app.getType() != Application.ApplicationType.Desktop)
+      return;
+    Pixmap source = new Pixmap(Gdx.files.internal("art/ui/click.png"));
+    try {
+      if (source.getWidth() != CURSOR_FRAME_WIDTH * CURSOR_FRAME_COUNT
+          || source.getHeight() != CURSOR_FRAME_HEIGHT)
+        throw new IllegalStateException("Expected click cursor sprite sheet to be 96x32");
+
+      Vector2 hitPoint = cursorHitPoint(source);
+      cursorFrames = new Cursor[CURSOR_FRAME_COUNT];
+      for (int frame = 0; frame < CURSOR_FRAME_COUNT; frame++) {
+        Pixmap image =
+            new Pixmap(CURSOR_IMAGE_SIZE, CURSOR_IMAGE_SIZE, Pixmap.Format.RGBA8888);
+        image.setBlending(Pixmap.Blending.None);
+        try {
+          for (int y = 0; y < CURSOR_FRAME_HEIGHT; y++)
+            for (int x = 0; x < CURSOR_FRAME_WIDTH; x++) {
+              int pixel = source.getPixel(frame * CURSOR_FRAME_WIDTH + x, y);
+              if (!isCursorBackground(pixel))
+                image.drawPixel(x, y, pixel);
+            }
+          cursorFrames[frame] =
+              Gdx.graphics.newCursor(image, Math.round(hitPoint.x), Math.round(hitPoint.y));
+        } finally {
+          image.dispose();
+        }
+      }
+    } finally {
+      source.dispose();
+    }
+    idleCursor = cursorFrames[0];
+    activeCursor = idleCursor;
+    Gdx.graphics.setCursor(idleCursor);
+  }
+
+  private Vector2 cursorHitPoint(Pixmap source) {
+    int boundary = CURSOR_FRAME_HEIGHT;
+    int left = CURSOR_FRAME_WIDTH;
+    int right = -1;
+    for (int y = 0; y < CURSOR_FRAME_HEIGHT; y++)
+      for (int x = 0; x < CURSOR_FRAME_WIDTH; x++)
+        if (!isCursorBackground(source.getPixel(x, y))) {
+          if (y < boundary) {
+            boundary = y;
+            left = right = x;
+          } else if (y == boundary) {
+            left = Math.min(left, x);
+            right = Math.max(right, x);
+          }
+        }
+    if (right < 0)
+      throw new IllegalStateException("Cursor image has no visible pixels");
+    return new Vector2((left + right) / 2f, boundary);
+  }
+
+  private boolean isCursorBackground(int rgba) {
+    int red = (rgba >>> 24) & 0xff;
+    int green = (rgba >>> 16) & 0xff;
+    int blue = (rgba >>> 8) & 0xff;
+    int alpha = rgba & 0xff;
+    return alpha == 0 || (red >= 250 && green >= 250 && blue >= 250);
   }
 
   private TextButton.TextButtonStyle coloredPurchaseStyle(Color color) {
+    return coloredPurchaseStyle(color, bodyFont);
+  }
+
+  private TextButton.TextButtonStyle coloredPurchaseStyle(Color color, BitmapFont font) {
     TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
     Color hover = new Color(color).lerp(Color.WHITE, .16f);
-    style.font = skin.getFont("Terminal");
+    style.font = font;
     style.fontColor = skin.getColor("ink");
     style.disabledFontColor = skin.getColor("faded");
-    style.up = skin.newDrawable("panel", color);
-    style.over = skin.newDrawable("panel", hover);
-    style.down = skin.getDrawable("pressed");
-    style.disabled = skin.newDrawable("panel", color);
+    style.up = skin.newDrawable("button", color);
+    style.over = reflective(skin.newDrawable("button", hover));
+    style.down = skin.newDrawable("button", new Color(color).lerp(Color.BLACK, .18f));
+    style.disabled = skin.newDrawable("button", new Color(.68f, .7f, .65f, 1));
+    return style;
+  }
+
+  private TextButton.TextButtonStyle pixelBuyPurchaseStyle() {
+    TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
+    style.font = headingFont;
+    style.fontColor = skin.getColor("ink");
+    style.disabledFontColor = skin.getColor("faded");
+    style.up = skin.newDrawable("button", new Color(.95f, .76f, .32f, 1));
+    style.over =
+        reflective(skin.newDrawable("button", new Color(1, .9f, .52f, 1)));
+    style.down = skin.newDrawable("button", new Color(.78f, .57f, .22f, 1));
+    style.disabled = skin.newDrawable("button", new Color(.68f, .7f, .65f, 1));
     return style;
   }
 
@@ -260,7 +777,13 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private Image icon(String key) {
-    return picture("art/" + key + ".png");
+    if (key.equals("egg") || key.matches("egg\\d+"))
+      key = "eggs/" + key;
+    else if (key.startsWith("badge-"))
+      key = "medals/" + key;
+    Image image = new Image(skin.getDrawable(key));
+    image.setScaling(Scaling.fit);
+    return image;
   }
 
   private String sprite(Species p, boolean shiny) {
@@ -269,6 +792,8 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
   private TextButton button(String name, Runnable run) {
     TextButton b = new TextButton(name, skin);
+    if (tab == 2 && affordablePurchaseStyle != null)
+      b.setStyle(affordablePurchaseStyle);
     change(b, run);
     return b;
   }
@@ -298,26 +823,47 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     content.add(l).growX().padTop(16).padBottom(12).row();
   }
 
+  private float screenMargin() {
+    return 8;
+  }
+
+  private float contentWidth() {
+    float width = stage.getViewport().getWorldWidth();
+    float widthFraction = content == menuContent ? .4f : .6f;
+    float scrollMargin = content == menuContent ? 28 : 0;
+    return width * widthFraction - screenMargin() * 2 - scrollMargin;
+  }
+
   private void rebuild() {
     TooltipManager.getInstance().hideAll();
-    for (int n = 0; n < tabs.length; n++)
-      navButtons[n].setStyle(
-          skin.get(n == tab ? "active" : "default", TextButton.TextButtonStyle.class));
     cards = null;
     bindings.clear();
     Arrays.fill(eggs, null);
-
     dexList = null;
     dexResults = null;
-    content.clearChildren();
-    content.top().left().pad(8);
+    farmContent.clearChildren();
+    menuContent.clearChildren();
+    dexContent.clearChildren();
     slot = Math.min(slot, game.s.slots - 1);
-    if (tab == 0) farm();
-    else if (tab == 1) dex();
-    else if (tab == 2) shop();
-    else if (tab == 3) bag();
-    else settings();
+
+    content = farmContent;
+    farmContent.top().left().pad(8, screenMargin(), 8, screenMargin());
+    farm();
+
+    content = menuContent;
+    menuContent.top().left().pad(8, screenMargin(), 8, screenMargin() + 28);
+    if (tab == 2)
+      shop();
+    else if (tab == 3)
+      bag();
+    else
+      settings();
+
     scroll.setScrollY(0);
+    if (dexOpen) {
+      buildDexContent();
+      dexScroll.setScrollY(0);
+    }
     refresh();
   }
 
@@ -340,120 +886,88 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private void farm() {
-    heading("Criadero");
-    Table meadowHeader = new Table();
-    meadowHeader.pad(4, 10, 4, 10);
-    meadowHeader.setBackground(skin.getDrawable("pine"));
-    meadowHeader.add(new Label("Pradera de crianza", skin, "light")).left().expandX();
-    Label stats = new Label("", skin, "light");
-    meadowHeader.add(stats).right();
-    bindings.add(
-        () ->
-            stats.setText(
-                "Eclosiones " + game.s.total + " · Registrados " + game.registered()));
-    content.add(meadowHeader).growX().row();
+    Table tools = new Table();
+    if (game.has("card-key")) {
+      Image generations = farmTool("card-key", "Generaciones", () -> openFarmDetails(true));
+      tools.add(generations).size(42).pad(3);
+    }
+    if (game.has("scope-lens")) {
+      Image groups = farmTool("scope-lens", "Progreso por grupo", () -> openFarmDetails(false));
+      tools.add(groups).size(42).pad(3);
+    }
+    if (tools.getChildren().size > 0)
+      content.add(tools).growX().left().row();
+
     Table field = new Table();
-    final Texture meadow = app.getAssets().get("art/meadow.png", Texture.class);
-    field.setBackground(
-        new BaseDrawable() {
-          public void draw(
-              com.badlogic.gdx.graphics.g2d.Batch batch, float x, float y, float w, float h) {
-            float scale = Math.max(w / meadow.getWidth(), h / meadow.getHeight());
-            int sw = Math.round(w / scale), sh = Math.round(h / scale);
-            batch.draw(
-                meadow,
-                x,
-                y,
-                w,
-                h,
-                (meadow.getWidth() - sw) / 2,
-                (meadow.getHeight() - sh) / 2,
-                sw,
-                sh,
-                false,
-                false);
-          }
-        });
-    int[] order = {5, 3, 6, 1, 0, 2, 7, 4, 8};
+    field.center();
+    float availableWidth = contentWidth();
+    float eggSize = FARM_EGG_SIZE;
+    int farmColumns = Math.max(1, Math.min(3, (int) ((availableWidth + 8) / (eggSize + 8))));
+    int centerIndex = farmColumns == 2 ? 5 : 4;
+    int[] preferredOrder = { 5, 3, 6, 1, 0, 2, 7, 4, 8 };
+    int[] order = new int[preferredOrder.length];
+    order[centerIndex] = 0;
+    int nextPosition = 0;
+    for (int candidate : preferredOrder)
+      if (candidate != 0) {
+        while (nextPosition == centerIndex)
+          nextPosition++;
+        order[nextPosition++] = candidate;
+      }
+    float nestWidth = availableWidth / farmColumns - 8;
+    float nestHeight = 118;
     for (int i = 0; i < 9; i++) {
       final int j = order[i];
       Table nest = new Table();
+      nest.center();
       if (j < game.s.slots) {
         eggGroups[j] = game.s.group[j];
-        HatchSprite egg =
-            eggs[j] =
-                new HatchSprite(icon("egg" + eggGroups[j]).getDrawable());
-        nest.add(egg).size(58);
-        egg.setOrigin(29, 0);
-        click(
-            nest,
-            () -> {
-              slot = j;
-              game.tap(j);
-              updateFarm();
+        HatchSprite egg = eggs[j] = new HatchSprite(icon("egg" + eggGroups[j]).getDrawable());
+        nest.add(egg).size(eggSize);
+        egg.setOrigin(eggSize / 2, 0);
+        nest.addAction(
+            Actions.forever(
+                Actions.sequence(
+                    Actions.moveBy(0, 5, .9f, Interpolation.sine),
+                    Actions.moveBy(0, -5, .9f, Interpolation.sine))));
+        nest.addListener(
+            new ClickListener() {
+              @Override
+              public void clicked(InputEvent event, float x, float y) {
+                Vector2 clickPosition = nest.localToStageCoordinates(new Vector2(x, y));
+                slot = j;
+                spawnEggClickParticles(j, clickPosition.x, clickPosition.y);
+                game.tap(j);
+                updateFarm();
+              }
             });
         if (game.has("silph-scope")) {
           HpBar bar = hpBar();
           nest.row();
-          nest.add(bar).width(72).height(10).padTop(3);
+          nest.add(bar).width(eggSize * .72f).height(12).padTop(3);
           bindings.add(() -> setHpBarValue(bar, game.s.progress[j]));
         }
       }
-      field.add(nest).size(100, 82).pad(5, 8, 4, 8);
-      if (i % 3 == 2) field.row();
+      field.add(nest).size(nestWidth, nestHeight).pad(5, 4, 4, 4);
+      if (i % farmColumns == farmColumns - 1)
+        field.row();
     }
+    int farmRows = (order.length + farmColumns - 1) / farmColumns;
     content
         .add(field)
         .growX()
-        .height(Math.max(252, Math.min(340, stage.getViewport().getWorldHeight() * .48f)))
+        .height(farmRows * (nestHeight + 9))
         .row();
-    farmStatus = label("");
-    Table status = new Table();
-    status.setBackground(skin.getDrawable("panel"));
-    status.pad(7, 12, 7, 12);
-    status.add(farmStatus).expandX().left();
-    content.add(status).growX().row();
     bindings.add(this::updateFarm);
-    if (game.has("card-key")) {
-      heading("Generaciones");
-      Table row = new Table();
-      content.add(row).left().row();
-      for (int i = 1; i <= 5; i++) {
-        final int n = i;
-        CheckBox box = new CheckBox(catalog.regions[n - 1], skin);
-        box.setChecked(game.s.gen[n]);
-        change(
-            box,
-            () -> {
-              if (game.s.gen[n] && count(game.s.gen) == 1) {
-                box.setChecked(true);
-                return;
-              }
-              game.s.gen[n] = box.isChecked();
-              save();
-            });
-        row.add(box).pad(3);
-      }
-    }
-    if (game.has("scope-lens")) {
-      heading("Progreso por grupo");
-      Table groups = new Table();
-      float tileWidth = (stage.getViewport().getWorldWidth() - 34) / 3;
-      int column = 0;
-      for (Catalog.Group g : catalog.groups) {
-        Table tile = new Table();
-        tile.setBackground(neutralGroupPanel);
-        tile.pad(4, 6, 4, 6);
-        tile.add(label(g.name)).center().growX().row();
-        tile.add(groupProgressContent(g, tile)).growX();
-        groups.add(tile).width(tileWidth).pad(3).fillX().top();
-        if (++column == 3) {
-          groups.row();
-          column = 0;
-        }
-      }
-      content.add(groups).growX().row();
-    }
+  }
+
+  private Image farmTool(String iconId, String tooltip, Runnable action) {
+    Image button = icon(iconId);
+    TextTooltip textTooltip = new TextTooltip(tooltip, skin);
+    textTooltip.setInstant(false);
+    button.addListener(textTooltip);
+    click(button, action);
+    return button;
   }
 
   private HpBar hpBar() {
@@ -465,24 +979,32 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private Table groupProgressContent(Catalog.Group group, Table panel) {
+    return groupProgressContent(group, panel, bindings);
+  }
+
+  private Table groupProgressContent(Catalog.Group group, Table panel, List<Runnable> updates) {
     Table row = new Table();
     Label progress = label("");
     HpBar bar = hpBar();
     progress.setAlignment(com.badlogic.gdx.utils.Align.center);
     row.add(progress).growX().center().row();
     row.add(bar).growX().height(10).padTop(3);
-    bindings.add(
+    updates.add(
         () -> {
           int total = 0, hatched = 0;
           for (Species p : catalog.species)
             if (contains(p.pool, group.id)) {
               total++;
-              if (game.s.counts[p.id] > 0) hatched++;
+              if (game.s.counts[p.id] > 0)
+                hatched++;
             }
           progress.setText(hatched + " / " + total);
-          if (game.completeGroup(group.id)) progress.setColor(1, .65f, .1f, 1);
-          else if (total > 0 && hatched == total) progress.setColor(.36f, .55f, .72f, 1);
-          else progress.setColor(Color.WHITE);
+          if (game.completeGroup(group.id))
+            progress.setColor(1, .65f, .1f, 1);
+          else if (total > 0 && hatched == total)
+            progress.setColor(.36f, .55f, .72f, 1);
+          else
+            progress.setColor(Color.WHITE);
           setHpBarValue(bar, total == 0 ? 0 : (double) hatched / total);
           if (panel != null) {
             panel.setBackground(
@@ -506,111 +1028,153 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
       float x = Math.round(getX()), y = Math.round(getY());
       float width = Math.max(0, Math.round(getWidth()));
       float height = Math.max(0, Math.round(getHeight()));
-      if (width < 7 || height < 7) return;
+      if (width < 3 || height < 3)
+        return;
 
       Color old = batch.getColor();
       Color actor = getColor();
       float oldR = old.r, oldG = old.g, oldB = old.b, oldA = old.a;
       float tintR = oldR * actor.r, tintG = oldG * actor.g, tintB = oldB * actor.b;
       float alpha = oldA * actor.a * parentAlpha;
-      drawBarRect(batch, x, y, width, height, .22f, .28f, .31f, tintR, tintG, tintB, alpha);
-      drawBarRect(
-          batch, x + 1, y + height - 2, width - 2, 1, .91f, .91f, .79f, tintR, tintG, tintB, alpha);
-      drawBarRect(
-          batch, x + 1, y + 1, 1, height - 2, .91f, .91f, .79f, tintR, tintG, tintB, alpha);
-      drawBarRect(
-          batch, x + 2, y + 2, width - 4, height - 4, .28f, .32f, .35f, tintR, tintG, tintB, alpha);
-
-      int zone = value <= .2f ? 0 : value <= .5f ? 1 : 2;
-      float innerX = x + 3, innerY = y + 3, innerWidth = width - 6, innerHeight = height - 6;
-      float fillWidth = Math.round(innerWidth * value);
-      if (fillWidth > 0) {
-        float bottomHeight = (float) Math.floor(innerHeight / 2);
-        float topHeight = innerHeight - bottomHeight;
-        drawBarRect(
-            batch,
-            innerX,
-            innerY,
-            fillWidth,
-            bottomHeight,
-            HP_COLORS[zone][3],
-            HP_COLORS[zone][4],
-            HP_COLORS[zone][5],
-            tintR,
-            tintG,
-            tintB,
-            alpha);
-        drawBarRect(
-            batch,
-            innerX,
-            innerY + bottomHeight,
-            fillWidth,
-            topHeight,
-            HP_COLORS[zone][0],
-            HP_COLORS[zone][1],
-            HP_COLORS[zone][2],
-            tintR,
-            tintG,
-            tintB,
-            alpha);
-      }
+      batch.setColor(tintR, tintG, tintB, alpha);
+      batch.draw(emptyBarRegion, x, y, width, height);
+      int zone = value < .25f ? 2 : value < .5f ? 1 : 0;
+      float fillWidth = Math.round((width - 2) * value);
+      if (fillWidth > 0)
+        batch.draw(fillBarRegions[zone], x + 1, y + 1, fillWidth, height - 2);
       batch.setColor(oldR, oldG, oldB, oldA);
-    }
-
-    private void drawBarRect(
-        Batch batch,
-        float x,
-        float y,
-        float width,
-        float height,
-        float red,
-        float green,
-        float blue,
-        float tintR,
-        float tintG,
-        float tintB,
-        float alpha) {
-      batch.setColor(red * tintR, green * tintG, blue * tintB, alpha);
-      batch.draw(hpPixel, x, y, width, height);
     }
   }
 
   private int count(boolean[] flags) {
     int n = 0;
-    for (boolean b : flags) if (b) n++;
+    for (boolean b : flags)
+      if (b)
+        n++;
     return n;
   }
 
+  private void openFarmDetails(boolean showGenerations) {
+    if (farmDetailsDialog != null && farmDetailsDialog.isVisible())
+      farmDetailsDialog.hide();
+
+    float width = Math.min(900, stage.getViewport().getWorldWidth() * .58f);
+    List<Runnable> updates = new ArrayList<>();
+    Table details = showGenerations
+        ? generationDetails(updates, width)
+        : groupDetails(updates, width);
+    Dialog dialog = new Dialog("", skin) {
+      @Override
+      public void hide() {
+        super.hide();
+        if (farmDetailsDialog == this) {
+          farmDetailsDialog = null;
+          farmDetailsUpdate = null;
+        }
+      }
+    };
+    addDialogHeader(dialog, showGenerations ? "Generaciones" : "Progreso por grupo");
+    ScrollPane detailScroll = new ScrollPane(details, skin);
+    detailScroll.setScrollingDisabled(true, false);
+    detailScroll.setFadeScrollBars(false);
+    float height = Math.min(640, stage.getViewport().getWorldHeight() * .72f);
+    dialog.getContentTable().add(detailScroll).width(width).height(height).row();
+    dialog.button("Cerrar", false);
+    styleDialogButtons(dialog);
+    dialog.setKeepWithinStage(true);
+    farmDetailsDialog = dialog;
+    farmDetailsUpdate =
+        () -> {
+          for (Runnable update : updates)
+            update.run();
+        };
+    farmDetailsUpdate.run();
+    dialog.show(stage);
+    fitDialog(dialog);
+    registerDialog(dialog);
+  }
+
+  private Table generationDetails(List<Runnable> updates, float width) {
+    Table details = new Table();
+    details.top().center();
+    float tileWidth = Math.max(80, (width - 54) / 3);
+    Table row = null;
+    for (int i = 1; i <= 5; i++) {
+      final int generation = i;
+      if ((i - 1) % 3 == 0) {
+        row = new Table();
+        row.center();
+        details.add(row).center().growX().row();
+      }
+      Table tile = new Table();
+      tile.top().center().pad(7, 8, 7, 8);
+      tile.add(icon("badge-" + catalog.badges[(generation - 1) * 8])).size(52).pad(4).row();
+      Label name = label(catalog.regions[generation - 1]);
+      name.setWrap(true);
+      name.setAlignment(com.badlogic.gdx.utils.Align.center);
+      tile.add(name).growX().center().row();
+      Label status = label("");
+      tile.add(status).center();
+      tile.setTouchable(Touchable.enabled);
+      click(
+          tile,
+          () -> {
+            if (game.s.gen[generation] && count(game.s.gen) == 1) {
+              message("Debe quedar una generación activa");
+              return;
+            }
+            game.s.gen[generation] = !game.s.gen[generation];
+            refresh();
+            save();
+          });
+      updates.add(
+          () -> {
+            boolean active = game.s.gen[generation];
+            tile.setBackground(active ? activeGroupPanel : inactiveGroupPanel);
+            status.setText(active ? "Activa" : "Inactiva");
+          });
+      row.add(tile).width(tileWidth).pad(3).fillY().top();
+    }
+    return details;
+  }
+
+  private Table groupDetails(List<Runnable> updates, float width) {
+    Table details = new Table();
+    details.top().center();
+    float tileWidth = Math.max(80, (width - 54) / 3);
+    int column = 0;
+    for (Catalog.Group group : catalog.groups) {
+      Table tile = new Table();
+      tile.setBackground(neutralGroupPanel);
+      tile.pad(4, 6, 4, 6);
+      Label name = label(group.name);
+      name.setWrap(true);
+      name.setAlignment(com.badlogic.gdx.utils.Align.center);
+      tile.add(name).center().growX().row();
+      tile.add(icon("egg" + group.id)).size(42).pad(3).row();
+      tile.add(groupProgressContent(group, tile, updates)).growX();
+      details.add(tile).width(tileWidth).pad(3).fillX().top();
+      if (++column == 3) {
+        details.row();
+        column = 0;
+      }
+    }
+    return details;
+  }
+
   private void updateFarm() {
-    if (tab != 0) return;
     for (int i = 0; i < game.s.slots; i++)
       if (eggs[i] != null && eggGroups[i] != game.s.group[i]) {
         eggGroups[i] = game.s.group[i];
         eggs[i].next(icon("egg" + eggGroups[i]).getDrawable());
       }
-    double p = game.s.progress[slot];
-    int g = game.s.group[slot];
-    String mood =
-        !game.eligible(g)
-            ? "En pausa por generación"
-            : p > .75 ? "¡Se mueve!" : p > .35 ? "Se balancea suavemente" : "Está calentito";
-    if (eggs[slot] != null && eggs[slot].revealing()) mood = "Ha nacido " + revealedNames[slot];
-    farmStatus.setText(
-        "Plaza "
-            + (slot + 1)
-            + " · "
-            + catalog.byGroup[g].name
-            + " · "
-            + mood
-            + "\nIncubadora "
-            + game.s.level[slot]
-            + " / 5");
   }
 
   public void step(int i) {
     lastStep = i;
     Image egg = eggs[i];
-    if (egg == null || eggs[i].revealing()) return;
+    if (egg == null || eggs[i].revealing())
+      return;
     egg.clearActions();
     egg.setRotation(0);
     egg.addAction(
@@ -622,12 +1186,12 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
       Species p, boolean shiny, GameEngine.HatchReward reward, long amount, List<String> drops) {
     HatchSprite egg = eggs[lastStep];
     hatchToast(p, shiny, drops);
-    if (amount > 0) coinToast(amount, egg, reward);
+    if (amount > 0)
+      coinToast(amount, egg, reward);
     if (egg != null) {
-      revealedNames[lastStep] = p.name;
       eggGroups[lastStep] = game.s.group[lastStep];
       egg.next(icon("egg" + eggGroups[lastStep]).getDrawable());
-      egg.reveal(picture(sprite(p, shiny)).getDrawable());
+      egg.reveal(picture(sprite(p, shiny)).getDrawable(), HATCH_SPRITE_SIZE / FARM_EGG_SIZE);
     }
     if (store.volume > 0)
       app.getAssets().get("cries/" + p.id + ".ogg", Sound.class).play(store.volume / 100f);
@@ -635,7 +1199,7 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
   private void hatchToast(Species p, boolean shiny, List<String> drops) {
     Table line = new Table();
-    line.setBackground(skin.getDrawable("panel"));
+    line.setBackground(alphaBackground(skin.getDrawable("panel"), .5f));
     line.add(picture(sprite(p, shiny))).size(42).pad(3);
     line.add(label((shiny ? "Shiny · " : "") + p.name)).pad(4);
     for (String id : drops) {
@@ -644,6 +1208,19 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     }
     line.pack();
     addToast(births, line, 9, 2.4f);
+  }
+
+  private Drawable alphaBackground(Drawable drawable, float alpha) {
+    return new BaseDrawable(drawable) {
+      @Override
+      public void draw(Batch batch, float x, float y, float width, float height) {
+        Color color = batch.getColor();
+        float red = color.r, green = color.g, blue = color.b, previousAlpha = color.a;
+        batch.setColor(red, green, blue, previousAlpha * alpha);
+        drawable.draw(batch, x, y, width, height);
+        batch.setColor(red, green, blue, previousAlpha);
+      }
+    };
   }
 
   private void coinToast(long value) {
@@ -667,15 +1244,13 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     popup.add(label("+" + value));
     popup.pack();
     popup.setOrigin(popup.getWidth() / 2, popup.getHeight() / 2);
-    Vector2 origin =
-        source.localToStageCoordinates(new Vector2(source.getWidth() / 2, source.getHeight() / 2));
+    Vector2 origin = source.localToStageCoordinates(new Vector2(source.getWidth() / 2, source.getHeight() / 2));
     popup.setPosition(origin.x - popup.getWidth() / 2, origin.y - popup.getHeight() / 2);
     popup.setScale(.2f);
     popup.getColor().a = 0;
     effects.addActor(popup);
     floatingCoins.add(popup);
-    float[] trajectory =
-        COIN_TRAJECTORIES[(int) (Math.random() * COIN_TRAJECTORIES.length)];
+    float[] trajectory = COIN_TRAJECTORIES[(int) (Math.random() * COIN_TRAJECTORIES.length)];
     popup.addAction(
         Actions.sequence(
             Actions.parallel(
@@ -705,7 +1280,8 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   private void toast(Table rail, Image image, String text, int limit, float seconds) {
     Table line = new Table();
     line.setBackground(skin.getDrawable("panel"));
-    if (image != null) line.add(image).size(30);
+    if (image != null)
+      line.add(image).size(30);
     line.add(label(text)).pad(3);
     line.pack();
     addToast(rail, line, limit, seconds);
@@ -729,23 +1305,27 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   private void positionRails() {
     float h = stage.getViewport().getWorldHeight(), w = stage.getViewport().getWorldWidth();
     float y = 6;
+    float birthX = 12;
     for (int i = births.getChildren().size - 1; i >= 0; i--) {
       Actor a = births.getChildren().get(i);
       Float previousTarget = birthTargets.put(a, y);
-      if (previousTarget == null) a.setPosition(8, y);
+      if (previousTarget == null)
+        a.setPosition(birthX, y);
       else if (Math.abs(previousTarget - y) > .5f) {
         for (int j = a.getActions().size - 1; j >= 0; j--) {
           Action action = a.getActions().get(j);
-          if (action instanceof MoveToAction) a.removeAction(action);
+          if (action instanceof MoveToAction)
+            a.removeAction(action);
         }
-        a.addAction(Actions.moveTo(8, y, .14f, Interpolation.sineOut));
+        a.addAction(Actions.moveTo(birthX, y, .14f, Interpolation.sineOut));
       }
       y += a.getHeight() + 1;
     }
     y = h - 64;
     for (Actor a : coins.getChildren()) {
       y -= a.getHeight();
-      a.setPosition(w - a.getWidth() - 12, y);
+      float leftWidth = w * .6f;
+      a.setPosition(Math.max(8, leftWidth - a.getWidth() - 12), y);
     }
     births.toFront();
     coins.toFront();
@@ -758,35 +1338,44 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
   private Table row(String key, String title, String description) {
     Table r = card(key, title);
-    if (!description.isEmpty()) subtitle(r, description);
+    if (!description.isEmpty())
+      subtitle(r, description);
     return r;
   }
 
   private Table card(String key, String title) {
+    return card(key, title, columns);
+  }
+
+  private Table card(String key, String title, int requestedColumns) {
     if (cards == null) {
       cards = new Table();
       cards.left();
       content.add(cards).growX().row();
       cardCount = 0;
+      cardColumns = requestedColumns;
     }
-    if (cardCount > 0 && cardCount % columns == 0) cards.row();
+    if (cardCount > 0 && cardCount % cardColumns == 0)
+      cards.row();
     Table tile = new Table();
-    tile.top().center().pad(7, 8, 7, 8);
+    tile.top().center().pad(5, 3, 5, 3);
     tile.setBackground(skin.getDrawable("panel"));
     Label name = label(title);
     name.setWrap(true);
     name.setAlignment(com.badlogic.gdx.utils.Align.center);
     tile.add(name).minWidth(0).growX().center().row();
-    tile.add(icon(key)).size(52).center().pad(4).row();
-    float width = (stage.getViewport().getWorldWidth() - 36) / columns;
-    cards.add(tile).width(width - 4).pad(2).fillY().top();
+    float width = contentWidth() / cardColumns;
+    float iconSize = Math.min(52, Math.max(20, width * .6f));
+    tile.add(icon(key)).size(iconSize).center().pad(3).row();
+    cards.add(tile).width(width - 2).pad(1).fillY().top();
     cardCount++;
     return tile;
   }
 
   private Image cardIcon(Table card) {
     for (Actor child : card.getChildren())
-      if (child instanceof Image) return (Image) child;
+      if (child instanceof Image)
+        return (Image) child;
     throw new IllegalStateException("Card has no item icon");
   }
 
@@ -800,18 +1389,17 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private void animateItemPurchase(Image source) {
-    Vector2 start =
-        source.localToStageCoordinates(new Vector2(source.getWidth() / 2, source.getHeight() / 2));
-    TextButton backpack = navButtons[3];
-    Vector2 end =
-        backpack.localToStageCoordinates(
-            new Vector2(backpack.getWidth() / 2, backpack.getHeight() / 2));
+    Vector2 start = source.localToStageCoordinates(new Vector2(source.getWidth() / 2, source.getHeight() / 2));
+    Image backpack = menuIcons[4];
+    Vector2 end = backpack.localToStageCoordinates(
+        new Vector2(backpack.getWidth() / 2, backpack.getHeight() / 2));
     Image duplicate = new Image(source.getDrawable(), Scaling.fit);
     duplicate.setSize(52, 52);
     duplicate.setOrigin(26, 26);
     duplicate.setPosition(start.x - 26, start.y - 26);
     duplicate.setScale(.22f);
     effects.addActor(duplicate);
+    effects.addActor(new ItemTrail(duplicate, source.getDrawable()));
     duplicate.addAction(
         Actions.sequence(
             Actions.parallel(
@@ -820,6 +1408,133 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
                     Actions.scaleTo(.18f, .18f, .3f, Interpolation.sineIn)),
                 Actions.moveTo(end.x - 26, end.y - 26, .52f, Interpolation.sine)),
             Actions.removeActor()));
+  }
+
+  private void spawnEggClickParticles(int index, float x, float y) {
+    HatchSprite egg = eggs[index];
+    if (egg == null || eggClickParticlePool == null)
+      return;
+    int group = game.s.group[index];
+    if (group == 6) {
+      spawnSparkleEffect(x, y, FAIRY_SPARKLE_COLOR, 20);
+    } else if (group == 10) {
+      for (float[] color : MINERAL_SPARKLE_COLORS)
+        spawnSparkleEffect(x, y, color, 8);
+    } else {
+      effects.addActor(
+          new EggBurstActor(
+              group,
+              x,
+              y,
+              particlePixel,
+              particleDot,
+              particleBubble,
+              particleFlower,
+              particleDrop));
+    }
+  }
+
+  private void spawnSparkleEffect(float x, float y, float[] color, int count) {
+    ParticleEffectPool.PooledEffect effect = eggClickParticlePool.obtain();
+    ParticleEmitter emitter = effect.getEmitters().first();
+    emitter.getTint().setColors(color);
+    effect.setPosition(x, y);
+    emitter.addParticles(count);
+    effects.addActor(new ParticleActor(effect));
+  }
+
+  private static final class ParticleActor extends Actor {
+    private ParticleEffectPool.PooledEffect effect;
+
+    ParticleActor(ParticleEffectPool.PooledEffect effect) {
+      this.effect = effect;
+      setTouchable(Touchable.disabled);
+    }
+
+    @Override
+    public void act(float delta) {
+      super.act(delta);
+      if (effect == null)
+        return;
+      effect.update(delta);
+      if (effect.isComplete())
+        remove();
+    }
+
+    @Override
+    public void draw(Batch batch, float parentAlpha) {
+      if (effect != null)
+        effect.draw(batch);
+    }
+
+    @Override
+    public boolean remove() {
+      if (effect != null) {
+        effect.free();
+        effect = null;
+      }
+      return super.remove();
+    }
+  }
+
+  private static final class ItemTrail extends Actor {
+    private static final float SAMPLE_INTERVAL = .045f;
+    private static final float FADE_DURATION = .22f;
+    private final Actor source;
+    private final Drawable sprite;
+    private final float[] xs = new float[6], ys = new float[6], sizes = new float[6], ages = new float[6];
+    private float sampleTimer, elapsed;
+    private int count;
+
+    ItemTrail(Actor source, Drawable sprite) {
+      this.source = source;
+      this.sprite = sprite;
+      setTouchable(Touchable.disabled);
+    }
+
+    @Override
+    public void act(float delta) {
+      super.act(delta);
+      elapsed += delta;
+      sampleTimer += delta;
+      for (int i = 0; i < count; i++)
+        ages[i] += delta;
+      if (source.getParent() != null && sampleTimer >= SAMPLE_INTERVAL) {
+        sampleTimer %= SAMPLE_INTERVAL;
+        capture();
+      }
+      if (elapsed >= .82f)
+        remove();
+    }
+
+    private void capture() {
+      for (int i = xs.length - 1; i > 0; i--) {
+        xs[i] = xs[i - 1];
+        ys[i] = ys[i - 1];
+        sizes[i] = sizes[i - 1];
+        ages[i] = ages[i - 1];
+      }
+      xs[0] = source.getX() + source.getOriginX();
+      ys[0] = source.getY() + source.getOriginY();
+      sizes[0] = source.getWidth() * source.getScaleX() * .42f;
+      ages[0] = 0;
+      count = Math.min(count + 1, xs.length);
+    }
+
+    @Override
+    public void draw(Batch batch, float parentAlpha) {
+      Color color = batch.getColor();
+      float red = color.r, green = color.g, blue = color.b, alpha = color.a;
+      for (int i = count - 1; i >= 0; i--) {
+        float opacity = Math.max(0, 1 - ages[i] / FADE_DURATION) * .32f * alpha * parentAlpha;
+        if (opacity <= 0)
+          continue;
+        float size = sizes[i];
+        batch.setColor(red, green, blue, opacity);
+        sprite.draw(batch, xs[i] - size / 2, ys[i] - size / 2, size, size);
+      }
+      batch.setColor(red, green, blue, alpha);
+    }
   }
 
   private Label subtitle(Table tile, String text) {
@@ -860,43 +1575,57 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private void shop() {
-    heading("Tienda");
     gsBallListed = false;
-    Table bar = new Table();
-    content.add(bar).left().row();
-    for (int i = 0; i < (game.s.trips > 0 ? 5 : 4); i++) {
-      final int n = i;
-      TextButton category =
-          button(
-              shops[i],
-              () -> {
-                shop = n;
-                rebuild();
-              });
-      if (n == shop) category.setStyle(skin.get("active", TextButton.TextButtonStyle.class));
-      bar.add(category).height(30).pad(2);
-    }
+    if (shop == 0)
+      heading("Criadero");
+    else if (shop == 3)
+      heading("Incubadoras");
     if (shop == 0) {
       heading("Grupos de huevo");
       for (Catalog.Group g : catalog.groups) {
         Table r = card("egg" + g.id, g.name);
-        TextButton b =
-            button(
-                "",
-                () -> {
-                  if (!game.s.open[g.id]) game.unlock(g);
-                  else if (game.has("oval-charm")) {
-                    if (game.s.active[g.id] && count(game.s.active) == 1) {
-                      message("Debe quedar un grupo activo");
-                      return;
-                    }
-                    game.s.active[g.id] = !game.s.active[g.id];
-                  }
+        r.setTouchable(Touchable.enabled);
+        TextButton b = new TextButton("", skin);
+        change(
+            b,
+            () -> {
+              if (!game.s.open[g.id]) {
+                if (game.unlock(g))
                   afterPurchase();
-                });
+                else
+                  denyPurchase(b);
+              }
+            });
+        r.addListener(
+            new ClickListener() {
+              private boolean wasOpen;
+
+              @Override
+              public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                wasOpen = game.s.open[g.id];
+                return super.touchDown(event, x, y, pointer, button);
+              }
+
+              @Override
+              public void clicked(InputEvent event, float x, float y) {
+                if (!wasOpen || !game.s.open[g.id])
+                  return;
+                if (!game.has("oval-charm")) {
+                  message("Amuleto Oval para alternar");
+                  return;
+                }
+                if (game.s.active[g.id] && count(game.s.active) == 1) {
+                  message("Debe quedar un grupo activo");
+                  return;
+                }
+                game.s.active[g.id] = !game.s.active[g.id];
+                afterPurchase();
+              }
+            });
         Image currency = addCurrencyIcon(b, false);
         r.add(b).growX().height(30).row();
-        if (game.has("scope-lens")) r.add(groupProgressContent(g, null)).growX().row();
+        if (game.has("scope-lens"))
+          r.add(groupProgressContent(g, null)).growX().row();
         Table req = currencySubtitle(r, false);
         bindings.add(
             () -> {
@@ -907,36 +1636,39 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
                       ? neutralGroupPanel
                       : active ? activeGroupPanel : inactiveGroupPanel);
               b.setStyle(
-                  skin.get(
-                      forSale ? "buy" : active ? "active" : "default",
-                      TextButton.TextButtonStyle.class));
+                  forSale
+                      ? game.s.coins >= game.price(g.cost)
+                          ? affordablePurchaseStyle
+                          : skin.get("buy", TextButton.TextButtonStyle.class)
+                      : active
+                          ? affordablePurchaseStyle
+                          : skin.get("default", TextButton.TextButtonStyle.class));
               setCurrencySubtitle(
                   req,
                   forSale
-                      ? "Desbloquea el grupo por " + game.price(g.cost)
+                      ? ""
                       : game.has("oval-charm")
                           ? "Selecciona los grupos activos"
                           : "Amuleto Oval para alternar",
-                  forSale);
+                  false);
               b.setText(
                   game.s.open[g.id]
                       ? (game.s.active[g.id] ? "Activo" : "Inactivo")
                       : Integer.toString(game.price(g.cost)));
               currency.setVisible(forSale);
-              b.setDisabled(
-                  game.s.open[g.id] ? !game.has("oval-charm") : game.s.coins < game.price(g.cost));
+              b.setDisabled(false);
             });
       }
       heading("Plazas adicionales");
       for (int j = 0; j < 8; j++) {
         final int i = j;
         Table r = row(flutes[i], "Plaza " + (i + 2), "");
-        TextButton b =
-            button(
-                "",
-                () -> {
-                  if (i == game.s.slots - 1 && game.expand()) afterPurchase();
-                });
+        TextButton b = button(
+            "",
+            () -> {
+              if (i == game.s.slots - 1 && game.expand())
+                afterPurchase();
+            });
         Image currency = addCurrencyIcon(b, false);
         r.add(b).growX().height(30).row();
         Table requirement = currencySubtitle(r, false);
@@ -955,42 +1687,60 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
                       ? "Adquirida"
                       : i > game.s.slots - 1 ? "Bloqueado" : Integer.toString(cost));
               currency.setVisible(i == game.s.slots - 1);
+              b.setStyle(
+                  i > game.s.slots - 1
+                      ? lockedPurchaseStyle
+                      : i < game.s.slots - 1
+                          ? skin.get("default", TextButton.TextButtonStyle.class)
+                          : cost <= game.s.coins
+                              ? affordablePurchaseStyle
+                              : skin.get("buy", TextButton.TextButtonStyle.class));
               b.setDisabled(i != game.s.slots - 1 || cost > game.s.coins);
             });
       }
       Item gsBall = catalog.item.get("gs-ball");
       gsBallListed = game.gate(gsBall).isEmpty();
-      if (gsBallListed) {
-        heading("Viaje al pasado");
-        item(gsBall, true);
-      }
+      if (gsBallListed)
+        travelCard(gsBall);
       return;
     }
     if (shop == 3) {
-      heading("Incubadoras");
       for (int j = 0; j < game.s.slots; j++) {
         final int i = j;
         int lv = game.s.level[i];
         Table r = row("egg" + game.s.group[i], "Plaza " + (i + 1), "Nivel " + lv + " / 5");
         int price = lv == 5 ? 0 : game.price(game.levels[lv]);
-        TextButton b =
-            button(
-                lv == 5 ? "Nivel máximo" : Integer.toString(price),
-                () -> {
-                  if (game.level(i)) afterPurchase();
-                });
+        TextButton b = button(
+            lv == 5 ? "Nivel máximo" : Integer.toString(price),
+            () -> {
+              if (game.level(i))
+                afterPurchase();
+            });
         Image currency = addCurrencyIcon(b, false);
         currency.setVisible(lv != 5);
         r.add(b).growX().height(30).row();
-        bindings.add(() -> b.setDisabled(lv == 5 || price > game.s.coins));
+        bindings.add(
+            () -> {
+              b.setStyle(
+                  lv == 5
+                      ? skin.get("default", TextButton.TextButtonStyle.class)
+                      : price <= game.s.coins
+                          ? affordablePurchaseStyle
+                          : skin.get("buy", TextButton.TextButtonStyle.class));
+              b.setDisabled(lv == 5 || price > game.s.coins);
+            });
       }
     } else if (shop == 4) {
       List<Item> temporal = new ArrayList<>();
-      for (Item i : catalog.items) if (i.kind.equals("RC")) temporal.add(i);
+      for (Item i : catalog.items)
+        if (i.kind.equals("RC"))
+          temporal.add(i);
       temporal.sort(Comparator.comparingInt(i -> i.price));
       for (int g = 0; g < 2; g++) {
         heading(g == 0 ? "Beneficios Temporales" : "Huevos");
-        for (Item i : temporal) if ((i.group > 0) == (g == 1)) item(i, true);
+        for (Item i : temporal)
+          if ((i.group > 0) == (g == 1))
+            item(i, true);
       }
     } else {
       for (String category : sections)
@@ -1000,11 +1750,84 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
             if (i.kind.equals("PC") && i.section.equals(category) && !i.id.equals("gs-ball"))
               item(i, true);
         }
+      if (shop == 1 && game.s.trips > 0) {
+        List<Item> temporal = new ArrayList<>();
+        for (Item i : catalog.items)
+          if (i.kind.equals("RC"))
+            temporal.add(i);
+        temporal.sort(Comparator.comparingInt(i -> i.price));
+        for (int g = 0; g < 2; g++) {
+          heading(g == 0 ? "Beneficios Temporales" : "Huevos");
+          for (Item i : temporal)
+            if ((i.group > 0) == (g == 1))
+              item(i, true);
+        }
+      }
     }
   }
 
+  private void travelCard(Item item) {
+    cards = null;
+    float width = Math.min(460, contentWidth() - 32);
+    Table panel = new Table();
+    panel.setBackground(skin.getDrawable("panel"));
+    panel.pad(10);
+
+    Table titleBar = new Table();
+    titleBar.setBackground(skin.getDrawable("leaf"));
+    titleBar.pad(6, 10, 6, 10);
+    Label title = new Label("Viaje al pasado", skin, "pixel");
+    title.setColor(skin.getColor("cream"));
+    title.setAlignment(com.badlogic.gdx.utils.Align.center);
+    titleBar.add(title).growX().center();
+    panel.add(titleBar).growX().row();
+
+    panel.add(picture("pokemon/normal/251.png")).size(112).pad(8).row();
+    Label description = new Label(item.desc, skin, "pixel");
+    description.setAlignment(com.badlogic.gdx.utils.Align.center);
+    description.setWrap(true);
+    panel.add(description).width(width - 28).pad(4, 8, 8, 8).row();
+
+    TextButton buy = new TextButton("", pixelBuyPurchaseStyle);
+    Image currency = addCurrencyIcon(buy, false);
+    panel.add(buy).width(240).height(42).padBottom(4).row();
+    bindings.add(
+        () -> {
+          int price = game.price(item);
+          buy.setText(Integer.toString(price));
+          buy.setStyle(
+              game.s.coins >= price ? pixelAffordablePurchaseStyle : pixelBuyPurchaseStyle);
+          currency.setVisible(true);
+        });
+    change(buy, () -> confirmTravel(() -> buyItem(item, buy, null)));
+
+    content.add(panel).width(width).center().pad(6).row();
+  }
+
+  private void buyItem(Item item, TextButton button, Table sourceCard) {
+    if (!game.buy(item)) {
+      denyPurchase(button);
+      return;
+    }
+    if (item.id.equals("gs-ball")) {
+      births.clearChildren();
+      coins.clearChildren();
+      effects.clearChildren();
+      floatingCoins.clear();
+      birthTargets.clear();
+      tab = 2;
+      shop = 1;
+      rebuild();
+      save();
+      return;
+    }
+    if (sourceCard != null && (shop == 1 || shop == 2 || shop == 4))
+      animateItemPurchase(cardIcon(sourceCard));
+    afterPurchase();
+  }
+
   private void item(Item i, boolean sell) {
-    Table r = card(i.id, i.name);
+    Table r = card(i.id.equals("golden-egg") ? "egg" : i.id, i.name, 6);
     TextTooltip tip = new TextTooltip(i.desc.replaceFirst("\\.$", ""), skin);
     tip.setInstant(false);
     r.addListener(tip);
@@ -1013,8 +1836,10 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
       owned.setDisabled(true);
       r.add(owned).growX().height(28).row();
       String rule = game.requirement(i, false);
-      if (!i.source.isEmpty()) subtitle(r, i.source);
-      else if (!rule.isEmpty()) subtitle(r, rule);
+      if (!i.source.isEmpty())
+        subtitle(r, i.source);
+      else if (!rule.isEmpty())
+        subtitle(r, rule);
       else {
         Table price = currencySubtitle(r, i.kind.equals("RC"));
         setCurrencySubtitle(price, "Compra por " + i.price, true);
@@ -1029,37 +1854,19 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     change(
         b,
         () -> {
-          Runnable purchase =
-              () -> {
-                if (game.buy(i)) {
-                  if (i.id.equals("gs-ball")) {
-                    births.clearChildren();
-                    coins.clearChildren();
-                    effects.clearChildren();
-                    floatingCoins.clear();
-                    birthTargets.clear();
-                    tab = 0;
-                    shop = 4;
-                    rebuild();
-                    save();
-                  } else {
-                    if (shop == 1 || shop == 2 || shop == 4) animateItemPurchase(cardIcon(r));
-                    afterPurchase();
-                  }
-                } else denyPurchase(b);
-              };
-          if (i.id.equals("gs-ball")) confirmTravel(purchase);
-          else purchase.run();
+          if (i.id.equals("gs-ball"))
+            confirmTravel(() -> buyItem(i, b, r));
+          else
+            buyItem(i, b, r);
         });
     bindings.add(
         () -> {
           String reason = game.gate(i);
           boolean owned = game.has(i.id);
           int cost = game.price(i);
-          String caption =
-              owned
-                  ? "Adquirido"
-                  : !reason.isEmpty() ? "Bloqueado" : Integer.toString(cost);
+          String caption = owned
+              ? "Adquirido"
+              : !reason.isEmpty() ? "Bloqueado" : Integer.toString(cost);
           String rule = game.requirement(i, false);
           gate.setText(
               !reason.isEmpty()
@@ -1069,8 +1876,10 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
                       : "");
           b.setText(caption);
           currency.setVisible(!owned && reason.isEmpty());
-          if (owned) b.setStyle(skin.get("default", TextButton.TextButtonStyle.class));
-          else if (!reason.isEmpty()) b.setStyle(lockedPurchaseStyle);
+          if (owned)
+            b.setStyle(skin.get("default", TextButton.TextButtonStyle.class));
+          else if (!reason.isEmpty())
+            b.setStyle(lockedPurchaseStyle);
           else {
             long balance = i.kind.equals("RC") ? game.s.rc : game.s.coins;
             b.setStyle(
@@ -1090,7 +1899,7 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     for (String category : sections) {
       boolean started = false;
       for (Item i : catalog.items)
-        if (game.s.owned.contains(i.id) && i.section.equals(category)) {
+        if (game.s.owned.contains(i.id) && i.section.equals(category) && !isTrophy(i)) {
           if (!started) {
             heading(category);
             started = true;
@@ -1098,22 +1907,72 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
           item(i, false);
         }
     }
-    if (!game.s.benefits.isEmpty()) {
+    boolean hasBenefits = false;
+    for (Item i : catalog.items)
+      hasBenefits |= game.s.benefits.contains(i.id) && !isTrophy(i);
+    if (hasBenefits) {
       heading("Beneficios Temporales");
-      for (Item i : catalog.items) if (game.s.benefits.contains(i.id)) item(i, false);
+      for (Item i : catalog.items)
+        if (game.s.benefits.contains(i.id) && !isTrophy(i))
+          item(i, false);
+    }
+    boolean hasTrophies = false;
+    for (Item i : catalog.items)
+      if (isTrophy(i))
+        hasTrophies |= ownsTrophy(i);
+    if (hasTrophies) {
+      heading("Trofeos");
+      for (Item i : catalog.items)
+        if (isTrophy(i) && ownsTrophy(i))
+          item(i, false);
     }
     heading("Medallas");
-    int n = Math.min(catalog.badges.length, game.evolutions() / 8);
-    if (n == 0)
-      content.add(label("Consigue una medalla por cada 8 evoluciones registradas")).left().row();
-    for (int i = 0; i < n; i++)
-      row("badge-" + catalog.badges[i], "Medalla " + catalog.badgeNames[i], catalog.regions[i / 8]);
+    int numberOfColumns = (catalog.badges.length + 7) / 8;
+    float columnWidth = (contentWidth() - numberOfColumns * 4) / numberOfColumns;
+    Table medalColumns = new Table();
+    Table column = null;
+    int earned = Math.min(catalog.badges.length, game.evolutions() / 8);
+    for (int i = 0; i < catalog.badges.length; i++) {
+      if (i % 8 == 0) {
+        column = new Table();
+        medalColumns.add(column).width(columnWidth).top().padRight(4);
+      }
+      Table badge = new Table();
+      badge.setBackground(skin.getDrawable("panel"));
+      Image sprite = icon("badge-" + catalog.badges[i]);
+      badge.add(sprite).size(34).pad(3).row();
+      Label name = label(catalog.badgeNames[i]);
+      name.setWrap(true);
+      name.setAlignment(com.badlogic.gdx.utils.Align.center);
+      badge.add(name).width(columnWidth - 8).row();
+      Label region = label(catalog.regions[i / 8]);
+      region.setWrap(true);
+      region.setAlignment(com.badlogic.gdx.utils.Align.center);
+      region.setColor(skin.getColor("faded"));
+      badge.add(region).width(columnWidth - 8).padBottom(3).row();
+      final int medalIndex = i;
+      bindings.add(
+          () ->
+              sprite.setColor(
+                  medalIndex < earned ? Color.WHITE : UNAVAILABLE_BADGE_TINT));
+      column.add(badge).width(columnWidth).padBottom(3).top().row();
+    }
+    content.add(medalColumns).growX().row();
+  }
+
+  private boolean isTrophy(Item item) {
+    return item.kind.equals("drop") && !item.evolution;
+  }
+
+  private boolean ownsTrophy(Item item) {
+    return game.s.owned.contains(item.id)
+        || (item.id.equals("golden-egg") && game.s.benefits.contains(item.id));
   }
 
   private void dex() {
-    heading("Pokédex");
     Table filters = new Table();
     content.add(filters).growX().row();
+    float filterWidth = contentWidth();
     TextField field = new TextField(search, skin);
     field.setMessageText("Nombre o número");
     field.setTextFieldListener(
@@ -1122,14 +1981,14 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
           filterDex();
         });
-    filters.add(field).growX();
+    filters.add(field).width(filterWidth * .42f).fillX();
     SelectBox<String> gens = new SelectBox<>(skin);
     String[] gn = new String[6];
     gn[0] = "Generaciones";
     System.arraycopy(catalog.regions, 0, gn, 1, 5);
     gens.setItems(gn);
     gens.setSelectedIndex(gen);
-    filters.add(gens);
+    filters.add(gens).width(filterWidth * .29f).fillX();
     change(
         gens,
         () -> {
@@ -1140,10 +1999,11 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     SelectBox<String> groups = new SelectBox<>(skin);
     String[] names = new String[catalog.groups.length + 1];
     names[0] = "Grupos";
-    for (int j = 0; j < catalog.groups.length; j++) names[j + 1] = catalog.groups[j].name;
+    for (int j = 0; j < catalog.groups.length; j++)
+      names[j + 1] = catalog.groups[j].name;
     groups.setItems(names);
     groups.setSelectedIndex(group);
-    filters.add(groups);
+    filters.add(groups).width(filterWidth * .29f).fillX();
     change(
         groups,
         () -> {
@@ -1152,15 +2012,16 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
           filterDex();
         });
     Table flags = new Table();
-    content.add(flags).left().row();
+    content.add(flags).growX().left().row();
     CheckBox only = new CheckBox("Registrados", skin),
         ready = new CheckBox("Listos para evolucionar", skin),
         sh = new CheckBox("Shiny", skin);
     only.setChecked(registeredOnly);
     ready.setChecked(readyOnly);
     sh.setChecked(shinyOnly);
-    for (CheckBox box : new CheckBox[] {only, ready, sh}) {
-      flags.add(box).pad(3);
+    for (CheckBox box : new CheckBox[] { only, ready, sh }) {
+      box.getLabel().setWrap(false);
+      flags.add(box).pad(3).left();
       change(
           box,
           () -> {
@@ -1179,24 +2040,31 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private void filterDex() {
-    scroll.setScrollY(0);
+    dexScroll.setScrollY(0);
     entries();
   }
 
   private void entries() {
-    if (dexList == null) return;
+    if (dexList == null)
+      return;
     List<Species> matches = new ArrayList<>();
     boolean[] parents = new boolean[650];
-    if (readyOnly) for (Species p : catalog.species) if (game.ready(p)) parents[p.parent] = true;
+    if (readyOnly)
+      for (Species p : catalog.species)
+        if (game.ready(p))
+          parents[p.parent] = true;
     String q = search.toLowerCase(Locale.ROOT);
     for (Species p : catalog.species) {
       if ((gen > 0 && p.gen != gen)
-          || (group > 0 && !contains(p.groups, catalog.groups[group - 1].id))) continue;
+          || (group > 0 && !contains(p.groups, catalog.groups[group - 1].id)))
+        continue;
       if ((registeredOnly && !game.s.dex[p.id])
           || (shinyOnly && !game.s.shiny[p.id])
-          || (readyOnly && !parents[p.id])) continue;
+          || (readyOnly && !parents[p.id]))
+        continue;
       if (!p.name.toLowerCase(Locale.ROOT).contains(q)
-          && !Integer.toString(1000 + p.id).substring(1).contains(q)) continue;
+          && !Integer.toString(1000 + p.id).substring(1).contains(q))
+        continue;
       matches.add(p);
     }
     dexResults.setText(matches.size() + " resultados");
@@ -1204,26 +2072,28 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private void detail(Species p) {
-    Dialog d =
-        new Dialog("N.º " + p.id + " · " + p.name, skin) {
-          private boolean closing;
+    Dialog d = new Dialog("", skin) {
+      private boolean closing;
 
-          public void hide() {
-            if (closing) return;
-            closing = true;
-            clearActions();
-            if (activeDetail == this) activeDetail = null;
-            detailUpdate = null;
-            setModal(false);
-            setTouchable(Touchable.disabled);
-            super.hide(
-                Actions.sequence(
-                    Actions.scaleTo(getScaleX() * .82f, getScaleY() * .82f, DETAIL_FRAME),
-                    Actions.scaleTo(getScaleX() * .60f, getScaleY() * .60f, DETAIL_FRAME),
-                    Actions.scaleTo(getScaleX() * .35f, getScaleY() * .35f, DETAIL_FRAME),
-                    Actions.scaleTo(getScaleX() * .12f, getScaleY() * .12f, DETAIL_FRAME)));
-          }
-        };
+      public void hide() {
+        if (closing)
+          return;
+        closing = true;
+        clearActions();
+        if (activeDetail == this)
+          activeDetail = null;
+        detailUpdate = null;
+        setModal(false);
+        setTouchable(Touchable.disabled);
+        super.hide(
+            Actions.sequence(
+                Actions.scaleTo(getScaleX() * .82f, getScaleY() * .82f, DETAIL_FRAME),
+                Actions.scaleTo(getScaleX() * .60f, getScaleY() * .60f, DETAIL_FRAME),
+                Actions.scaleTo(getScaleX() * .35f, getScaleY() * .35f, DETAIL_FRAME),
+                Actions.scaleTo(getScaleX() * .12f, getScaleY() * .12f, DETAIL_FRAME)));
+      }
+    };
+    addDialogHeader(d, "N.º " + p.id + " · " + p.name);
     Table t = d.getContentTable();
     t.defaults().pad(3);
     Image img = picture(sprite(p, game.s.shiny[p.id]));
@@ -1236,24 +2106,26 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     t.add(sh).left().row();
     StringBuilder groups = new StringBuilder();
     for (int g : p.groups) {
-      if (groups.length() > 0) groups.append(" / ");
+      if (groups.length() > 0)
+        groups.append(" / ");
       groups.append(catalog.byGroup[g].name);
     }
     t.add(label("Gen. " + p.gen + " · " + groups)).colspan(2).row();
     String condition;
-    if (p.id == 292) condition = "Se registra al evolucionar a Nincada en Ninjask";
+    if (p.id == 292)
+      condition = "Se registra al evolucionar a Nincada en Ninjask";
     else if (p.parent == 0) {
       StringJoiner pools = new StringJoiner(" o ");
-      for (int g : p.pool) pools.add(catalog.byGroup[g].name);
+      for (int g : p.pool)
+        pools.add(catalog.byGroup[g].name);
       condition = p.pool.length == 0 ? "Sin método de obtención" : "Nace en " + pools;
     } else {
-      condition =
-          game.required(p)
-              + " crías de "
-              + catalog.byId[p.root].name
-              + (p.extra ? " después de registrar a " + catalog.byId[p.parent].name : " en total")
-              + (p.item.isEmpty() ? "" : " y " + catalog.item.get(p.item).name)
-              + (p.id == 291 ? ". También registra a Shedinja" : "");
+      condition = game.required(p)
+          + " crías de "
+          + catalog.byId[p.root].name
+          + (p.extra ? " después de registrar a " + catalog.byId[p.parent].name : " en total")
+          + (p.item.isEmpty() ? "" : " y " + catalog.item.get(p.item).name)
+          + (p.id == 291 ? ". También registra a Shedinja" : "");
     }
     Label how = label(condition);
     how.setWrap(true);
@@ -1267,10 +2139,9 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
         Label rule = label("");
         rule.setEllipsis(true);
         t.add(rule).left().minWidth(0).growX();
-        TextButton evolve =
-            button(
-                "Evolucionar",
-                () -> evolveDetail(child, d));
+        TextButton evolve = button(
+            "Evolucionar",
+            () -> evolveDetail(child, d));
         t.add(evolve).row();
         live.add(
             () -> {
@@ -1281,30 +2152,36 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
                       + " / "
                       + game.required(child)
                       + (child.item.isEmpty() ? "" : " · " + catalog.item.get(child.item).name));
-              evolve.setDisabled(!game.ready(child));
+              boolean ready = game.ready(child);
+              evolve.setStyle(ready ? affordablePurchaseStyle : lockedPurchaseStyle);
+              evolve.setDisabled(!ready);
             });
       }
-    detailUpdate =
-        () -> {
-          count.setText(
-              "Crías de " + catalog.byId[p.root].name + " obtenidas: " + game.s.counts[p.root]);
-          sh.setVisible(game.s.shiny[p.id]);
-          for (Runnable r : live) r.run();
-        };
+    detailUpdate = () -> {
+      count.setText(
+          "Crías de " + catalog.byId[p.root].name + " obtenidas: " + game.s.counts[p.root]);
+      sh.setVisible(game.s.shiny[p.id]);
+      for (Runnable r : live)
+        r.run();
+    };
     detailUpdate.run();
     d.addListener(
         new InputListener() {
           @Override
           public boolean keyDown(InputEvent event, int keycode) {
-            if (keycode != Input.Keys.SPACE) return false;
-            if (!evolveFirstReady(p, d)) d.hide();
+            if (keycode != Input.Keys.SPACE)
+              return false;
+            if (!evolveFirstReady(p, d))
+              d.hide();
             return true;
           }
         });
-    d.button("Cerrar");
+    styleDialogButtons(d);
     d.setKeepWithinStage(true);
     activeDetail = d;
     d.show(stage, null);
+    fitDialog(d);
+    registerDialog(d);
     d.setOrigin(d.getWidth() / 2, d.getHeight() / 2);
     d.setScale(.12f);
     d.addAction(
@@ -1313,9 +2190,6 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
             Actions.scaleTo(.60f, .60f, DETAIL_FRAME),
             Actions.scaleTo(.82f, .82f, DETAIL_FRAME),
             Actions.scaleTo(1, 1, DETAIL_FRAME)));
-    d.setPosition(
-        (stage.getViewport().getWorldWidth() - d.getWidth()) / 2,
-        (stage.getViewport().getWorldHeight() - d.getHeight()) / 2);
   }
 
   private boolean evolveFirstReady(Species parent, Dialog detail) {
@@ -1327,7 +2201,8 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
   private boolean evolveDetail(Species species, Dialog detail) {
     long before = game.s.coins;
-    if (!game.evolve(species)) return false;
+    if (!game.evolve(species))
+      return false;
     coinToast(game.s.coins - before);
     detail.hide();
     save();
@@ -1353,6 +2228,19 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
           store.volume((int) slider.getValue());
           value.setText("Volumen de los gritos · " + store.volume + " %");
         });
+    heading("Pantalla");
+    Table windowModes = new Table();
+    content.add(windowModes).growX().row();
+    windowModes
+        .add(button("Ventana con bordes", () -> applyWindowMode(false)))
+        .expandX()
+        .fillX()
+        .pad(3);
+    windowModes
+        .add(button("Pantalla completa sin bordes", () -> applyWindowMode(true)))
+        .expandX()
+        .fillX()
+        .pad(3);
     heading("Partida");
     content
         .add(
@@ -1368,19 +2256,102 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
         .add(
             button(
                 "Empezar de cero",
-                () ->
-                    confirm(
-                        "Nueva partida",
-                        "¿Borrar la partida actual?",
-                        () -> replace(new GameState()))))
+                () -> confirm(
+                    "Nueva partida",
+                    "¿Borrar la partida actual?",
+                    () -> replace(new GameState()))))
+        .pad(3);
+    tools.add(button("Salir", () -> Gdx.app.exit())).pad(3);
+
+    heading("Depuración");
+    Table debug = new Table();
+    content.add(debug).growX().row();
+    debug
+        .add(
+            button(
+                "+10000 PC",
+                () -> {
+                  game.s.coins += 10000;
+                  game.revision++;
+                  afterPurchase();
+                }))
+        .expandX()
+        .fillX()
+        .pad(3);
+    debug
+        .add(
+            button(
+                "+10000 RC",
+                () -> {
+                  game.s.rc += 10000;
+                  game.s.trips = Math.max(1, game.s.trips);
+                  game.revision++;
+                  afterPurchase();
+                }))
+        .expandX()
+        .fillX()
+        .pad(3)
+        .row();
+    debug
+        .add(
+            button(
+                "Completar Pokédex",
+                () -> {
+                  for (Species species : game.c.species)
+                    game.register(species);
+                  game.revision++;
+                  afterPurchase();
+                }))
+        .expandX()
+        .fillX()
+        .pad(3);
+    debug
+        .add(
+            button(
+                "Aumentar Shiny chance al 50 %",
+                () -> {
+                  game.debugShinyChance50 = true;
+                  message("Probabilidad shiny al 50 % activada");
+                }))
+        .expandX()
+        .fillX()
         .pad(3);
   }
 
+  private void applyWindowMode(boolean borderless) {
+    Graphics graphics = Gdx.graphics;
+    Graphics.Monitor monitor = graphics.getMonitor();
+    Graphics.DisplayMode displayMode =
+        monitor == null ? null : graphics.getDisplayMode(monitor);
+    if (displayMode == null) {
+      Gdx.app.error("PokeHatch", "No se pudo obtener el modo de pantalla actual");
+      message("No se pudo cambiar el modo de pantalla");
+      return;
+    }
+
+    int width = displayMode.width;
+    int height = displayMode.height;
+    if (!borderless) {
+      float scale = Math.min(1, Math.min(width / 1280f, height / 720f));
+      width = Math.round(1280 * scale);
+      height = Math.round(720 * scale);
+    }
+    graphics.setUndecorated(borderless);
+    if (!graphics.setWindowedMode(width, height)) {
+      Gdx.app.error(
+          "PokeHatch",
+          "No se pudo cambiar al modo " + (borderless ? "sin bordes" : "de ventana"));
+      message("No se pudo cambiar el modo de pantalla");
+    }
+  }
+
   private void replace(GameState next) {
+    if (settingsDialog != null)
+      settingsDialog.hide();
     game.s = next;
     game.revision++;
     store.blocked = false;
-    tab = 0;
+    tab = 2;
     shop = 0;
     slot = 0;
     births.clearChildren();
@@ -1393,37 +2364,93 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
   }
 
   private void confirm(String title, String text, Runnable yes) {
-    Dialog d =
-        new Dialog(title, skin) {
-          protected void result(Object accepted) {
-            if (Boolean.TRUE.equals(accepted)) yes.run();
-          }
-        };
-    d.text(text);
+    Dialog d = new Dialog("", skin) {
+      protected void result(Object accepted) {
+        if (Boolean.TRUE.equals(accepted))
+          yes.run();
+      }
+    };
+    addDialogHeader(d, title);
+    Label body = label(text);
+    body.setAlignment(com.badlogic.gdx.utils.Align.center);
+    body.setWrap(true);
+    d.getContentTable().add(body).center().pad(4).row();
     d.button("Cancelar", false);
     d.button("Confirmar", true);
+    styleDialogButtons(d);
+    d.setKeepWithinStage(true);
     d.show(stage);
+    fitDialog(d);
+    registerDialog(d);
+  }
+
+  private void styleDialogButtons(Dialog dialog) {
+    for (Actor actor : dialog.getButtonTable().getChildren())
+      if (actor instanceof TextButton)
+        ((TextButton) actor).setStyle(affordablePurchaseStyle);
+  }
+
+  private void addDialogHeader(Dialog dialog, String text) {
+    Table titleTable = dialog.getTitleTable();
+    titleTable.clearChildren();
+    titleTable.pad(0);
+    titleTable.setVisible(false);
+
+    Table contentTable = dialog.getContentTable();
+    contentTable.setBackground(skin.getDrawable("canvas"));
+    contentTable.pad(10);
+    contentTable.defaults().pad(4);
+    Table header = new Table();
+    header.setBackground(skin.getDrawable("leaf"));
+    header.pad(7, 10, 7, 10);
+    Label label = new Label(text, skin, "pixel");
+    label.setColor(skin.getColor("cream"));
+    label.setAlignment(com.badlogic.gdx.utils.Align.center);
+    header.add(label).growX().center();
+    contentTable.add(header).growX().padBottom(8).row();
+  }
+
+  private void fitDialog(Dialog dialog) {
+    dialog.pack();
+    float width =
+        Math.min(dialog.getWidth(), Math.max(1, stage.getViewport().getWorldWidth() - 32));
+    float height =
+        Math.min(dialog.getHeight(), Math.max(1, stage.getViewport().getWorldHeight() - 32));
+    dialog.setSize(width, height);
+    dialog.setPosition(
+        (stage.getViewport().getWorldWidth() - width) / 2,
+        (stage.getViewport().getWorldHeight() - height) / 2);
   }
 
   private void confirmTravel(Runnable yes) {
-    Dialog d =
-        new Dialog("Volver al pasado", skin) {
-          protected void result(Object accepted) {
-            if (Boolean.TRUE.equals(accepted)) yes.run();
-          }
-        };
-    d.text("Reinicia esta crianza y recibe");
+    Dialog d = new Dialog("", skin) {
+      protected void result(Object accepted) {
+        if (Boolean.TRUE.equals(accepted))
+          yes.run();
+      }
+    };
+    addDialogHeader(d, "Volver al pasado");
+    Label text = label("Reinicia esta crianza y recibe");
+    text.setAlignment(com.badlogic.gdx.utils.Align.center);
+    text.setWrap(true);
+    float textWidth = Math.min(380, Math.max(120, stage.getViewport().getWorldWidth() - 64));
+    d.getContentTable().add(text).width(textWidth).center().pad(4, 2, 4, 2).row();
     Table amount = new Table();
-    amount.add(label(Integer.toString(game.registered()))).left();
+    amount.add(label(Integer.toString(game.registered()))).center();
     amount.add(icon("reset-urge")).size(18).padLeft(4);
-    d.getContentTable().add(amount).left().row();
+    d.getContentTable().add(amount).center().pad(4).row();
     d.button("Cancelar", false);
     d.button("Confirmar", true);
+    styleDialogButtons(d);
+    d.setKeepWithinStage(true);
     d.show(stage);
+    fitDialog(d);
+    registerDialog(d);
   }
 
   private void updateWallet() {
-    if (wallet == null) return;
+    if (wallet == null)
+      return;
     boolean showRc = game.s.trips > 0;
     if (!walletBuilt || walletShowsRc != showRc) {
       wallet.clearChildren();
@@ -1441,18 +2468,25 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
       walletShowsRc = showRc;
     }
     coinBalance.setText(Long.toString(game.s.coins));
-    if (showRc) rcBalance.setText(Long.toString(game.s.rc));
+    if (showRc)
+      rcBalance.setText(Long.toString(game.s.rc));
   }
 
   private void refresh() {
     updateWallet();
-    for (Runnable r : bindings) r.run();
-    if (detailUpdate != null) detailUpdate.run();
+    for (Runnable r : bindings)
+      r.run();
+    if (detailUpdate != null)
+      detailUpdate.run();
+    if (farmDetailsUpdate != null)
+      farmDetailsUpdate.run();
   }
 
   @Override
   public void render(float delta) {
-    if (!paused) game.tick(Math.min(delta, .25f));
+    updateCursor();
+    if (!paused)
+      game.tick(Math.min(delta, .25f));
     elapsed += delta;
     saveTime += delta;
     if (elapsed >= .15f) {
@@ -1460,7 +2494,8 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
       refresh();
       if (lastRevision != game.revision && !Gdx.input.isTouched()) {
         lastRevision = game.revision;
-        if (tab == 1) entries();
+        if (dexOpen)
+          entries();
         if (tab == 2 && shop == 0 && gsBallListed != game.gate(catalog.item.get("gs-ball")).isEmpty())
           afterResize();
         if (tab == 3
@@ -1475,8 +2510,39 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     Gdx.gl.glClearColor(.91f, .93f, .87f, 1);
     Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     stage.act(delta);
+    syncDexToggle();
     positionRails();
+    dexDrawer.toFront();
+    dexToggle.toFront();
+    settingsButton.toFront();
+    bringDialogsToFront();
     stage.draw();
+  }
+
+  private void updateCursor() {
+    if (idleCursor == null)
+      return;
+    boolean pressed =
+        Gdx.input.isButtonPressed(Input.Buttons.LEFT)
+            || Gdx.input.isButtonPressed(Input.Buttons.RIGHT);
+    long now = TimeUtils.millis();
+    if (pressed && !cursorPressed)
+      cursorClickStart = now;
+    cursorPressed = pressed;
+
+    Cursor nextCursor = idleCursor;
+    if (cursorClickStart >= 0) {
+      long elapsed = now - cursorClickStart;
+      int frame = (int) (elapsed / CURSOR_FRAME_MILLIS);
+      if (frame >= CURSOR_CLICK_FRAMES.length)
+        cursorClickStart = -1;
+      else
+        nextCursor = cursorFrames[CURSOR_CLICK_FRAMES[frame]];
+    }
+    if (nextCursor != activeCursor) {
+      activeCursor = nextCursor;
+      Gdx.graphics.setCursor(activeCursor);
+    }
   }
 
   @Override
@@ -1484,16 +2550,30 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
     ((ScreenViewport) stage.getViewport())
         .setUnitsPerPixel(Math.max(1f, Math.max(640f / Math.max(1, w), 460f / Math.max(1, h))));
     stage.getViewport().update(w, h, true);
-    columns = Math.max(3, (int) (stage.getViewport().getWorldWidth() / 160));
-    if (skin != null && (tab == 2 || tab == 3)) afterResize();
+    columns = Math.max(1, (int) (stage.getViewport().getWorldWidth() * .4f / 160));
+    if (skin != null) {
+      layoutPanels();
+      layoutMenuTabs();
+      positionDexDrawer();
+      positionSettingsButton();
+      afterResize();
+      if (settingsDialog != null && settingsDialog.isVisible())
+        fitDialog(settingsDialog);
+    }
   }
 
   private void afterResize() {
     float y = scroll.getScrollY();
+    float dexY = dexScroll.getScrollY();
     rebuild();
     scroll.validate();
     scroll.setScrollY(y);
     scroll.updateVisualScroll();
+    if (dexOpen) {
+      dexScroll.validate();
+      dexScroll.setScrollY(dexY);
+      dexScroll.updateVisualScroll();
+    }
   }
 
   @Override
@@ -1514,8 +2594,29 @@ public final class FirstScreen extends ScreenAdapter implements GameEngine.Liste
 
   @Override
   public void dispose() {
+    effects.clearChildren();
     stage.clear();
     stage.dispose();
     skin.dispose();
+    if (eggClickParticleTemplate != null)
+      eggClickParticleTemplate.dispose();
+    if (eggParticleTexture != null)
+      eggParticleTexture.dispose();
+    if (emptyBarTexture != null)
+      emptyBarTexture.dispose();
+    if (fillBarTextures != null)
+      for (Texture texture : fillBarTextures)
+        if (texture != null)
+          texture.dispose();
+    if (menuTabTextures != null)
+      for (Texture texture : menuTabTextures)
+        if (texture != null)
+          texture.dispose();
+    if (cursorFrames != null) {
+      Gdx.graphics.setSystemCursor(Cursor.SystemCursor.Arrow);
+      for (Cursor cursor : cursorFrames)
+        if (cursor != null)
+          cursor.dispose();
+    }
   }
 }

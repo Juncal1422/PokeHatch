@@ -1,5 +1,6 @@
 package io.github.poke_hatch.lwjgl3;
 
+import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import io.github.poke_hatch.Main;
@@ -28,7 +29,9 @@ public class Lwjgl3Launcher {
         //// useful for testing performance, but can also be very stressful to some hardware.
         //// You may also need to configure GPU drivers to fully disable Vsync; this can cause screen tearing.
 
-        configuration.setWindowedMode(1040, 720);
+        DisplayMode displayMode = Lwjgl3ApplicationConfiguration.getDisplayMode();
+        configuration.setWindowedMode(displayMode.width, displayMode.height);
+        configuration.setDecorated(false);
         //// You can change these files; they are in lwjgl3/src/main/resources/ .
         //// They can also be loaded from the root of assets/ .
         configuration.setWindowIcon("egg128.png", "egg64.png", "egg32.png", "egg16.png");

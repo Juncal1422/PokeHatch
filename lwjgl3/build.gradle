@@ -28,14 +28,44 @@ if (JavaVersion.current().isJava9Compatible()) {
         compileJava.options.release.set(8)
 }
 
+configurations {
+  gdxTools
+}
+
 dependencies {
   implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
   implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+  implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
   implementation project(':core')
+  gdxTools "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
 
   if(enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-backend-lwjgl3:$graalHelperVersion"
 
+  }
+
+  tasks.register('packUiAtlas', JavaExec) {
+    group = 'assets'
+    description = 'Packs the UI sprites and button art into interface/ui.atlas.'
+    classpath = configurations.gdxTools
+    mainClass.set('com.badlogic.gdx.tools.texturepacker.TexturePacker')
+
+    def input = layout.buildDirectory.dir('ui-atlas-input').get().asFile
+    def output = rootProject.file('assets/interface')
+    args input.absolutePath, output.absolutePath, 'ui'
+    doFirst {
+      delete(input)
+      input.mkdirs()
+      copy {
+        from rootProject.file('assets/art')
+        exclude 'meadow.png'
+        into input
+      }
+      copy {
+        from rootProject.file('tools/ui-atlas-src')
+        into input
+      }
+    }
   }
   // Forces LWJGL3 to use at least $lwjgl3Version, currently 3.4.3, to avoid warnings on Java 25 and up.
   constraints{
