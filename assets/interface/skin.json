@@ -1,0 +1,143 @@
+{
+  "com.badlogic.gdx.graphics.g2d.BitmapFont": {
+    "Terminal": {
+      "file": "Terminal.fnt"
+    },
+    "Pixel": {
+      "file": "Pixel.fnt"
+    },
+    "Brand": {
+      "file": "Brand.fnt"
+    }
+  },
+  "com.badlogic.gdx.graphics.Color": {
+    "ink": {
+      "hex": "243e33ff"
+    },
+    "cream": {
+      "hex": "fff5d7ff"
+    },
+    "faded": {
+      "hex": "65705dff"
+    },
+    "goldInk": {
+      "hex": "ffce6eff"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+    "default": {
+      "font": "Terminal",
+      "fontColor": "ink"
+    },
+    "pixel": {
+      "font": "Pixel",
+      "fontColor": "ink"
+    },
+    "brand": {
+      "font": "Brand",
+      "fontColor": "cream"
+    },
+    "light": {
+      "font": "Terminal",
+      "fontColor": "cream"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
+    "default": {
+      "up": "leaf",
+      "over": "select",
+      "down": "pressed",
+      "disabled": "muted",
+      "font": "Terminal",
+      "fontColor": "ink",
+      "disabledFontColor": "faded"
+    },
+    "buy": {
+      "up": "gold",
+      "over": "select",
+      "down": "pressed",
+      "disabled": "muted",
+      "font": "Terminal",
+      "fontColor": "ink",
+      "disabledFontColor": "faded"
+    },
+    "active": {
+      "up": "select",
+      "over": "select",
+      "down": "pressed",
+      "disabled": "muted",
+      "font": "Terminal",
+      "fontColor": "ink",
+      "disabledFontColor": "faded"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle": {
+    "default": {
+      "vScroll": "track",
+      "vScrollKnob": "knob"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle": {
+    "default": {
+      "font": "Terminal",
+      "fontColorSelected": "ink",
+      "fontColorUnselected": "ink",
+      "selection": "select",
+      "background": "panel"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle": {
+    "default": {
+      "font": "Terminal",
+      "fontColor": "ink",
+      "background": "leaf",
+      "scrollStyle": "default",
+      "listStyle": "default"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
+    "default": {
+      "font": "Terminal",
+      "fontColor": "ink",
+      "cursor": "knob",
+      "background": "panel",
+      "selection": "select",
+      "messageFontColor": "faded"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
+    "default": {
+      "checkboxOn": "check",
+      "checkboxOff": "panel",
+      "font": "Terminal",
+      "fontColor": "ink"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
+    "default": {
+      "titleFont": "Terminal",
+      "titleFontColor": "ink",
+      "background": "panel"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle": {
+    "default-horizontal": {
+      "background": "track",
+      "knobBefore": "knob"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle": {
+    "default-horizontal": {
+      "background": "track",
+      "knob": "knob",
+      "knobBefore": "select"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle": {
+    "default": {
+      "label": "default",
+      "background": "tip",
+      "wrapWidth": 240
+    }
+  }
+}

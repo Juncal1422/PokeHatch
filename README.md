@@ -1,33 +1,19 @@
-# PokeHatch
+# PokéHatch
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+Juego de crianza Pokémon para escritorio, desarrollado en Java con libGDX y Scene2D. Los sprites, iconos y gritos están incluidos en el proyecto. El juego funciona sin conexión una vez instaladas las dependencias de compilación.
 
-This project was generated with a template including simple application launchers and a main class extending `Game` that sets the first screen.
+## Ejecutar
 
-## Platforms
+Abre la carpeta que contiene `settings.gradle` como proyecto Gradle. Desde esa carpeta, en Windows, ejecuta `.\gradlew.bat lwjgl3:run`. En Linux o macOS puedes usar `./gradlew lwjgl3:run`.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+## Partida
 
-## Gradle
+El juego recupera automáticamente el perfil local al arrancar. Guarda cada cuatro segundos, al comprar o evolucionar, al pausar y al salir. En Windows la partida está en `%LOCALAPPDATA%\PokeHatch\profile.sav`. En macOS se encuentra en `~/Library/Application Support/PokeHatch/profile.sav` y en Linux en `~/.local/share/PokeHatch/profile.sav`. El volumen de los gritos se conserva en las preferencias de libGDX.
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+## Recursos y edición
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+- Las reglas de crianza y progresión están en `GameEngine.java`. Los catálogos de especies, grupos y objetos están en `core/src/main/resources/pokehatch/`.
+- La paleta, marcos, botones y estilos Scene2D se encuentran en `assets/interface/`. Los atlas de texto proceden de las fuentes originales en `assets/fonts/`.
+- Para ajustar la ráfaga de eclosión, abre `assets/effects/hatch.p` en el editor 2D Particle Editor de libGDX. Su imagen es `spark.png`, en la misma carpeta.
+- `assets/effects/hatch.vert` y `hatch.frag` controlan el destello aplicado al sprite de la cría. `HatchSprite.java` controla el tiempo de aparición.
+- El icono de la ventana y los iconos de empaquetado de escritorio proceden de `assets/art/egg.png`.

@@ -6,7 +6,6 @@ dependencies {
   api "com.github.tommyettinger:formic:$formicVersion"
   api "com.github.tommyettinger:regexodus:$regExodusVersion"
   api "com.github.tommyettinger:typing-label:$typingLabelVersion"
-  api "com.kotcrab.vis:vis-ui:$visUiVersion"
   api "org.mini2Dx:universal-tween-engine:$universalTweenVersion"
   api "space.earlygrey:shapedrawer:$shapeDrawerVersion"
 

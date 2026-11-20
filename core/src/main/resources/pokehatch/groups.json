@@ -1,0 +1,106 @@
+[
+  {
+    "id": 3,
+    "name": "Bicho",
+    "cost": 0,
+    "steps": 25,
+    "boost": "silver-powder",
+    "benefit": "gracidea"
+  },
+  {
+    "id": 6,
+    "name": "Hada",
+    "cost": 50,
+    "steps": 30,
+    "boost": "metronome",
+    "benefit": "clear-bell"
+  },
+  {
+    "id": 4,
+    "name": "Volador",
+    "cost": 75,
+    "steps": 40,
+    "boost": "sharp-beak",
+    "benefit": "silver-wing"
+  },
+  {
+    "id": 12,
+    "name": "Marino",
+    "cost": 100,
+    "steps": 50,
+    "boost": "mystic-water",
+    "benefit": "aqua-suit"
+  },
+  {
+    "id": 7,
+    "name": "Planta",
+    "cost": 125,
+    "steps": 60,
+    "boost": "miracle-seed",
+    "benefit": "rich-mulch"
+  },
+  {
+    "id": 5,
+    "name": "Campo",
+    "cost": 150,
+    "steps": 70,
+    "boost": "soft-sand",
+    "benefit": "dowsing-machine"
+  },
+  {
+    "id": 2,
+    "name": "Costa",
+    "cost": 200,
+    "steps": 80,
+    "boost": "damp-rock",
+    "benefit": "good-rod"
+  },
+  {
+    "id": 8,
+    "name": "Humanoide",
+    "cost": 250,
+    "steps": 100,
+    "boost": "wise-glasses",
+    "benefit": "go-goggles"
+  },
+  {
+    "id": 11,
+    "name": "Amorfo",
+    "cost": 300,
+    "steps": 120,
+    "boost": "black-sludge",
+    "benefit": "soot-sack"
+  },
+  {
+    "id": 9,
+    "name": "Abisal",
+    "cost": 350,
+    "steps": 140,
+    "boost": "deep-sea-scale",
+    "benefit": "devon-scuba-gear"
+  },
+  {
+    "id": 10,
+    "name": "Mineral",
+    "cost": 400,
+    "steps": 160,
+    "boost": "hard-stone",
+    "benefit": "enigma-stone"
+  },
+  {
+    "id": 1,
+    "name": "Monstruo",
+    "cost": 450,
+    "steps": 180,
+    "boost": "leftovers",
+    "benefit": "slowpoke-tail"
+  },
+  {
+    "id": 14,
+    "name": "Dragón",
+    "cost": 500,
+    "steps": 200,
+    "boost": "dragon-fang",
+    "benefit": "dragon-skull"
+  }
+]
