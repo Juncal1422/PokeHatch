@@ -4,10 +4,10 @@ function calculateEggTarget(group, a) {
   for (const item of a.owned) {
     if (scentRules[item]?.[1].includes(group)) speed++;
     else if (item === 'lax-incense') speed += 0.25;
-    else if (item === 'air-balloon' && group === 4) speed++;
+    else if (item === 'air-balloon' && group === 3) speed++;
   }
   const slow =
-    a.owned.includes('full-incense') && [3, 6, 4].includes(group) ? 3 : 1;
+    a.owned.includes('full-incense') && [1, 2, 3].includes(group) ? 3 : 1;
   return (
     ((stepCost[group] * (a.boosts.includes(group) ? 0.75 : 1) * slow) / speed) *
     (a.owned.includes('master-ball') ? 0.5 : 1) *
@@ -50,7 +50,7 @@ function hatchEgg(i, manual = false) {
   for (const [k, eligible, chance] of [
     ['ice-stone', iceHatchlings.has(s.id), 0.025],
     ['rare-bone', s.id === 104, 0.01],
-    ['air-balloon', oldGroup === 4, 0.001],
+    ['air-balloon', oldGroup === 3, 0.001],
     ['light-ball', s.id === 172, 0.001],
   ]) {
     if (eligible && !owned(k) && Math.random() < chance * dropBonus())
@@ -113,7 +113,9 @@ function advanceIncubator(i, dt) {
   st.eggs[i].charge = credit - steps;
   return steps > 0;
 }
+let debugShinyChanceEnabled = false;
 function calculateShinyChance(g) {
+  if (window.debug === true && debugShinyChanceEnabled) return 0.5;
   const base =
     (owned('shiny-charm') ? 0.0025 : 0.0005) *
     (owned('lustrous-orb') ? 2 : 1) *

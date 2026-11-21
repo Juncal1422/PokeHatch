@@ -124,7 +124,7 @@ async function preloadArtSprites(entries, priority = 'auto') {
 }
 
 async function preloadAllSprites() {
-  const entries = Object.entries(DB.art);
+  const entries = [...Object.entries(DB.art), ...Object.entries(pokemonArt)];
   const regularSprites = entries.filter(([key]) => !shinySpriteKey.test(key));
   const shinySprites = entries.filter(([key]) => shinySpriteKey.test(key));
 

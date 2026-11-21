@@ -7,8 +7,6 @@ const evoUses = {},
 
 for (const s of species) {
   if (!s.evolvesFromId) continue;
-  if (S[s.evolvesFromId].evolvesFromId)
-    s.evolutionRequirement.requiresHatchesAfterParentRegistered = true;
   (byParent[s.evolvesFromId] ??= []).push(s);
   if (s.familyRootId) {
     (families[s.familyRootId] ??= []).push(s.id);

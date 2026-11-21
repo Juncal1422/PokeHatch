@@ -5,15 +5,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 1,
     "hatchableEggGroups": [
-      1,
-      7
+      12,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -24,11 +22,9 @@
     "evolvesFromId": 1,
     "generation": 1,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 1,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -47,11 +43,9 @@
     "evolvesFromId": 2,
     "generation": 1,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 1,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -61,7 +55,7 @@
     "evolutionRequirement": {
       "baseHatches": 32,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -70,15 +64,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 4,
     "hatchableEggGroups": [
-      1,
-      14
+      12,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -89,11 +81,9 @@
     "evolvesFromId": 4,
     "generation": 1,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 4,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -112,11 +102,9 @@
     "evolvesFromId": 5,
     "generation": 1,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 4,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -126,7 +114,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -135,15 +123,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 7,
     "hatchableEggGroups": [
-      1,
-      2
+      12,
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -154,11 +140,9 @@
     "evolvesFromId": 7,
     "generation": 1,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 7,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -177,11 +161,9 @@
     "evolvesFromId": 8,
     "generation": 1,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 7,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -191,7 +173,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -200,13 +182,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 10,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -217,10 +197,8 @@
     "evolvesFromId": 10,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 10,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -239,10 +217,8 @@
     "evolvesFromId": 11,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 10,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -252,7 +228,7 @@
     "evolutionRequirement": {
       "baseHatches": 10,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -261,13 +237,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 13,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -278,10 +252,8 @@
     "evolvesFromId": 13,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 13,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -300,10 +272,8 @@
     "evolvesFromId": 14,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 13,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -313,7 +283,7 @@
     "evolutionRequirement": {
       "baseHatches": 10,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -322,13 +292,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 16,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -339,10 +307,8 @@
     "evolvesFromId": 16,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 16,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -361,10 +327,8 @@
     "evolvesFromId": 17,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 16,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -374,7 +338,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -383,13 +347,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 19,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -400,10 +362,8 @@
     "evolvesFromId": 19,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 19,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -422,13 +382,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 21,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -439,10 +397,8 @@
     "evolvesFromId": 21,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 21,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -461,15 +417,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5,
-      14
+      6,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 23,
     "hatchableEggGroups": [
-      5,
-      14
+      6,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -480,11 +434,9 @@
     "evolvesFromId": 23,
     "generation": 1,
     "eggGroups": [
-      5,
-      14
+      6,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 23,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -503,11 +455,9 @@
     "evolvesFromId": 172,
     "generation": 1,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 172,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -526,11 +476,9 @@
     "evolvesFromId": 25,
     "generation": 1,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 172,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -549,13 +497,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 27,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -566,10 +512,8 @@
     "evolvesFromId": 27,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 27,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -588,15 +532,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 29,
     "hatchableEggGroups": [
-      1,
-      5
+      12,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -609,8 +551,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 29,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -631,8 +571,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 29,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -651,15 +589,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 32,
     "hatchableEggGroups": [
-      1,
-      5
+      12,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -670,11 +606,9 @@
     "evolvesFromId": 32,
     "generation": 1,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 32,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -693,11 +627,9 @@
     "evolvesFromId": 33,
     "generation": 1,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 32,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -716,10 +648,8 @@
     "evolvesFromId": 173,
     "generation": 1,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 173,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -738,10 +668,8 @@
     "evolvesFromId": 35,
     "generation": 1,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 173,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -760,13 +688,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 37,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -777,10 +703,8 @@
     "evolvesFromId": 37,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 37,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -799,10 +723,8 @@
     "evolvesFromId": 174,
     "generation": 1,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 174,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -821,10 +743,8 @@
     "evolvesFromId": 39,
     "generation": 1,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 174,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -843,13 +763,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 41,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -860,10 +778,8 @@
     "evolvesFromId": 41,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 41,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -882,13 +798,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 43,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -899,10 +813,8 @@
     "evolvesFromId": 43,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 43,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -921,10 +833,8 @@
     "evolvesFromId": 44,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 43,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -943,15 +853,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      3,
-      7
+      1,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 46,
     "hatchableEggGroups": [
-      3,
-      7
+      1,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -962,11 +870,9 @@
     "evolvesFromId": 46,
     "generation": 1,
     "eggGroups": [
-      3,
-      7
+      1,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 46,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -985,13 +891,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 48,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1002,10 +906,8 @@
     "evolvesFromId": 48,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 48,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1024,13 +926,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 50,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1041,10 +941,8 @@
     "evolvesFromId": 50,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 50,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1063,13 +961,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 52,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1080,10 +976,8 @@
     "evolvesFromId": 52,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 52,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1102,15 +996,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 54,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1121,11 +1013,9 @@
     "evolvesFromId": 54,
     "generation": 1,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 54,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1144,13 +1034,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 56,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1161,10 +1049,8 @@
     "evolvesFromId": 56,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 56,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1183,13 +1069,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 58,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1200,10 +1084,8 @@
     "evolvesFromId": 58,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 58,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1222,13 +1104,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 60,
     "hatchableEggGroups": [
-      2
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1239,10 +1119,8 @@
     "evolvesFromId": 60,
     "generation": 1,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 60,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1261,10 +1139,8 @@
     "evolvesFromId": 61,
     "generation": 1,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 60,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1285,8 +1161,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 63,
     "hatchableEggGroups": [
       8
@@ -1302,8 +1176,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 63,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1324,8 +1196,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 63,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1346,8 +1216,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 66,
     "hatchableEggGroups": [
       8
@@ -1363,8 +1231,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 66,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1385,8 +1251,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 66,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1405,13 +1269,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 69,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1422,10 +1284,8 @@
     "evolvesFromId": 69,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 69,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1444,10 +1304,8 @@
     "evolvesFromId": 70,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 69,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1466,13 +1324,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 72,
     "hatchableEggGroups": [
-      9
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1483,10 +1339,8 @@
     "evolvesFromId": 72,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 72,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1505,13 +1359,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 74,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1522,10 +1374,8 @@
     "evolvesFromId": 74,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 74,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1544,10 +1394,8 @@
     "evolvesFromId": 75,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 74,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1566,13 +1414,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 77,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1583,10 +1429,8 @@
     "evolvesFromId": 77,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 77,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1605,15 +1449,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 79,
     "hatchableEggGroups": [
-      1,
-      2
+      12,
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1624,11 +1466,9 @@
     "evolvesFromId": 79,
     "generation": 1,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 79,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1647,13 +1487,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 81,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1664,10 +1502,8 @@
     "evolvesFromId": 81,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 81,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1686,15 +1522,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      4,
-      5
+      3,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 83,
     "hatchableEggGroups": [
-      4,
-      5
+      3,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1705,13 +1539,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 84,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1722,10 +1554,8 @@
     "evolvesFromId": 84,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 84,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1744,15 +1574,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 86,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1763,11 +1591,9 @@
     "evolvesFromId": 86,
     "generation": 1,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 86,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1786,13 +1612,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 88,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1803,10 +1627,8 @@
     "evolvesFromId": 88,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 88,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1825,13 +1647,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 90,
     "hatchableEggGroups": [
-      9
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1842,10 +1662,8 @@
     "evolvesFromId": 90,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 90,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1864,13 +1682,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 92,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1881,10 +1697,8 @@
     "evolvesFromId": 92,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 92,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1903,10 +1717,8 @@
     "evolvesFromId": 93,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 92,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1925,13 +1737,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 95,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1944,8 +1754,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 96,
     "hatchableEggGroups": [
       8
@@ -1961,8 +1769,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 96,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -1981,13 +1787,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 98,
     "hatchableEggGroups": [
-      9
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -1998,10 +1802,8 @@
     "evolvesFromId": 98,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 98,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2020,13 +1822,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 100,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2037,10 +1837,8 @@
     "evolvesFromId": 100,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 100,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2059,13 +1857,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 102,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2076,10 +1872,8 @@
     "evolvesFromId": 102,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 102,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2098,13 +1892,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 104,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2115,10 +1907,8 @@
     "evolvesFromId": 104,
     "generation": 1,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 104,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2139,8 +1929,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 236,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2161,8 +1949,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 236,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2181,13 +1967,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 108,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2198,13 +1982,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 109,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2215,10 +1997,8 @@
     "evolvesFromId": 109,
     "generation": 1,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 109,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2237,15 +2017,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 111,
     "hatchableEggGroups": [
-      1,
-      5
+      12,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2256,11 +2034,9 @@
     "evolvesFromId": 111,
     "generation": 1,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 111,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2279,10 +2055,8 @@
     "evolvesFromId": 440,
     "generation": 1,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 440,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2301,13 +2075,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 114,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2318,13 +2090,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 115,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2335,15 +2105,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 116,
     "hatchableEggGroups": [
-      2,
-      14
+      7,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2354,11 +2122,9 @@
     "evolvesFromId": 116,
     "generation": 1,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 116,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2377,13 +2143,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 118,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2394,10 +2158,8 @@
     "evolvesFromId": 118,
     "generation": 1,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 118,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2416,13 +2178,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 120,
     "hatchableEggGroups": [
-      9
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2433,10 +2193,8 @@
     "evolvesFromId": 120,
     "generation": 1,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 120,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2457,8 +2215,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 439,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2477,13 +2233,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 123,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2496,8 +2250,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 238,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2518,8 +2270,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 239,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2540,8 +2290,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 240,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2560,13 +2308,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 127,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2577,13 +2323,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 128,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2594,15 +2338,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      12,
-      14
+      4,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 5,
     "familyRootId": 129,
     "hatchableEggGroups": [
-      12,
-      14
+      4,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2613,11 +2355,9 @@
     "evolvesFromId": 129,
     "generation": 1,
     "eggGroups": [
-      12,
-      14
+      4,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 5,
     "familyRootId": 129,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2636,15 +2376,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 131,
     "hatchableEggGroups": [
-      1,
-      2
+      12,
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2655,13 +2393,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      13
+      "Ditto"
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 132,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2672,13 +2408,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2689,10 +2423,8 @@
     "evolvesFromId": 133,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2711,10 +2443,8 @@
     "evolvesFromId": 133,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2733,10 +2463,8 @@
     "evolvesFromId": 133,
     "generation": 1,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2755,13 +2483,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 137,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2772,15 +2498,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 138,
     "hatchableEggGroups": [
-      2,
-      9
+      7,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2791,11 +2515,9 @@
     "evolvesFromId": 138,
     "generation": 1,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 138,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2814,15 +2536,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 140,
     "hatchableEggGroups": [
-      2,
-      9
+      7,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2833,11 +2553,9 @@
     "evolvesFromId": 140,
     "generation": 1,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 140,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2856,13 +2574,11 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 142,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2873,10 +2589,8 @@
     "evolvesFromId": 446,
     "generation": 1,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 446,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2895,15 +2609,13 @@
     "evolvesFromId": null,
     "generation": 1,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 147,
     "hatchableEggGroups": [
-      2,
-      14
+      7,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2914,11 +2626,9 @@
     "evolvesFromId": 147,
     "generation": 1,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 147,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2937,11 +2647,9 @@
     "evolvesFromId": 148,
     "generation": 1,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 147,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -2951,7 +2659,7 @@
     "evolutionRequirement": {
       "baseHatches": 55,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -2960,15 +2668,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 152,
     "hatchableEggGroups": [
-      1,
-      7
+      12,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -2979,11 +2685,9 @@
     "evolvesFromId": 152,
     "generation": 2,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 152,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3002,11 +2706,9 @@
     "evolvesFromId": 153,
     "generation": 2,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 152,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3016,7 +2718,7 @@
     "evolutionRequirement": {
       "baseHatches": 32,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -3025,13 +2727,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 155,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3042,10 +2742,8 @@
     "evolvesFromId": 155,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 155,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3064,10 +2762,8 @@
     "evolvesFromId": 156,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 155,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3077,7 +2773,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -3086,15 +2782,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 158,
     "hatchableEggGroups": [
-      1,
-      2
+      12,
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3105,11 +2799,9 @@
     "evolvesFromId": 158,
     "generation": 2,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 158,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3128,11 +2820,9 @@
     "evolvesFromId": 159,
     "generation": 2,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 158,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3142,7 +2832,7 @@
     "evolutionRequirement": {
       "baseHatches": 30,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -3151,13 +2841,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 161,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3168,10 +2856,8 @@
     "evolvesFromId": 161,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 161,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3190,13 +2876,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 163,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3207,10 +2891,8 @@
     "evolvesFromId": 163,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 163,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3229,13 +2911,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 165,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3246,10 +2926,8 @@
     "evolvesFromId": 165,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 165,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3268,13 +2946,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 167,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3285,10 +2961,8 @@
     "evolvesFromId": 167,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 167,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3307,10 +2981,8 @@
     "evolvesFromId": 42,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 41,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3329,13 +3001,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 170,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3346,10 +3016,8 @@
     "evolvesFromId": 170,
     "generation": 2,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 170,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3370,12 +3038,10 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 10,
     "familyRootId": 172,
     "hatchableEggGroups": [
-      5,
-      6
+      6,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3388,11 +3054,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 10,
     "familyRootId": 173,
     "hatchableEggGroups": [
-      6
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3405,11 +3069,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 10,
     "familyRootId": 174,
     "hatchableEggGroups": [
-      6
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3422,12 +3084,10 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 10,
     "familyRootId": 175,
     "hatchableEggGroups": [
-      4,
-      6
+      3,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3438,11 +3098,9 @@
     "evolvesFromId": 175,
     "generation": 2,
     "eggGroups": [
-      4,
-      6
+      3,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 175,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3461,13 +3119,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 177,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3478,10 +3134,8 @@
     "evolvesFromId": 177,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 177,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3500,15 +3154,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 179,
     "hatchableEggGroups": [
-      1,
-      5
+      12,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3519,11 +3171,9 @@
     "evolvesFromId": 179,
     "generation": 2,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 179,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3542,11 +3192,9 @@
     "evolvesFromId": 180,
     "generation": 2,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 179,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3556,7 +3204,7 @@
     "evolutionRequirement": {
       "baseHatches": 30,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -3565,10 +3213,8 @@
     "evolvesFromId": 44,
     "generation": 2,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 43,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3587,11 +3233,9 @@
     "evolvesFromId": 298,
     "generation": 2,
     "eggGroups": [
-      2,
-      6
+      7,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 298,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3610,11 +3254,9 @@
     "evolvesFromId": 183,
     "generation": 2,
     "eggGroups": [
-      2,
-      6
+      7,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 298,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3624,7 +3266,7 @@
     "evolutionRequirement": {
       "baseHatches": 18,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -3633,10 +3275,8 @@
     "evolvesFromId": 438,
     "generation": 2,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 438,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3655,10 +3295,8 @@
     "evolvesFromId": 61,
     "generation": 2,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 60,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3677,15 +3315,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 187,
     "hatchableEggGroups": [
-      6,
-      7
+      2,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3696,11 +3332,9 @@
     "evolvesFromId": 187,
     "generation": 2,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 187,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3719,11 +3353,9 @@
     "evolvesFromId": 188,
     "generation": 2,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 187,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3733,7 +3365,7 @@
     "evolutionRequirement": {
       "baseHatches": 27,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -3742,13 +3374,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 190,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3759,13 +3389,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 191,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3776,10 +3404,8 @@
     "evolvesFromId": 191,
     "generation": 2,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 191,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3798,13 +3424,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 193,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3815,15 +3439,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 194,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3834,11 +3456,9 @@
     "evolvesFromId": 194,
     "generation": 2,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 194,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3857,10 +3477,8 @@
     "evolvesFromId": 133,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3879,10 +3497,8 @@
     "evolvesFromId": 133,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3901,13 +3517,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 198,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3918,11 +3532,9 @@
     "evolvesFromId": 79,
     "generation": 2,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 79,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3941,13 +3553,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 200,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3960,11 +3570,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 201,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -3975,10 +3583,8 @@
     "evolvesFromId": 360,
     "generation": 2,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 360,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -3997,13 +3603,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 203,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4014,13 +3618,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 204,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4031,10 +3633,8 @@
     "evolvesFromId": 204,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 204,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4053,13 +3653,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 206,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4070,13 +3668,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 207,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4087,10 +3683,8 @@
     "evolvesFromId": 95,
     "generation": 2,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 95,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4109,15 +3703,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 209,
     "hatchableEggGroups": [
-      5,
-      6
+      6,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4128,11 +3720,9 @@
     "evolvesFromId": 209,
     "generation": 2,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 209,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4151,13 +3741,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 211,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4168,10 +3756,8 @@
     "evolvesFromId": 123,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 123,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4190,13 +3776,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 213,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4207,13 +3791,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 214,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4224,13 +3806,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 215,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4241,13 +3821,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 216,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4258,10 +3836,8 @@
     "evolvesFromId": 216,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 216,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4280,13 +3856,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 218,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4297,10 +3871,8 @@
     "evolvesFromId": 218,
     "generation": 2,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 218,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4319,13 +3891,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 220,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4336,10 +3906,8 @@
     "evolvesFromId": 220,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 220,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4358,15 +3926,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 222,
     "hatchableEggGroups": [
-      2,
-      9
+      7,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4377,15 +3943,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      2,
-      12
+      7,
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 223,
     "hatchableEggGroups": [
-      2,
-      12
+      7,
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4396,11 +3960,9 @@
     "evolvesFromId": 223,
     "generation": 2,
     "eggGroups": [
-      2,
-      12
+      7,
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 223,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4419,15 +3981,13 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 225,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4438,10 +3998,8 @@
     "evolvesFromId": 458,
     "generation": 2,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 458,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4460,13 +4018,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 227,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4477,13 +4033,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 228,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4494,10 +4048,8 @@
     "evolvesFromId": 228,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 228,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4516,11 +4068,9 @@
     "evolvesFromId": 117,
     "generation": 2,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 116,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4539,13 +4089,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 231,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4556,10 +4104,8 @@
     "evolvesFromId": 231,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 231,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4578,10 +4124,8 @@
     "evolvesFromId": 137,
     "generation": 2,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 137,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4600,13 +4144,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 234,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4617,13 +4159,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 235,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4636,8 +4176,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 236,
     "hatchableEggGroups": [
       8
@@ -4653,8 +4191,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 236,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4675,8 +4211,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 238,
     "hatchableEggGroups": [
       8
@@ -4692,8 +4226,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 239,
     "hatchableEggGroups": [
       8
@@ -4709,8 +4241,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 240,
     "hatchableEggGroups": [
       8
@@ -4724,13 +4254,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 241,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4741,10 +4269,8 @@
     "evolvesFromId": 113,
     "generation": 2,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 440,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4763,13 +4289,11 @@
     "evolvesFromId": null,
     "generation": 2,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 246,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4780,10 +4304,8 @@
     "evolvesFromId": 246,
     "generation": 2,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 246,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4802,10 +4324,8 @@
     "evolvesFromId": 247,
     "generation": 2,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 246,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4815,7 +4335,7 @@
     "evolutionRequirement": {
       "baseHatches": 55,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -4824,15 +4344,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 252,
     "hatchableEggGroups": [
-      1,
-      14
+      12,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4843,11 +4361,9 @@
     "evolvesFromId": 252,
     "generation": 3,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 252,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4866,11 +4382,9 @@
     "evolvesFromId": 253,
     "generation": 3,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 252,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4880,7 +4394,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -4889,13 +4403,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 255,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4906,10 +4418,8 @@
     "evolvesFromId": 255,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 255,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4928,10 +4438,8 @@
     "evolvesFromId": 256,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 255,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4941,7 +4449,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -4950,15 +4458,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 258,
     "hatchableEggGroups": [
-      1,
-      2
+      12,
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -4969,11 +4475,9 @@
     "evolvesFromId": 258,
     "generation": 3,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 258,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -4992,11 +4496,9 @@
     "evolvesFromId": 259,
     "generation": 3,
     "eggGroups": [
-      1,
-      2
+      12,
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 258,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5006,7 +4508,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5015,13 +4517,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 261,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5032,10 +4532,8 @@
     "evolvesFromId": 261,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 261,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5054,13 +4552,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 263,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5071,10 +4567,8 @@
     "evolvesFromId": 263,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 263,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5093,13 +4587,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 265,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5110,10 +4602,8 @@
     "evolvesFromId": 265,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 265,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5132,10 +4622,8 @@
     "evolvesFromId": 266,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 265,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5145,7 +4633,7 @@
     "evolutionRequirement": {
       "baseHatches": 10,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5154,10 +4642,8 @@
     "evolvesFromId": 265,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 265,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5176,10 +4662,8 @@
     "evolvesFromId": 268,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 265,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5189,7 +4673,7 @@
     "evolutionRequirement": {
       "baseHatches": 10,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5198,15 +4682,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      7
+      7,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 270,
     "hatchableEggGroups": [
-      2,
-      7
+      7,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5217,11 +4699,9 @@
     "evolvesFromId": 270,
     "generation": 3,
     "eggGroups": [
-      2,
-      7
+      7,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 270,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5240,11 +4720,9 @@
     "evolvesFromId": 271,
     "generation": 3,
     "eggGroups": [
-      2,
-      7
+      7,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 270,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5263,15 +4741,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5,
-      7
+      6,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 273,
     "hatchableEggGroups": [
-      5,
-      7
+      6,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5282,11 +4758,9 @@
     "evolvesFromId": 273,
     "generation": 3,
     "eggGroups": [
-      5,
-      7
+      6,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 273,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5305,11 +4779,9 @@
     "evolvesFromId": 274,
     "generation": 3,
     "eggGroups": [
-      5,
-      7
+      6,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 273,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5328,13 +4800,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 276,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5345,10 +4815,8 @@
     "evolvesFromId": 276,
     "generation": 3,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 276,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5367,15 +4835,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      4
+      7,
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 278,
     "hatchableEggGroups": [
-      2,
-      4
+      7,
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5386,11 +4852,9 @@
     "evolvesFromId": 278,
     "generation": 3,
     "eggGroups": [
-      2,
-      4
+      7,
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 278,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5410,14 +4874,12 @@
     "generation": 3,
     "eggGroups": [
       8,
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 280,
     "hatchableEggGroups": [
       8,
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5429,10 +4891,8 @@
     "generation": 3,
     "eggGroups": [
       8,
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 280,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5452,10 +4912,8 @@
     "generation": 3,
     "eggGroups": [
       8,
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 280,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5465,7 +4923,7 @@
     "evolutionRequirement": {
       "baseHatches": 30,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5474,15 +4932,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      3
+      7,
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 283,
     "hatchableEggGroups": [
-      2,
-      3
+      7,
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5493,11 +4949,9 @@
     "evolvesFromId": 283,
     "generation": 3,
     "eggGroups": [
-      2,
-      3
+      7,
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 283,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5516,15 +4970,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 285,
     "hatchableEggGroups": [
-      6,
-      7
+      2,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5535,11 +4987,9 @@
     "evolvesFromId": 285,
     "generation": 3,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 285,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5558,13 +5008,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 287,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5575,10 +5023,8 @@
     "evolvesFromId": 287,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 287,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5597,10 +5043,8 @@
     "evolvesFromId": 288,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 287,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5610,7 +5054,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5619,13 +5063,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 290,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5636,10 +5078,8 @@
     "evolvesFromId": 290,
     "generation": 3,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 290,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5658,10 +5098,8 @@
     "evolvesFromId": 290,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 290,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5680,15 +5118,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 293,
     "hatchableEggGroups": [
-      1,
-      5
+      12,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5699,11 +5135,9 @@
     "evolvesFromId": 293,
     "generation": 3,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 293,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5722,11 +5156,9 @@
     "evolvesFromId": 294,
     "generation": 3,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 293,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5736,7 +5168,7 @@
     "evolutionRequirement": {
       "baseHatches": 40,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5747,8 +5179,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 296,
     "hatchableEggGroups": [
       8
@@ -5764,8 +5194,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 296,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5786,12 +5214,10 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 10,
     "familyRootId": 298,
     "hatchableEggGroups": [
-      2,
-      6
+      7,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5802,13 +5228,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 299,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5819,15 +5243,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 300,
     "hatchableEggGroups": [
-      5,
-      6
+      6,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5838,11 +5260,9 @@
     "evolvesFromId": 300,
     "generation": 3,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 300,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5863,8 +5283,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 302,
     "hatchableEggGroups": [
       8
@@ -5878,15 +5296,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 303,
     "hatchableEggGroups": [
-      5,
-      6
+      6,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5897,13 +5313,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 304,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -5914,10 +5328,8 @@
     "evolvesFromId": 304,
     "generation": 3,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 304,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5936,10 +5348,8 @@
     "evolvesFromId": 305,
     "generation": 3,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 304,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5949,7 +5359,7 @@
     "evolutionRequirement": {
       "baseHatches": 42,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -5960,8 +5370,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 307,
     "hatchableEggGroups": [
       8
@@ -5977,8 +5385,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 307,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -5997,13 +5403,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 309,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6014,10 +5418,8 @@
     "evolvesFromId": 309,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 309,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6036,13 +5438,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 311,
     "hatchableEggGroups": [
-      6
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6053,13 +5453,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 312,
     "hatchableEggGroups": [
-      6
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6070,14 +5468,12 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      3,
+      1,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 313,
     "hatchableEggGroups": [
-      3,
+      1,
       8
     ],
     "evolutionMethod": null,
@@ -6089,14 +5485,12 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      3,
+      1,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 314,
     "hatchableEggGroups": [
-      3,
+      1,
       8
     ],
     "evolutionMethod": null,
@@ -6108,11 +5502,9 @@
     "evolvesFromId": 406,
     "generation": 3,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 406,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6131,13 +5523,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 316,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6148,10 +5538,8 @@
     "evolvesFromId": 316,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 316,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6170,13 +5558,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 318,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6187,10 +5573,8 @@
     "evolvesFromId": 318,
     "generation": 3,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 318,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6209,15 +5593,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5,
-      12
+      6,
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 320,
     "hatchableEggGroups": [
-      5,
-      12
+      6,
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6228,11 +5610,9 @@
     "evolvesFromId": 320,
     "generation": 3,
     "eggGroups": [
-      5,
-      12
+      6,
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 320,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6251,13 +5631,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 322,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6268,10 +5646,8 @@
     "evolvesFromId": 322,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 322,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6290,13 +5666,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 324,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6307,13 +5681,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 325,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6324,10 +5696,8 @@
     "evolvesFromId": 325,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 325,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6346,14 +5716,12 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 327,
     "hatchableEggGroups": [
-      5,
+      6,
       8
     ],
     "evolutionMethod": null,
@@ -6365,15 +5733,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      3,
-      14
+      1,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 328,
     "hatchableEggGroups": [
-      3,
-      14
+      1,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6384,11 +5750,9 @@
     "evolvesFromId": 328,
     "generation": 3,
     "eggGroups": [
-      3,
-      14
+      1,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 328,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6407,11 +5771,9 @@
     "evolvesFromId": 329,
     "generation": 3,
     "eggGroups": [
-      3,
-      14
+      1,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 328,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6421,7 +5783,7 @@
     "evolutionRequirement": {
       "baseHatches": 45,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -6430,14 +5792,12 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      7,
+      5,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 331,
     "hatchableEggGroups": [
-      7,
+      5,
       8
     ],
     "evolutionMethod": null,
@@ -6449,11 +5809,9 @@
     "evolvesFromId": 331,
     "generation": 3,
     "eggGroups": [
-      7,
+      5,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 331,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6472,15 +5830,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      4,
-      14
+      3,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 333,
     "hatchableEggGroups": [
-      4,
-      14
+      3,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6491,11 +5847,9 @@
     "evolvesFromId": 333,
     "generation": 3,
     "eggGroups": [
-      4,
-      14
+      3,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 333,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6514,13 +5868,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 335,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6531,15 +5883,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5,
-      14
+      6,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 336,
     "hatchableEggGroups": [
-      5,
-      14
+      6,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6550,13 +5900,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 337,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6567,13 +5915,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 338,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6584,13 +5930,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 339,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6601,10 +5945,8 @@
     "evolvesFromId": 339,
     "generation": 3,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 339,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6623,15 +5965,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 341,
     "hatchableEggGroups": [
-      2,
-      9
+      7,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6642,11 +5982,9 @@
     "evolvesFromId": 341,
     "generation": 3,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 341,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6665,13 +6003,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 343,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6682,10 +6018,8 @@
     "evolvesFromId": 343,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 343,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6704,13 +6038,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 345,
     "hatchableEggGroups": [
-      9
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6721,10 +6053,8 @@
     "evolvesFromId": 345,
     "generation": 3,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 345,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6743,13 +6073,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 347,
     "hatchableEggGroups": [
-      9
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6760,10 +6088,8 @@
     "evolvesFromId": 347,
     "generation": 3,
     "eggGroups": [
-      9
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 347,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6782,15 +6108,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 349,
     "hatchableEggGroups": [
-      2,
-      14
+      7,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6801,11 +6125,9 @@
     "evolvesFromId": 349,
     "generation": 3,
     "eggGroups": [
-      2,
-      14
+      7,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 349,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6824,15 +6146,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      6,
-      11
+      2,
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 351,
     "hatchableEggGroups": [
-      6,
-      11
+      2,
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6843,13 +6163,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 352,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6860,13 +6178,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 353,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6877,10 +6193,8 @@
     "evolvesFromId": 353,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 353,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6899,13 +6213,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 355,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6916,10 +6228,8 @@
     "evolvesFromId": 355,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 355,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6938,15 +6248,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 357,
     "hatchableEggGroups": [
-      1,
-      7
+      12,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6957,10 +6265,8 @@
     "evolvesFromId": 433,
     "generation": 3,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 433,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -6979,13 +6285,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 359,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -6998,11 +6302,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 20,
     "familyRootId": 360,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7013,15 +6315,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      6,
-      10
+      2,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 361,
     "hatchableEggGroups": [
-      6,
-      10
+      2,
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7032,11 +6332,9 @@
     "evolvesFromId": 361,
     "generation": 3,
     "eggGroups": [
-      6,
-      10
+      2,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 361,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7055,15 +6353,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 363,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7074,11 +6370,9 @@
     "evolvesFromId": 363,
     "generation": 3,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 363,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7097,11 +6391,9 @@
     "evolvesFromId": 364,
     "generation": 3,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 363,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7111,7 +6403,7 @@
     "evolutionRequirement": {
       "baseHatches": 44,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7120,13 +6412,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 366,
     "hatchableEggGroups": [
-      2
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7137,10 +6427,8 @@
     "evolvesFromId": 366,
     "generation": 3,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 366,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7159,10 +6447,8 @@
     "evolvesFromId": 366,
     "generation": 3,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 366,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7181,15 +6467,13 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      2,
-      12
+      7,
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 369,
     "hatchableEggGroups": [
-      2,
-      12
+      7,
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7200,13 +6484,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 370,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7217,13 +6499,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      14
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 371,
     "hatchableEggGroups": [
-      14
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7234,10 +6514,8 @@
     "evolvesFromId": 371,
     "generation": 3,
     "eggGroups": [
-      14
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 371,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7256,10 +6534,8 @@
     "evolvesFromId": 372,
     "generation": 3,
     "eggGroups": [
-      14
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 371,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7269,7 +6545,7 @@
     "evolutionRequirement": {
       "baseHatches": 50,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7278,13 +6554,11 @@
     "evolvesFromId": null,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 374,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7295,10 +6569,8 @@
     "evolvesFromId": 374,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 374,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7317,10 +6589,8 @@
     "evolvesFromId": 375,
     "generation": 3,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 374,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7330,7 +6600,7 @@
     "evolutionRequirement": {
       "baseHatches": 45,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7339,15 +6609,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 387,
     "hatchableEggGroups": [
-      1,
-      7
+      12,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7358,11 +6626,9 @@
     "evolvesFromId": 387,
     "generation": 4,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 387,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7381,11 +6647,9 @@
     "evolvesFromId": 388,
     "generation": 4,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 387,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7395,7 +6659,7 @@
     "evolutionRequirement": {
       "baseHatches": 32,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7404,14 +6668,12 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 390,
     "hatchableEggGroups": [
-      5,
+      6,
       8
     ],
     "evolutionMethod": null,
@@ -7423,11 +6685,9 @@
     "evolvesFromId": 390,
     "generation": 4,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 390,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7446,11 +6706,9 @@
     "evolvesFromId": 391,
     "generation": 4,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 390,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7460,7 +6718,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7469,15 +6727,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 393,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7488,11 +6744,9 @@
     "evolvesFromId": 393,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 393,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7511,11 +6765,9 @@
     "evolvesFromId": 394,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 393,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7525,7 +6777,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7534,13 +6786,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 396,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7551,10 +6801,8 @@
     "evolvesFromId": 396,
     "generation": 4,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 396,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7573,10 +6821,8 @@
     "evolvesFromId": 397,
     "generation": 4,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 396,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7586,7 +6832,7 @@
     "evolutionRequirement": {
       "baseHatches": 34,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7595,15 +6841,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 399,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7614,11 +6858,9 @@
     "evolvesFromId": 399,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 399,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7637,13 +6879,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 401,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7654,10 +6894,8 @@
     "evolvesFromId": 401,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 401,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7676,13 +6914,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 403,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7693,10 +6929,8 @@
     "evolvesFromId": 403,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 403,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7715,10 +6949,8 @@
     "evolvesFromId": 404,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 403,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7728,7 +6960,7 @@
     "evolutionRequirement": {
       "baseHatches": 30,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -7739,12 +6971,10 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 20,
     "familyRootId": 406,
     "hatchableEggGroups": [
-      6,
-      7
+      2,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7755,11 +6985,9 @@
     "evolvesFromId": 315,
     "generation": 4,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 406,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7778,13 +7006,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 408,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7795,10 +7021,8 @@
     "evolvesFromId": 408,
     "generation": 4,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 408,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7817,13 +7041,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 410,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7834,10 +7056,8 @@
     "evolvesFromId": 410,
     "generation": 4,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 410,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7856,13 +7076,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 412,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7873,10 +7091,8 @@
     "evolvesFromId": 412,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 412,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7895,10 +7111,8 @@
     "evolvesFromId": 412,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 412,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7917,13 +7131,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 415,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7934,10 +7146,8 @@
     "evolvesFromId": 415,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 415,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -7956,15 +7166,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5,
-      6
+      6,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 417,
     "hatchableEggGroups": [
-      5,
-      6
+      6,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7975,15 +7183,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 418,
     "hatchableEggGroups": [
-      2,
-      5
+      7,
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -7994,11 +7200,9 @@
     "evolvesFromId": 418,
     "generation": 4,
     "eggGroups": [
-      2,
-      5
+      7,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 418,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8017,15 +7221,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 420,
     "hatchableEggGroups": [
-      6,
-      7
+      2,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8036,11 +7238,9 @@
     "evolvesFromId": 420,
     "generation": 4,
     "eggGroups": [
-      6,
-      7
+      2,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 420,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8059,15 +7259,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      2,
-      11
+      7,
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 422,
     "hatchableEggGroups": [
-      2,
-      11
+      7,
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8078,11 +7276,9 @@
     "evolvesFromId": 422,
     "generation": 4,
     "eggGroups": [
-      2,
-      11
+      7,
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 422,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8101,10 +7297,8 @@
     "evolvesFromId": 190,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 190,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8123,13 +7317,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 425,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8140,10 +7332,8 @@
     "evolvesFromId": 425,
     "generation": 4,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 425,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8162,14 +7352,12 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 427,
     "hatchableEggGroups": [
-      5,
+      6,
       8
     ],
     "evolutionMethod": null,
@@ -8181,11 +7369,9 @@
     "evolvesFromId": 427,
     "generation": 4,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 427,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8204,10 +7390,8 @@
     "evolvesFromId": 200,
     "generation": 4,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 200,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8226,10 +7410,8 @@
     "evolvesFromId": 198,
     "generation": 4,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 198,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8248,13 +7430,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 431,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8265,10 +7445,8 @@
     "evolvesFromId": 431,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 431,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8289,11 +7467,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 433,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8304,13 +7480,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 434,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8321,10 +7495,8 @@
     "evolvesFromId": 434,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 434,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8343,13 +7515,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 436,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8360,10 +7530,8 @@
     "evolvesFromId": 436,
     "generation": 4,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 436,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8384,11 +7552,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 20,
     "familyRootId": 438,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8401,8 +7567,6 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 439,
     "hatchableEggGroups": [
       8
@@ -8418,11 +7582,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 40,
     "familyRootId": 440,
     "hatchableEggGroups": [
-      6
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8433,13 +7595,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 441,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8450,13 +7610,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 442,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8467,15 +7625,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 443,
     "hatchableEggGroups": [
-      1,
-      14
+      12,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8486,11 +7642,9 @@
     "evolvesFromId": 443,
     "generation": 4,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 443,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8509,11 +7663,9 @@
     "evolvesFromId": 444,
     "generation": 4,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 443,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8523,7 +7675,7 @@
     "evolutionRequirement": {
       "baseHatches": 48,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -8534,11 +7686,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 40,
     "familyRootId": 446,
     "hatchableEggGroups": [
-      1
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8551,11 +7701,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 447,
     "hatchableEggGroups": [
-      5,
+      6,
       8
     ],
     "evolutionMethod": null,
@@ -8567,11 +7715,9 @@
     "evolvesFromId": 447,
     "generation": 4,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 447,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8590,13 +7736,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 449,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8607,10 +7751,8 @@
     "evolvesFromId": 449,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 449,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8629,15 +7771,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      3,
-      9
+      1,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 451,
     "hatchableEggGroups": [
-      3,
-      9
+      1,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8648,11 +7788,9 @@
     "evolvesFromId": 451,
     "generation": 4,
     "eggGroups": [
-      3,
-      9
+      1,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 451,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8673,8 +7811,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 453,
     "hatchableEggGroups": [
       8
@@ -8690,8 +7826,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 453,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8710,13 +7844,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 455,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8727,13 +7859,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 456,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8744,10 +7874,8 @@
     "evolvesFromId": 456,
     "generation": 4,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 456,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8768,11 +7896,9 @@
     "eggGroups": [
       15
     ],
-    "isBaby": true,
-    "hatchCycles": 25,
     "familyRootId": 458,
     "hatchableEggGroups": [
-      2
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8783,15 +7909,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 459,
     "hatchableEggGroups": [
-      1,
-      7
+      12,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -8802,11 +7926,9 @@
     "evolvesFromId": 459,
     "generation": 4,
     "eggGroups": [
-      1,
-      7
+      12,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 459,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8825,10 +7947,8 @@
     "evolvesFromId": 215,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 215,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8847,10 +7967,8 @@
     "evolvesFromId": 82,
     "generation": 4,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 81,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8869,10 +7987,8 @@
     "evolvesFromId": 108,
     "generation": 4,
     "eggGroups": [
-      1
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 108,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8891,11 +8007,9 @@
     "evolvesFromId": 112,
     "generation": 4,
     "eggGroups": [
-      1,
-      5
+      12,
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 111,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8914,10 +8028,8 @@
     "evolvesFromId": 114,
     "generation": 4,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 114,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8938,8 +8050,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 239,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8960,8 +8070,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 240,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -8980,11 +8088,9 @@
     "evolvesFromId": 176,
     "generation": 4,
     "eggGroups": [
-      4,
-      6
+      3,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 175,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9003,10 +8109,8 @@
     "evolvesFromId": 193,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 193,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9025,10 +8129,8 @@
     "evolvesFromId": 133,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9047,10 +8149,8 @@
     "evolvesFromId": 133,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 35,
     "familyRootId": 133,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9069,10 +8169,8 @@
     "evolvesFromId": 207,
     "generation": 4,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 207,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9091,10 +8189,8 @@
     "evolvesFromId": 221,
     "generation": 4,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 220,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9113,10 +8209,8 @@
     "evolvesFromId": 233,
     "generation": 4,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 137,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9136,10 +8230,8 @@
     "generation": 4,
     "eggGroups": [
       8,
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 280,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9158,10 +8250,8 @@
     "evolvesFromId": 299,
     "generation": 4,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 299,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9180,10 +8270,8 @@
     "evolvesFromId": 356,
     "generation": 4,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 355,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9202,11 +8290,9 @@
     "evolvesFromId": 361,
     "generation": 4,
     "eggGroups": [
-      6,
-      10
+      2,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 361,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9225,13 +8311,11 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 479,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9242,15 +8326,13 @@
     "evolvesFromId": null,
     "generation": 4,
     "eggGroups": [
-      2,
-      6
+      7,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 489,
     "hatchableEggGroups": [
-      2,
-      6
+      7,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9261,15 +8343,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5,
-      7
+      6,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 495,
     "hatchableEggGroups": [
-      5,
-      7
+      6,
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9280,11 +8360,9 @@
     "evolvesFromId": 495,
     "generation": 5,
     "eggGroups": [
-      5,
-      7
+      6,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 495,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9303,11 +8381,9 @@
     "evolvesFromId": 496,
     "generation": 5,
     "eggGroups": [
-      5,
-      7
+      6,
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 495,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9317,7 +8393,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -9326,13 +8402,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 498,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9343,10 +8417,8 @@
     "evolvesFromId": 498,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 498,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9365,10 +8437,8 @@
     "evolvesFromId": 499,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 498,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9378,7 +8448,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -9387,13 +8457,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 501,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9404,10 +8472,8 @@
     "evolvesFromId": 501,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 501,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9426,10 +8492,8 @@
     "evolvesFromId": 502,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 501,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9439,7 +8503,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -9448,13 +8512,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 504,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9465,10 +8527,8 @@
     "evolvesFromId": 504,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 504,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9487,13 +8547,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 506,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9504,10 +8562,8 @@
     "evolvesFromId": 506,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 506,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9526,10 +8582,8 @@
     "evolvesFromId": 507,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 506,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9539,7 +8593,7 @@
     "evolutionRequirement": {
       "baseHatches": 32,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -9548,13 +8602,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 509,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9565,10 +8617,8 @@
     "evolvesFromId": 509,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 509,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9587,13 +8637,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 511,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9604,10 +8652,8 @@
     "evolvesFromId": 511,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 511,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9626,13 +8672,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 513,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9643,10 +8687,8 @@
     "evolvesFromId": 513,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 513,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9665,13 +8707,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 515,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9682,10 +8722,8 @@
     "evolvesFromId": 515,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 515,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9704,13 +8742,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 517,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9721,10 +8757,8 @@
     "evolvesFromId": 517,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 10,
     "familyRootId": 517,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9743,13 +8777,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 519,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9760,10 +8792,8 @@
     "evolvesFromId": 519,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 519,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9782,10 +8812,8 @@
     "evolvesFromId": 520,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 519,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9795,7 +8823,7 @@
     "evolutionRequirement": {
       "baseHatches": 32,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -9804,13 +8832,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 522,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9821,10 +8847,8 @@
     "evolvesFromId": 522,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 522,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9843,13 +8867,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 524,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9860,10 +8882,8 @@
     "evolvesFromId": 524,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 524,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9882,10 +8902,8 @@
     "evolvesFromId": 525,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 524,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9904,15 +8922,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5,
-      4
+      6,
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 527,
     "hatchableEggGroups": [
-      5,
-      4
+      6,
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9923,11 +8939,9 @@
     "evolvesFromId": 527,
     "generation": 5,
     "eggGroups": [
-      5,
-      4
+      6,
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 527,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9946,13 +8960,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 529,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -9963,10 +8975,8 @@
     "evolvesFromId": 529,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 529,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -9985,13 +8995,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      6
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 531,
     "hatchableEggGroups": [
-      6
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10004,8 +9012,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 532,
     "hatchableEggGroups": [
       8
@@ -10021,8 +9027,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 532,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10043,8 +9047,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 532,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10063,13 +9065,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 535,
     "hatchableEggGroups": [
-      2
+      7
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10080,10 +9080,8 @@
     "evolvesFromId": 535,
     "generation": 5,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 535,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10102,10 +9100,8 @@
     "evolvesFromId": 536,
     "generation": 5,
     "eggGroups": [
-      2
+      7
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 535,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10115,7 +9111,7 @@
     "evolutionRequirement": {
       "baseHatches": 36,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -10126,8 +9122,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 538,
     "hatchableEggGroups": [
       8
@@ -10143,8 +9137,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 539,
     "hatchableEggGroups": [
       8
@@ -10158,13 +9150,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 540,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10175,10 +9165,8 @@
     "evolvesFromId": 540,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 540,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10197,10 +9185,8 @@
     "evolvesFromId": 541,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 540,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10219,13 +9205,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 543,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10236,10 +9220,8 @@
     "evolvesFromId": 543,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 543,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10258,10 +9240,8 @@
     "evolvesFromId": 544,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 543,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10271,7 +9251,7 @@
     "evolutionRequirement": {
       "baseHatches": 30,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -10280,15 +9260,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      7,
-      6
+      5,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 546,
     "hatchableEggGroups": [
-      7,
-      6
+      5,
+      2
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10299,11 +9277,9 @@
     "evolvesFromId": 546,
     "generation": 5,
     "eggGroups": [
-      7,
-      6
+      5,
+      2
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 546,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10322,13 +9298,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 548,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10339,10 +9313,8 @@
     "evolvesFromId": 548,
     "generation": 5,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 548,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10361,13 +9333,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      12
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 550,
     "hatchableEggGroups": [
-      12
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10378,13 +9348,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 551,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10395,10 +9363,8 @@
     "evolvesFromId": 551,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 551,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10417,10 +9383,8 @@
     "evolvesFromId": 552,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 551,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10430,7 +9394,7 @@
     "evolutionRequirement": {
       "baseHatches": 40,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -10439,13 +9403,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 554,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10456,10 +9418,8 @@
     "evolvesFromId": 554,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 554,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10478,13 +9438,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 556,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10495,15 +9453,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3,
-      10
+      1,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 557,
     "hatchableEggGroups": [
-      3,
-      10
+      1,
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10514,11 +9470,9 @@
     "evolvesFromId": 557,
     "generation": 5,
     "eggGroups": [
-      3,
-      10
+      1,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 557,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10537,15 +9491,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5,
-      14
+      6,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 559,
     "hatchableEggGroups": [
-      5,
-      14
+      6,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10556,11 +9508,9 @@
     "evolvesFromId": 559,
     "generation": 5,
     "eggGroups": [
-      5,
-      14
+      6,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 559,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10579,13 +9529,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 561,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10596,15 +9544,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10,
-      11
+      11,
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 562,
     "hatchableEggGroups": [
-      10,
-      11
+      11,
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10615,11 +9561,9 @@
     "evolvesFromId": 562,
     "generation": 5,
     "eggGroups": [
-      10,
-      11
+      11,
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 562,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10638,15 +9582,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 564,
     "hatchableEggGroups": [
-      2,
-      9
+      7,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10657,11 +9599,9 @@
     "evolvesFromId": 564,
     "generation": 5,
     "eggGroups": [
-      2,
-      9
+      7,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 564,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10680,15 +9620,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      4,
-      9
+      3,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 566,
     "hatchableEggGroups": [
-      4,
-      9
+      3,
+      10
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10699,11 +9637,9 @@
     "evolvesFromId": 566,
     "generation": 5,
     "eggGroups": [
-      4,
-      9
+      3,
+      10
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 566,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10722,13 +9658,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 568,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10739,10 +9673,8 @@
     "evolvesFromId": 568,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 568,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10761,13 +9693,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 570,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10778,10 +9708,8 @@
     "evolvesFromId": 570,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 570,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10800,13 +9728,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 572,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10817,10 +9743,8 @@
     "evolvesFromId": 572,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 572,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10841,8 +9765,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 574,
     "hatchableEggGroups": [
       8
@@ -10858,8 +9780,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 574,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10880,8 +9800,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 574,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10891,7 +9809,7 @@
     "evolutionRequirement": {
       "baseHatches": 41,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -10900,13 +9818,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 577,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10917,10 +9833,8 @@
     "evolvesFromId": 577,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 577,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10939,10 +9853,8 @@
     "evolvesFromId": 578,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 577,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -10952,7 +9864,7 @@
     "evolutionRequirement": {
       "baseHatches": 41,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -10961,15 +9873,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      2,
-      4
+      7,
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 580,
     "hatchableEggGroups": [
-      2,
-      4
+      7,
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -10980,11 +9890,9 @@
     "evolvesFromId": 580,
     "generation": 5,
     "eggGroups": [
-      2,
-      4
+      7,
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 580,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11003,13 +9911,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 582,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11020,10 +9926,8 @@
     "evolvesFromId": 582,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 582,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11042,10 +9946,8 @@
     "evolvesFromId": 583,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 582,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11055,7 +9957,7 @@
     "evolutionRequirement": {
       "baseHatches": 47,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -11064,13 +9966,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 585,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11081,10 +9981,8 @@
     "evolvesFromId": 585,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 585,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11103,13 +10001,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 587,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11120,13 +10016,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 588,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11137,10 +10031,8 @@
     "evolvesFromId": 588,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 588,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11159,13 +10051,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 590,
     "hatchableEggGroups": [
-      7
+      5
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11176,10 +10066,8 @@
     "evolvesFromId": 590,
     "generation": 5,
     "eggGroups": [
-      7
+      5
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 590,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11198,13 +10086,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 592,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11215,10 +10101,8 @@
     "evolvesFromId": 592,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 592,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11237,15 +10121,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      2,
-      12
+      7,
+      4
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 594,
     "hatchableEggGroups": [
-      2,
-      12
+      7,
+      4
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11256,13 +10138,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 595,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11273,10 +10153,8 @@
     "evolvesFromId": 595,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 595,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11295,15 +10173,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      7,
-      10
+      5,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 597,
     "hatchableEggGroups": [
-      7,
-      10
+      5,
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11314,11 +10190,9 @@
     "evolvesFromId": 597,
     "generation": 5,
     "eggGroups": [
-      7,
-      10
+      5,
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 597,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11337,13 +10211,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 599,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11354,10 +10226,8 @@
     "evolvesFromId": 599,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 599,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11376,10 +10246,8 @@
     "evolvesFromId": 600,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 599,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11389,7 +10257,7 @@
     "evolutionRequirement": {
       "baseHatches": 49,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -11398,13 +10266,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 602,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11415,10 +10281,8 @@
     "evolvesFromId": 602,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 602,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11437,10 +10301,8 @@
     "evolvesFromId": 603,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 602,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11461,8 +10323,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 605,
     "hatchableEggGroups": [
       8
@@ -11478,8 +10338,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 605,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11498,13 +10356,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 607,
     "hatchableEggGroups": [
-      11
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11515,10 +10371,8 @@
     "evolvesFromId": 607,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 607,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11537,10 +10391,8 @@
     "evolvesFromId": 608,
     "generation": 5,
     "eggGroups": [
-      11
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 607,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11559,15 +10411,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 610,
     "hatchableEggGroups": [
-      1,
-      14
+      12,
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11578,11 +10428,9 @@
     "evolvesFromId": 610,
     "generation": 5,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 610,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11601,11 +10449,9 @@
     "evolvesFromId": 611,
     "generation": 5,
     "eggGroups": [
-      1,
-      14
+      12,
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 610,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11615,7 +10461,7 @@
     "evolutionRequirement": {
       "baseHatches": 48,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -11624,13 +10470,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 613,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11641,10 +10485,8 @@
     "evolvesFromId": 613,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 613,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11663,13 +10505,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 615,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11680,13 +10520,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 616,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11697,10 +10535,8 @@
     "evolvesFromId": 616,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 15,
     "familyRootId": 616,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11719,15 +10555,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      2,
-      11
+      7,
+      9
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 618,
     "hatchableEggGroups": [
-      2,
-      11
+      7,
+      9
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11738,14 +10572,12 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 619,
     "hatchableEggGroups": [
-      5,
+      6,
       8
     ],
     "evolutionMethod": null,
@@ -11757,11 +10589,9 @@
     "evolvesFromId": 619,
     "generation": 5,
     "eggGroups": [
-      5,
+      6,
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 619,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11780,15 +10610,13 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      14,
-      1
+      13,
+      12
     ],
-    "isBaby": false,
-    "hatchCycles": 30,
     "familyRootId": 621,
     "hatchableEggGroups": [
-      14,
-      1
+      13,
+      12
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11799,13 +10627,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 622,
     "hatchableEggGroups": [
-      10
+      11
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11816,10 +10642,8 @@
     "evolvesFromId": 622,
     "generation": 5,
     "eggGroups": [
-      10
+      11
     ],
-    "isBaby": false,
-    "hatchCycles": 25,
     "familyRootId": 622,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11840,8 +10664,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 624,
     "hatchableEggGroups": [
       8
@@ -11857,8 +10679,6 @@
     "eggGroups": [
       8
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 624,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11877,13 +10697,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 626,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11894,13 +10712,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 627,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11911,10 +10727,8 @@
     "evolvesFromId": 627,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 627,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11933,13 +10747,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 629,
     "hatchableEggGroups": [
-      4
+      3
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11950,10 +10762,8 @@
     "evolvesFromId": 629,
     "generation": 5,
     "eggGroups": [
-      4
+      3
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 629,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -11972,13 +10782,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      5
+      6
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 631,
     "hatchableEggGroups": [
-      5
+      6
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -11989,13 +10797,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 20,
     "familyRootId": 632,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -12006,13 +10812,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      14
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 633,
     "hatchableEggGroups": [
-      14
+      13
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -12023,10 +10827,8 @@
     "evolvesFromId": 633,
     "generation": 5,
     "eggGroups": [
-      14
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 633,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -12045,10 +10847,8 @@
     "evolvesFromId": 634,
     "generation": 5,
     "eggGroups": [
-      14
+      13
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 633,
     "hatchableEggGroups": [],
     "evolutionMethod": {
@@ -12058,7 +10858,7 @@
     "evolutionRequirement": {
       "baseHatches": 64,
       "requiredItem": null,
-      "requiresHatchesAfterParentRegistered": false
+      "requiresHatchesAfterParentRegistered": true
     }
   },
   {
@@ -12067,13 +10867,11 @@
     "evolvesFromId": null,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 636,
     "hatchableEggGroups": [
-      3
+      1
     ],
     "evolutionMethod": null,
     "evolutionRequirement": null
@@ -12084,10 +10882,8 @@
     "evolvesFromId": 636,
     "generation": 5,
     "eggGroups": [
-      3
+      1
     ],
-    "isBaby": false,
-    "hatchCycles": 40,
     "familyRootId": 636,
     "hatchableEggGroups": [],
     "evolutionMethod": {

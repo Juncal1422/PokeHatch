@@ -1,6 +1,6 @@
 // DB conserva los nombres exactos de los archivos JSON cargados.
 const IC = DB['item-config'];
-const names = { ...DB.items, ...IC.names };
+const names = { ...IC.names };
 const drops = IC.drops;
 const goods = {},
   clickItems = { ...IC.clickItems },

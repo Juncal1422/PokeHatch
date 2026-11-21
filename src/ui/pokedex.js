@@ -123,6 +123,35 @@ function modal(html) {
     $('detail').append($('births'), $('coinToasts'));
   }
 }
+function debugSettings() {
+  return card(
+    'Depuración',
+    '<div class="tools"><label for="debugGeneration">Completar Pokédex de la generación</label><select id="debugGeneration">' +
+      regions
+        .map(
+          (region, index) =>
+            '<option value="' +
+            (index + 1) +
+            '">Generación ' +
+            (index + 1) +
+            ' · ' +
+            region +
+            '</option>',
+        )
+        .join('') +
+      '</select>' +
+      button('Completar generación', 'debug-complete-generation') +
+      button('+10.000 PC', 'debug-add-coins') +
+      button('+10.000 RC', 'debug-add-rc') +
+      button(
+        debugShinyChanceEnabled
+          ? 'Probabilidad de shiny: 50 % (activa)'
+          : 'Probabilidad de shiny: 50 %',
+        'debug-toggle-shiny',
+      ) +
+      '</div>',
+  );
+}
 function settings() {
   return (
     heading('Configuración', 'Gestiona la partida de este navegador.') +
@@ -152,7 +181,8 @@ function settings() {
         button('0 %', 'cry-volume-0') +
         button('100 %', 'cry-volume-100') +
         '</div></div>',
-    )
+    ) +
+    (window.debug === true ? debugSettings() : '')
   );
 }
 function info(i, reset = true) {

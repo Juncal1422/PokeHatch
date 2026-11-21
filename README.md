@@ -5,9 +5,8 @@
 | Dato | Archivo |
 |---|---|
 | Especies, evoluciones y reglas de eclosion | `data/species.json` |
-| Nombres de grupos de huevo | `data/groups.json` |
-| Nombres generales de objetos | `data/items.json` |
-| Precios, costos, medallas, colores e identificadores de grupos | `data/group-config.json` |
+| Nombres, precios, costos, medallas, colores e identificadores de grupos | `data/group-config.json` |
+| Nombres y configuración de objetos | `data/item-config.json` |
 | Beneficios temporales y beneficios por grupo | `data/benefits.json` |
 | Objetos de tienda, objetos de eclosion, inciensos, bufos y recompensas | `data/item-config.json` |
 | Arte y rutas de imagen | `data/art.json` |
@@ -15,15 +14,17 @@
 
 Los JSON se cargan desde `src/app/inicio.js`. En la ejecucion normal se leen con `fetch`; al abrir el HTML desde disco se selecciona manualmente la carpeta `data`.
 
+El criadero muestra `assets/objetos-y-criadero/meadow.png` como fondo adaptable al tamaño de su frame. Para mostrar las herramientas de depuracion en Configuracion, escribe `debug=true` en la consola web; `debug=false` las oculta. Incluyen completar una generacion de la Pokedex, sumar PC y RC y activar una probabilidad shiny del 50 %.
+
 ## Datos y conexiones
 
-- `data/group-config.json` alimenta `src/config/grupos.js`: identifica grupos, costes, pasos, plazas, regiones, medallas y colores.
+- `data/group-config.json` alimenta `src/config/grupos.js`: proporciona nombres de grupos, costes, pasos, plazas, regiones, medallas y colores.
 - `data/benefits.json` alimenta `src/config/beneficios.js`; `src/core/recompensas.js` usa el objeto `benefits` y `groupBenefits`.
 - `data/item-config.json` alimenta `src/config/objetos.js`; ese archivo crea `names`, `goods`, `gates`, `clickItems`, `rateItems`, `boostItems`, `rewards`, `loot` y las relaciones de objetos.
 - `data/species.json` crea `species`, `S` y todas las relaciones de familias, padres y grupos.
-- `data/groups.json` proporciona `G`, las etiquetas visibles de los grupos.
-- `data/items.json` aporta nombres base y `data/item-config.json` los completa o sustituye nombres de objeto.
-- `data/art.json` proporciona rutas de sprites a las UI y a `src/assets/sprites.js`.
+- `data/art.json` contiene rutas para objetos y medallas. Los sprites Pokémon se generan desde `data/species.json`: `id` produce `assets/pokemon/{id}.png` y `sh{id}` produce `assets/shiny/sh{id}.png`.
+
+Los IDs de grupo de huevo son: 1 Bicho, 2 Hada, 3 Volador, 4 Marino, 5 Planta, 6 Campo, 7 Costa, 8 Humanoide, 9 Amorfo, 10 Abisal, 11 Mineral, 12 Monstruo y 13 Dragón. Las partidas v7 se convierten automáticamente al esquema v8 al abrirlas.
 
 ### Esquema de `data/species.json`
 
@@ -35,7 +36,7 @@ Cada registro usa nombres descriptivos en lugar de abreviaturas:
 | `name` | Nombre de la especie. |
 | `evolvesFromId` | ID de la especie de la que evoluciona, o `null` si es una especie base. |
 | `generation` | Generación a la que pertenece. |
-| `eggGroups` | Grupos de huevo propios de la especie. |
+| `eggGroups` | Grupos propios de la especie; Ditto usa el valor especial `"Ditto"` y `15` representa especies no eclosionables. |
 | `isBaby` | Indica si es un Pokémon bebé. |
 | `hatchCycles` | Ciclos de eclosión base. |
 | `familyRootId` | ID de la especie inicial de su familia evolutiva. |

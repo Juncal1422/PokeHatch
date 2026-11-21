@@ -22,6 +22,7 @@ setInterval(() => {
 $('logo').src = A.egg;
 renderCurrentView();
 preloadAllSprites();
+if (migratedSave) save();
 if (broken) {
   changeView('Ajustes');
   notify('Revisa tu guardado antes de continuar.');

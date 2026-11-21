@@ -5,8 +5,6 @@ let DB;
 (() => {
   const nombres = [
     'species',
-    'groups',
-    'items',
     'art',
     'scripts',
     'benefits',

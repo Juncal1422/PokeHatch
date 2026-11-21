@@ -1,14 +1,20 @@
 'use strict';
+// DB conserva los nombres exactos de los archivos JSON cargados.
+const GC = DB['group-config'];
 const species = DB.species,
   S = Object.fromEntries(species.map((s) => [s.id, s])),
-  G = DB.groups,
-  A = DB.art;
+  G = GC.groups;
+const pokemonArt = Object.fromEntries(
+  species.flatMap((s) => [
+    [String(s.id), 'assets/pokemon/' + s.id + '.png'],
+    ['sh' + s.id, 'assets/shiny/sh' + s.id + '.png'],
+  ]),
+);
+const A = { ...DB.art, ...pokemonArt };
 const $ = (id) => document.getElementById(id),
   image = (k, cl = '', alt = '') =>
     '<img src="' + A[k] + '" class="' + cl + '" alt="' + alt + '">',
   rid = (n) => String(n).padStart(3, '0');
-// DB usa los nombres exactos de los JSON cargados: "group-config".
-const GC = DB['group-config'];
 const groupIDs = GC.ids;
 const stepCost = Object.fromEntries(
   Object.entries(GC.stepCost).map(([g, v]) => [+g, v]),

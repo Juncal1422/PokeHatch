@@ -23,8 +23,18 @@
     "Permite bloquear y desbloquear generaciones en el Criadero.",
     null
   ],
-  "parcel": ["Paquete", 1, "Otorga 5 PC. Puedes comprarlo varias veces.", null],
-  "scope-lens": ["Periscopio", 50, "Sigue tu progreso en el Criadero", null],
+  "parcel": [
+    "Paquete",
+    1,
+    "Otorga 5 PC. Puedes comprarlo varias veces.",
+    null
+  ],
+  "scope-lens": [
+    "Periscopio",
+    50,
+    "Sigue tu progreso en el Criadero",
+    null
+  ],
   "blue-card": [
     "Tarjeta Azul",
     150,
@@ -73,7 +83,12 @@
     "Conserva los shinies registrados al usar la GS Ball.",
     null
   ],
-  "case": ["Neceser", 175, "Duplica la probabilidad de obtener shinies.", null],
+  "case": [
+    "Neceser",
+    175,
+    "Duplica la probabilidad de obtener shinies.",
+    null
+  ],
   "odd-stone": [
     "Piedra Insólita",
     200,
@@ -99,18 +114,57 @@
     null
   ],
   "groupBenefits": {
-    "11": ["soot-sack", "Saco Hollín"],
-    "2": ["good-rod", "Caña Buena"],
-    "3": ["gracidea", "Gracídea"],
-    "9": ["devon-scuba-gear", "Bombona Devon"],
-    "12": ["aqua-suit", "Traje Aqua"],
-    "14": ["dragon-skull", "Cráneo Dragón"],
-    "1": ["slowpoke-tail", "Cola Slowpoke"],
-    "4": ["silver-wing", "Ala Plateada"],
-    "5": ["dowsing-machine", "Zahorí"],
-    "6": ["clear-bell", "Cascabel Claro"],
-    "7": ["rich-mulch", "Abono Fértil"],
-    "8": ["go-goggles", "Gafas Aislantes"],
-    "10": ["enigma-stone", "Misticristal"]
+    "1": [
+      "gracidea",
+      "Gracídea"
+    ],
+    "2": [
+      "clear-bell",
+      "Cascabel Claro"
+    ],
+    "3": [
+      "silver-wing",
+      "Ala Plateada"
+    ],
+    "4": [
+      "aqua-suit",
+      "Traje Aqua"
+    ],
+    "5": [
+      "rich-mulch",
+      "Abono Fértil"
+    ],
+    "6": [
+      "dowsing-machine",
+      "Zahorí"
+    ],
+    "7": [
+      "good-rod",
+      "Caña Buena"
+    ],
+    "8": [
+      "go-goggles",
+      "Gafas Aislantes"
+    ],
+    "9": [
+      "soot-sack",
+      "Saco Hollín"
+    ],
+    "10": [
+      "devon-scuba-gear",
+      "Bombona Devon"
+    ],
+    "11": [
+      "enigma-stone",
+      "Misticristal"
+    ],
+    "12": [
+      "slowpoke-tail",
+      "Cola Slowpoke"
+    ],
+    "13": [
+      "dragon-skull",
+      "Cráneo Dragón"
+    ]
   }
 }

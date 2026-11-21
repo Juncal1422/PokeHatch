@@ -1,4 +1,18 @@
 let imported = null;
+let debugMode = window.debug === true;
+Object.defineProperty(window, 'debug', {
+  configurable: true,
+  get: () => debugMode,
+  set: (value) => {
+    debugMode = value === true;
+    if (view === 'Ajustes') renderCurrentView();
+  },
+});
+function finishDebugAction(message) {
+  save();
+  renderCurrentView();
+  if (!storageError) notify(message);
+}
 document.addEventListener('click', (ev) => {
   const b = ev.target.closest('[data-view],[data-act],.brand');
   if (!b) return;
@@ -15,6 +29,65 @@ document.addEventListener('click', (ev) => {
     [cmd, ...args] = a.split('-'),
     key = args.join('-'),
     i = Number(key);
+  if (cmd === 'debug') {
+    if (window.debug !== true) return;
+    if (broken) {
+      notify('Revisa el guardado antes de usar las herramientas debug.');
+      return;
+    }
+    if (key === 'complete-generation') {
+      const generation = Number($('debugGeneration').value);
+      if (
+        !Number.isInteger(generation) ||
+        generation < 1 ||
+        generation > regions.length
+      ) {
+        notify('Selecciona una generación válida.');
+        return;
+      }
+      let added = 0;
+      for (const s of species)
+        if (s.generation === generation && addDex(s.id)) added++;
+      finishDebugAction(
+        'Generación ' + generation + ' completada: +' + added + ' especies.',
+      );
+    }
+    if (key === 'add-coins') {
+      const amount = Math.min(10000, 1e10 - st.coins);
+      if (!amount) {
+        notify('Se alcanzó el límite de PokéCoins.');
+        return;
+      }
+      st.coins += amount;
+      finishDebugAction('+' + amount.toLocaleString('es-ES') + ' PokéCoins.');
+    }
+    if (key === 'add-rc') {
+      const amount = Math.min(10000, 1e12 - st.rc);
+      if (!amount) {
+        notify('Se alcanzó el límite de RestauraChapas.');
+        return;
+      }
+      const firstRestoration = st.trips === 0;
+      st.trips = Math.max(1, st.trips);
+      st.rc += amount;
+      finishDebugAction(
+        (firstRestoration ? 'Sistema RC habilitado. ' : '') +
+          '+' +
+          amount.toLocaleString('es-ES') +
+          ' RestauraChapas.',
+      );
+    }
+    if (key === 'toggle-shiny') {
+      debugShinyChanceEnabled = !debugShinyChanceEnabled;
+      renderCurrentView();
+      notify(
+        debugShinyChanceEnabled
+          ? 'Probabilidad shiny fijada en 50 %.'
+          : 'Probabilidad shiny normal restaurada.',
+      );
+    }
+    return;
+  }
   if (
     cmd === 'generation' &&
     hasBenefit('card-key') &&
@@ -170,7 +243,7 @@ $('file').onchange = async (e) => {
       'import',
     );
   } catch {
-    notify('Se necesita una partida válida de PokeHatch en formato v7.');
+    notify('Se necesita una partida válida de PokeHatch en formato v7 o v8.');
   }
 };
 $('close').onclick = () => $('detail').close();
