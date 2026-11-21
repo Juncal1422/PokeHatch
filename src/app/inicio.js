@@ -18,6 +18,8 @@ let DB;
   function cargarScript(ruta) {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
+      // Descarga en paralelo y conserva el orden de ejecución de scripts.json.
+      script.async = false;
       script.src = ruta;
       script.onload = resolve;
       script.onerror = () => reject(new Error('No se pudo cargar ' + ruta));
@@ -32,9 +34,7 @@ let DB;
     DB = Object.fromEntries(datos);
     selector.hidden = true;
     try {
-      for (const ruta of DB.scripts) {
-        await cargarScript(ruta);
-      }
+      await Promise.all(DB.scripts.map(cargarScript));
     } catch (error) {
       aviso.textContent =
         error.message + '. Revisa la ruta y vuelve a abrir el juego.';

@@ -12,7 +12,7 @@
 | Arte y rutas de imagen | `data/art.json` |
 | Orden de carga de JavaScript | `data/scripts.json` |
 
-Los JSON se cargan desde `src/app/inicio.js`. En la ejecucion normal se leen con `fetch`; al abrir el HTML desde disco se selecciona manualmente la carpeta `data`.
+Los JSON se cargan desde `src/app/inicio.js`. En la ejecucion normal se leen con `fetch`; al abrir el HTML desde disco se selecciona manualmente la carpeta `data`. Los scripts se descargan en paralelo y se ejecutan en el orden definido por `data/scripts.json`.
 
 El criadero muestra `assets/objetos-y-criadero/meadow.png` como fondo adaptable al tamaño de su frame. Para mostrar las herramientas de depuracion en Configuracion, escribe `debug=true` en la consola web; `debug=false` las oculta. Incluyen completar una generacion de la Pokedex, sumar PC y RC y activar una probabilidad shiny del 50 %.
 
@@ -44,8 +44,6 @@ Cada registro usa nombres descriptivos en lugar de abreviaturas:
 | `evolutionMethod` | Método original de evolución: `null` o `{ "type": "level", "level": n }`, `{ "type": "item", "itemId": "..." }` o `{ "type": "special", "description": "..." }`. |
 | `evolutionRequirement` | Requisito de juego: `null` o `{ "baseHatches": n, "requiredItem": "...", "requiresHatchesAfterParentRegistered": boolean }`. `requiredItem` puede ser `null`. |
 
-El campo `evolutionMethod` conserva cómo evoluciona la especie en los juegos de Pokémon; `evolutionRequirement` describe las reglas propias de PokeHatch. El cargador y las relaciones de especies se inicializan en `src/config/grupos.js` y `src/core/especies.js`; los requisitos se aplican desde `src/core/progreso.js` y `src/core/evolucion.js`.
-
 ## Ubicacion de metodos
 
 | Metodo o utilidad | Archivo | Responsabilidad |
@@ -67,19 +65,6 @@ El campo `evolutionMethod` conserva cómo evoluciona la especie en los juegos de
 | `loadItemSprites`, `preloadArtSprites`, `preloadAllSprites`, `itemArt` | `src/assets/sprites.js` | Precarga los sprites normales al iniciar y los shiny en segundo plano |
 | Controlador de eventos y acciones | `src/app/controles.js` | Navegacion, tienda, eclosion, evolucion e importacion |
 
-## Variables y constantes principales
-
-| Archivo | Variables principales | Papel |
-|---|---|---|
-| `src/config/grupos.js` | `species`, `S`, `G`, `A`, `groupIDs`, `stepCost`, `groupCost`, `prices`, `regions`, `badges`, `pools`, `tint` | Estado derivado de especies y grupos |
-| `src/config/objetos.js` | `names`, `goods`, `gates`, `clickItems`, `rateItems`, `boostItems`, `choiceItems`, `potions`, `rewards`, `loot`, `scarves` | Configuracion ejecutable de objetos |
-| `src/config/beneficios.js` | `benefits`, `groupBenefits`, `scopeLists`, `regionLists` | Beneficios temporales y desbloqueos |
-| `src/core/incubacion.js` | `lvlCost`, `rates` | Niveles de incubadora y aceleracion |
-| `src/core/especies.js` | `evoUses`, `byParent`, `dropByRoot`, `growingPools`, `families` | Relaciones entre objetos, familias y especie |
-| `src/storage/partida.js` | `st`, `view`, `slot`, `shopTab`, `KEY`, `saveFields`, `eggFields` | Estado global y campos persistidos |
-| `src/ui/actualizar.js` | `bagSignature`, `livePending`, `frameQueued`, `pressedPointers` | Optimizacion de renders y ritmo de actualizacion |
-| `src/assets/sprites.js` | `spriteCache`, `remoteItems`, `spriteURLs` | Cache de sprites remotos |
-
 ## Grafo principal de carga
 
 `PokeHatch.html`
@@ -88,5 +73,3 @@ El campo `evolutionMethod` conserva cómo evoluciona la especie en los juegos de
 → scripts declarados en `data/scripts.json`
 → estado creado por `src/storage/partida.js`
 → renderizado iniciado por `src/app/reloj.js` y `src/app/controles.js`
-
-El orden de carga esta controlado por `data/scripts.json`. Los modulos config deben cargarse antes que los modulos core y UI que consumen sus variables globales.
