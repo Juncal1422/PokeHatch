@@ -107,9 +107,13 @@ function showBirthToast(s, shiny, items) {
   const row = document.createElement('div');
   row.className = 'birth' + (shiny ? ' rare' : '');
   row.innerHTML =
-    image((shiny ? 'sh' : '') + s.id) +
+    image(
+      (shiny ? 'sh' : '') + s.id,
+      '',
+      (shiny ? 'Sprite shiny de ' : 'Sprite de ') + s.name,
+    ) +
     '<span>' +
-    (shiny ? '✦ ' : '') +
+    (shiny ? '★ ' : '') +
     s.name +
     '</span>' +
     items.map((k) => image(k) + '<small>' + names[k] + '</small>').join('');

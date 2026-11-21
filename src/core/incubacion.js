@@ -35,7 +35,7 @@ function hatchEgg(i, manual = false) {
   );
   if (shiny) {
     st.shinyBirths++;
-    inheritShiny(s.id);
+    inheritShiny(S[s.id].familyRootId);
   }
   const possible = familyDrops(s.id).filter((k) => !owned(k));
   const items = [];

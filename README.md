@@ -53,7 +53,7 @@ El campo `evolutionMethod` conserva cómo evoluciona la especie en los juegos de
 | `calculateEggTarget`, `hatchEgg`, `careForEgg`, `advanceIncubator`, `calculateShinyChance`, `changeIncubatorLevel` | `src/core/incubacion.js` | Eclosiones, progreso, probabilidad shiny y mejora de incubadoras |
 | `spendCoins`, `calculateTapPower`, `calculateIncubatorRateBoost`, `required`, `payout` | `src/core/progreso.js` | Economía compartida, potencia de toque, ritmo y costes de evolucion |
 | `addDex`, `progress`, `ready`, `inheritShiny`, `applyEvolution`, `evolve`, `evolveAll`, `condition`, `birthToast` | `src/core/evolucion.js` | Evoluciones y registro de especies |
-| `awardMilestones`, `benefitGate`, `buyBenefit`, `rollReal`, `purchaseCount`, `shopPrice`, `refreshTargets` | `src/core/recompensas.js` | Progresion, beneficios, regalos y recompensas |
+| `awardShinyItems`, `awardMilestones`, `benefitGate`, `buyBenefit`, `rollReal`, `purchaseCount`, `shopPrice`, `refreshTargets` | `src/core/recompensas.js` | Progresion, beneficios, regalos y recompensas |
 | `chooseHatchingSpecies`, `availableEggPool`, `describeEvolutionItem` | `src/core/especies.js` | Sorteo de especies y relaciones evolutivas |
 | `calculateEggTarget`, `hatchEgg`, `careForEgg`, `advanceIncubator`, `calculateShinyChance`, `changeIncubatorLevel` | `src/core/incubacion.js` | Eclosiones, progreso, shinies e incubadoras |
 | `isShopItemAcquired`, `describeShopGate`, `buyShopItem` | `src/core/tienda.js` | Disponibilidad y compra de objetos |

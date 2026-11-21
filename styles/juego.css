@@ -707,7 +707,9 @@ footer {
   box-shadow:1px 1px #79906d;
   white-space:nowrap}
 .birth.rare {
-  background:#fff0ba}
+  border-color:#a47719;
+  background:linear-gradient(120deg,#fff3bd,#dfba58);
+  box-shadow:1px 1px #8f6c1a}
 .birth img {
   width:23px;
   height:23px;

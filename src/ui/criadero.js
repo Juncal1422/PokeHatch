@@ -155,7 +155,12 @@ function reveal(i, g, id, shiny) {
   const fx = document.createElement('div');
   fx.className = 'flash';
   fx.innerHTML =
-    image('egg' + g, 'crack') + image((shiny ? 'sh' : '') + id, 'pop');
+    image('egg' + g, 'crack') +
+    image(
+      (shiny ? 'sh' : '') + id,
+      'pop',
+      (shiny ? 'Sprite shiny de ' : 'Sprite de ') + S[id].name,
+    );
   n.append(fx);
   setTimeout(() => fx.remove(), 1000);
 }

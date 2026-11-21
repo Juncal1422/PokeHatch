@@ -1,5 +1,20 @@
 const hasBenefit = (k) => st.benefits.includes(k);
 const complete = (list) => list.every((s) => st.dex.includes(s.id));
+function awardShinyItems(a) {
+  const give = (key) => {
+    if (!a.owned.includes(key)) a.owned.push(key);
+  };
+  const shinyGroups = new Set(
+    a.shiny.flatMap((id) => dexGroups(S[id])),
+  );
+  if (groupIDs.every((g) => shinyGroups.has(g))) give('iris-ticket');
+  for (const [key, [, groups]] of Object.entries(scarves)) {
+    const count = a.shiny.filter((id) =>
+      dexGroups(S[id]).some((g) => groups.includes(g)),
+    ).length;
+    if (count >= 3) give(key);
+  }
+}
 function awardMilestones(a) {
   const registered = new Set(a.dex),
     evolutions = a.dex.reduce(
