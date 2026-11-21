@@ -1,27 +1,33 @@
 function addDex(id) {
   if (st.dex.includes(id)) return false;
   st.dex.push(id);
-  st.since[id] = st.counts[S[id].root] || 0;
+  st.since[id] = st.counts[S[id].familyRootId] || 0;
   awardMilestones(st);
   return true;
 }
 function progress(s) {
-  const rule = s.rule;
-  return (st.counts[s.root] || 0) - (rule.extra ? st.since[s.p] || 0 : 0);
+  return (
+    (st.counts[s.familyRootId] || 0) -
+    (s.evolutionRequirement.requiresHatchesAfterParentRegistered
+      ? st.since[s.evolvesFromId] || 0
+      : 0)
+  );
 }
 function ready(s) {
   return (
     s.id !== 292 &&
-    s.p &&
-    st.dex.includes(s.p) &&
+    s.evolvesFromId &&
+    st.dex.includes(s.evolvesFromId) &&
     !st.dex.includes(s.id) &&
     progress(s) >= required(s) &&
-    (!s.rule.item || owned(s.rule.item))
+    (!s.evolutionRequirement.requiredItem ||
+      owned(s.evolutionRequirement.requiredItem))
   );
 }
 function inheritShiny(root) {
   for (const id of st.dex)
-    if (S[id].root === root && !st.shiny.includes(id)) st.shiny.push(id);
+    if (S[id].familyRootId === root && !st.shiny.includes(id))
+      st.shiny.push(id);
   awardShinyItems(st);
 }
 function applyEvolution(s) {
@@ -38,7 +44,7 @@ function applyEvolution(s) {
     '',
     'evolution',
   );
-  if (st.shiny.includes(s.root)) inheritShiny(s.root);
+  if (st.shiny.includes(s.familyRootId)) inheritShiny(s.familyRootId);
 }
 function evolve(id) {
   const s = S[id];
@@ -52,7 +58,7 @@ function evolve(id) {
     '¡' +
       (id === 291
         ? 'Ninjask y Shedinja se han registrado'
-        : s.n + ' se ha registrado') +
+        : s.name + ' se ha registrado') +
       ' en la Pokédex!',
   );
 }
@@ -63,7 +69,9 @@ function evolveAll() {
     pending.forEach(applyEvolution);
     pending = species.filter(ready);
   }
-  const evolved = st.dex.filter((id) => !before.has(id)).map((id) => S[id].n);
+  const evolved = st.dex
+    .filter((id) => !before.has(id))
+    .map((id) => S[id].name);
   if (evolved.length) {
     save();
     refreshLiveViews();
@@ -78,17 +86,19 @@ function evolveAll() {
 }
 function condition(s) {
   if (s.id === 292) return 'Se registra al evolucionar a Nincada en Ninjask.';
-  if (!s.p)
-    return s.pool.length
-      ? 'Nace en ' + s.pool.map((g) => G[g]).join(' o ') + '.'
+  if (!s.evolvesFromId)
+    return s.hatchableEggGroups.length
+      ? 'Nace en ' + s.hatchableEggGroups.map((g) => G[g]).join(' o ') + '.'
       : 'Todavía no tiene un método de obtención.';
-  const r = s.rule;
+  const requirement = s.evolutionRequirement;
   return (
     required(s) +
     ' eclosiones de ' +
-    S[s.root].n +
-    (r.extra ? ' después de registrar a ' + S[s.p].n : ' en total') +
-    (r.item ? ' y ' + names[r.item] : '') +
+    S[s.familyRootId].name +
+    (requirement.requiresHatchesAfterParentRegistered
+      ? ' después de registrar a ' + S[s.evolvesFromId].name
+      : ' en total') +
+    (requirement.requiredItem ? ' y ' + names[requirement.requiredItem] : '') +
     '.' +
     (s.id === 291 ? ' También registra a Shedinja.' : '')
   );
@@ -100,7 +110,7 @@ function showBirthToast(s, shiny, items) {
     image((shiny ? 'sh' : '') + s.id) +
     '<span>' +
     (shiny ? '✦ ' : '') +
-    s.n +
+    s.name +
     '</span>' +
     items.map((k) => image(k) + '<small>' + names[k] + '</small>').join('');
   const rail = $('births');

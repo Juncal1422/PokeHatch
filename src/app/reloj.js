@@ -21,7 +21,7 @@ setInterval(() => {
 }, 80);
 $('logo').src = A.egg;
 renderCurrentView();
-loadItemSprites();
+preloadAllSprites();
 if (broken) {
   changeView('Ajustes');
   notify('Revisa tu guardado antes de continuar.');

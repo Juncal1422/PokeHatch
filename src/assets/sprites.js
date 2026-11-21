@@ -9,6 +9,8 @@ const spriteSlugs = {
 };
 
 const spriteCache = 'PokeHatch.itemSprites.v2';
+const spriteLoadConcurrency = 12;
+const shinySpriteKey = /^sh\d+$/;
 const remoteItems = [
   ...potions,
   'devon-parts',
@@ -42,7 +44,7 @@ async function loadItemSprites() {
   async function load(k) {
     if (A[k] !== spriteURLs[k]) {
       entries[k] = A[k];
-      return;
+      return true;
     }
     try {
       let response = await fetch(spriteURLs[k]);
@@ -51,10 +53,10 @@ async function loadItemSprites() {
           'https://pokeapi.co/api/v2/item/' + (spriteSlugs[k] || k) + '/',
         );
         const url = (await data.json()).sprites?.default;
-        if (!url) return;
+        if (!url) return false;
         response = await fetch(url);
       }
-      if (!response.ok) return;
+      if (!response.ok) return false;
       const bitmap = await createImageBitmap(await response.blob());
       const canvas = document.createElement('canvas'),
         scale = Math.min(1, 64 / Math.max(bitmap.width, bitmap.height));
@@ -69,13 +71,65 @@ async function loadItemSprites() {
         '[data-item-icon="' + k + '"]',
       ))
         img.src = A[k];
+      return true;
     } catch {}
+    return false;
   }
-  for (let i = 0; i < remoteItems.length; i += 5)
-    await Promise.all(remoteItems.slice(i, i + 5).map(load));
+  let nextItem = 0;
+  const failedItems = [];
+  await Promise.all(
+    Array.from(
+      { length: Math.min(spriteLoadConcurrency, remoteItems.length) },
+      async () => {
+        while (nextItem < remoteItems.length) {
+          const item = remoteItems[nextItem++];
+          if (!(await load(item))) failedItems.push(item);
+        }
+      },
+    ),
+  );
   try {
     localStorage.setItem(spriteCache, JSON.stringify(entries));
   } catch {}
+  if (failedItems.length)
+    console.warn('No se pudieron cargar iconos de objetos:', failedItems);
+}
+
+async function preloadArtSprites(entries, priority = 'auto') {
+  const urls = [...new Set(entries.map(([key]) => A[key]).filter(Boolean))];
+  let nextUrl = 0;
+  const failedUrls = [];
+  await Promise.all(
+    Array.from(
+      { length: Math.min(spriteLoadConcurrency, urls.length) },
+      async () => {
+        while (nextUrl < urls.length) {
+          const url = urls[nextUrl++];
+          const loaded = await new Promise((resolve) => {
+            const image = new Image();
+            image.decoding = 'async';
+            image.fetchPriority = priority;
+            image.onload = () => resolve(true);
+            image.onerror = () => resolve(false);
+            image.src = url;
+          });
+          if (!loaded) failedUrls.push(url);
+        }
+      },
+    ),
+  );
+  if (failedUrls.length)
+    console.warn('No se pudieron precargar sprites:', failedUrls);
+  return failedUrls.length;
+}
+
+async function preloadAllSprites() {
+  const entries = Object.entries(DB.art);
+  const regularSprites = entries.filter(([key]) => !shinySpriteKey.test(key));
+  const shinySprites = entries.filter(([key]) => shinySpriteKey.test(key));
+
+  await Promise.all([preloadArtSprites(regularSprites), loadItemSprites()]);
+  await preloadArtSprites(shinySprites, 'low');
 }
 const itemArt = (k) =>
   '<img src="' + A[k] + '" data-item-icon="' + k + '" alt="">';

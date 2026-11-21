@@ -92,9 +92,8 @@
 
       try {
         const rama = await (await descargar('https://api.github.com/repos/' + repo + '/branches/develop', 'la rama')).json();
-        const revision = rama.commit.sha;
-        const htmlUrl = 'https://raw.githubusercontent.com/' + repo + '/' + revision + '/PokeHatch.html';
-        const base = 'https://cdn.jsdelivr.net/gh/' + repo + '@' + revision + '/';
+        const base = 'https://cdn.jsdelivr.net/gh/' + repo + '@' + rama.commit.sha + '/';
+        const htmlUrl = base + 'PokeHatch.html';
         const html = await (await descargar(htmlUrl, 'PokeHatch.html')).text();
 
         const pagina = new DOMParser().parseFromString(html, 'text/html');

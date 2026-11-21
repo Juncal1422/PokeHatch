@@ -6,18 +6,19 @@ const evoUses = {},
   growingPools = {};
 
 for (const s of species) {
-  if (!s.p) continue;
-  if (S[s.p].p) s.rule.extra = true;
-  (byParent[s.p] ??= []).push(s);
-  if (s.root) {
-    (families[s.root] ??= []).push(s.id);
+  if (!s.evolvesFromId) continue;
+  if (S[s.evolvesFromId].evolvesFromId)
+    s.evolutionRequirement.requiresHatchesAfterParentRegistered = true;
+  (byParent[s.evolvesFromId] ??= []).push(s);
+  if (s.familyRootId) {
+    (families[s.familyRootId] ??= []).push(s.id);
   }
-  const item = s.rule.item;
+  const item = s.evolutionRequirement.requiredItem;
   if (!item) continue;
   (evoUses[item] ??= []).push(s);
   if (item !== 'ice-stone' && drops.includes(item)) {
-    const keys = (dropByRoot[s.root] ??= []);
-    dropByRoot[s.root] = keys;
+    const keys = (dropByRoot[s.familyRootId] ??= []);
+    dropByRoot[s.familyRootId] = keys;
     if (!keys.includes(item)) keys.push(item);
   }
 }
@@ -30,7 +31,9 @@ for (const item of Object.keys(evoUses)) {
 
 // Devuelve el texto descriptivo usado por la tienda para objetos evolutivos.
 function describeEvolutionItem(item) {
-  const parents = [...new Set(evoUses[item].map((s) => S[s.p].n))];
+  const parents = [
+    ...new Set(evoUses[item].map((s) => S[s.evolvesFromId].name)),
+  ];
   return item === 'soothe-bell'
     ? 'Para evolucionar a pokémon por amistad.'
     : 'Para evolucionar a: ' + parents.join(', ') + '.';
@@ -40,7 +43,7 @@ function describeEvolutionItem(item) {
 function availableEggPool(group, a) {
   return a.generations.length === 5
     ? pools[group]
-    : pools[group].filter((s) => a.generations.includes(s.gen));
+    : pools[group].filter((s) => a.generations.includes(s.generation));
 }
 
 // Aplica las preferencias de objetos y medallas al sorteo de una eclosión.

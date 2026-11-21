@@ -25,7 +25,8 @@ function unlockSource(k) {
     dropByRoot[id].includes(k),
   );
   return roots.length
-    ? 'Encuéntralo al eclosionar ' + roots.map((id) => S[id].n).join(', ')
+    ? 'Encuéntralo al eclosionar ' +
+      roots.map((id) => S[id].name).join(', ')
     : '';
 }
 function inventory() {
@@ -45,7 +46,7 @@ function inventory() {
   };
   const grid = (a) => '<div class="catalog bag">' + a.join('') + '</div>';
   const earned = Math.floor(
-    st.dex.reduce((n, id) => n + Number(!!S[id].p), 0) / 8,
+    st.dex.reduce((n, id) => n + Number(!!S[id].evolvesFromId), 0) / 8,
   );
   const icons = badges
     .map(

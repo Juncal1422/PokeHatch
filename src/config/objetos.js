@@ -234,8 +234,13 @@ product(
   'Úsala para resonar con Celebi y volver al pasado.',
   { badges: 1 },
 );
-product('flame-orb', 'Llamasfera', 1000, 'Potencia las incubadoras.');
-product('toxic-orb', 'Toxisfera', 1000, 'Potencia cada toque.');
+product(
+  'flame-orb',
+  'Llamasfera',
+  1000,
+  'Duplica la potencia de las incubadoras.',
+);
+product('toxic-orb', 'Toxisfera', 1000, 'Duplica la potencia de cada toque.');
 product(
   'lustrous-orb',
   'Lustresfera',

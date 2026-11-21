@@ -16,5 +16,5 @@ const scopeLists = Object.fromEntries(
   groupIDs.map((g) => [g, species.filter((s) => dexGroups(s).includes(g))]),
 );
 const regionLists = regions.map((_, i) =>
-  species.filter((s) => s.gen === i + 1),
+  species.filter((s) => s.generation === i + 1),
 );

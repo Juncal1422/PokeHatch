@@ -2,7 +2,10 @@ const hasBenefit = (k) => st.benefits.includes(k);
 const complete = (list) => list.every((s) => st.dex.includes(s.id));
 function awardMilestones(a) {
   const registered = new Set(a.dex),
-    evolutions = a.dex.reduce((n, id) => n + Number(!!S[id].p), 0);
+    evolutions = a.dex.reduce(
+      (n, id) => n + Number(!!S[id].evolvesFromId),
+      0,
+    );
   for (const g of groupIDs)
     if (
       !a.unlockedGroups.includes(g) &&

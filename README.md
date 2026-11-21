@@ -25,12 +25,32 @@ Los JSON se cargan desde `src/app/inicio.js`. En la ejecucion normal se leen con
 - `data/items.json` aporta nombres base y `data/item-config.json` los completa o sustituye nombres de objeto.
 - `data/art.json` proporciona rutas de sprites a las UI y a `src/assets/sprites.js`.
 
+### Esquema de `data/species.json`
+
+Cada registro usa nombres descriptivos en lugar de abreviaturas:
+
+| Campo | Significado |
+|---|---|
+| `id` | Número de Pokédex y clave del sprite. |
+| `name` | Nombre de la especie. |
+| `evolvesFromId` | ID de la especie de la que evoluciona, o `null` si es una especie base. |
+| `generation` | Generación a la que pertenece. |
+| `eggGroups` | Grupos de huevo propios de la especie. |
+| `isBaby` | Indica si es un Pokémon bebé. |
+| `hatchCycles` | Ciclos de eclosión base. |
+| `familyRootId` | ID de la especie inicial de su familia evolutiva. |
+| `hatchableEggGroups` | Grupos en los que puede eclosionar; puede estar vacío para evoluciones. |
+| `evolutionMethod` | Método original de evolución: `null` o `{ "type": "level", "level": n }`, `{ "type": "item", "itemId": "..." }` o `{ "type": "special", "description": "..." }`. |
+| `evolutionRequirement` | Requisito de juego: `null` o `{ "baseHatches": n, "requiredItem": "...", "requiresHatchesAfterParentRegistered": boolean }`. `requiredItem` puede ser `null`. |
+
+El campo `evolutionMethod` conserva cómo evoluciona la especie en los juegos de Pokémon; `evolutionRequirement` describe las reglas propias de PokeHatch. El cargador y las relaciones de especies se inicializan en `src/config/grupos.js` y `src/core/especies.js`; los requisitos se aplican desde `src/core/progreso.js` y `src/core/evolucion.js`.
+
 ## Ubicacion de metodos
 
 | Metodo o utilidad | Archivo | Responsabilidad |
 |---|---|---|
 | `calculateEggTarget`, `hatchEgg`, `careForEgg`, `advanceIncubator`, `calculateShinyChance`, `changeIncubatorLevel` | `src/core/incubacion.js` | Eclosiones, progreso, probabilidad shiny y mejora de incubadoras |
-| `spendCoins`, `calculateTapPower`, `calculateIncubatorRateBoost`, `required`, `payout` | `src/core/progreso.js` | Economia compartida, potencia de toque, ritmo y costes de evolucion |
+| `spendCoins`, `calculateTapPower`, `calculateIncubatorRateBoost`, `required`, `payout` | `src/core/progreso.js` | Economía compartida, potencia de toque, ritmo y costes de evolucion |
 | `addDex`, `progress`, `ready`, `inheritShiny`, `applyEvolution`, `evolve`, `evolveAll`, `condition`, `birthToast` | `src/core/evolucion.js` | Evoluciones y registro de especies |
 | `awardMilestones`, `benefitGate`, `buyBenefit`, `rollReal`, `purchaseCount`, `shopPrice`, `refreshTargets` | `src/core/recompensas.js` | Progresion, beneficios, regalos y recompensas |
 | `chooseHatchingSpecies`, `availableEggPool`, `describeEvolutionItem` | `src/core/especies.js` | Sorteo de especies y relaciones evolutivas |
@@ -43,7 +63,7 @@ Los JSON se cargan desde `src/app/inicio.js`. En la ejecucion normal se leen con
 | `storeView`, `updateShop`, `sectionOf`, `categoryOrder` | `src/ui/tienda.js` | Catalogo y estado de compra |
 | `inventory`, `unlockSource` | `src/ui/mochila.js` | Mochila y procedencia de objetos |
 | `dex`, `entries`, `info`, `refreshDetail`, `settings` | `src/ui/pokedex.js` | Pokedex y configuracion |
-| `loadItemSprites`, `itemArt` | `src/assets/sprites.js` | Sprites de objetos locales y remotos |
+| `loadItemSprites`, `preloadArtSprites`, `preloadAllSprites`, `itemArt` | `src/assets/sprites.js` | Precarga los sprites normales al iniciar y los shiny en segundo plano |
 | Controlador de eventos y acciones | `src/app/controles.js` | Navegacion, tienda, eclosion, evolucion e importacion |
 
 ## Variables y constantes principales

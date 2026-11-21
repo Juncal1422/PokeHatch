@@ -25,7 +25,11 @@ const tint = Object.fromEntries(
   Object.entries(GC.tints).map(([g, v]) => [+g, v]),
 );
 function dexGroups(s) {
-  return s.pool.length ? s.pool : s.g.includes(15) ? S[s.root].pool : s.g;
+  return s.hatchableEggGroups.length
+    ? s.hatchableEggGroups
+    : s.eggGroups.includes(15)
+      ? S[s.familyRootId].hatchableEggGroups
+      : s.eggGroups;
 }
 function cardPaint(s) {
   const [g, h] = dexGroups(s);
@@ -35,5 +39,8 @@ function cardPaint(s) {
 }
 
 const pools = Object.fromEntries(
-  groupIDs.map((g) => [g, species.filter((s) => s.pool.includes(g))]),
+  groupIDs.map((g) => [
+    g,
+    species.filter((s) => s.hatchableEggGroups.includes(g)),
+  ]),
 );

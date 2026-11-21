@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="styles/juego.css" />
 <header>
     <div class="wrap bar">
-        <a href="#criadero" class="brand" aria-label="PokeHatch, ir al criadero">
-            <img id="logo" alt="" />Poke<span>Hatch</span>
+        <a href="PokeHatch.html#criadero" class="brand" aria-label="PokeHatch, ir al criadero">
+            <img id="logo" alt="" />Poke<span>Hatch</span><sub>v1.0</sub>
         </a>
         <div class="headtools">
             <span class="wallet">
@@ -44,6 +44,8 @@
     <button id="close">Cerrar</button>
 </dialog>
 <input hidden type="file" id="file" accept=".json,application/json" />
-<script src="src/app/inicio.js"></script>
+<script
+    src="src/app/inicio.js"
+    onerror="document.getElementById('carga').textContent = 'No se pudo cargar el inicio del juego. Comprueba la conexión y vuelve a intentarlo.'"></script>
 
 </html>

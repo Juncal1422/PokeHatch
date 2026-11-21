@@ -6,11 +6,15 @@ function isShopItemAcquired(item) {
 
 function describeShopGate(
   item,
-  evolutions = st.dex.reduce((n, id) => n + Number(!!S[id].p), 0),
+  evolutions = st.dex.reduce(
+    (n, id) => n + Number(!!S[id].evolvesFromId),
+    0,
+  ),
 ) {
   const rule = gates[item];
   if (!rule) return '';
-  if (rule.id && !st.dex.includes(rule.id)) return 'Registra a ' + S[rule.id].n;
+  if (rule.id && !st.dex.includes(rule.id))
+    return 'Registra a ' + S[rule.id].name;
   if (rule.requires && !owned(rule.requires))
     return 'Compra ' + names[rule.requires];
   if (rule.badges && evolutions < 64 * rule.badges)
@@ -21,7 +25,7 @@ function describeShopGate(
   const threshold = hasBenefit('rare-incense') ? 13 : 25;
   if (rule.baby && (st.counts[rule.baby] || 0) < threshold)
     return (
-      S[rule.baby].n +
+      S[rule.baby].name +
       ' · ' +
       (st.counts[rule.baby] || 0) +
       ' / ' +

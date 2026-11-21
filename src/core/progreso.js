@@ -13,8 +13,9 @@ function spendCoins(base, key) {
   return true;
 }
 function required(s) {
-  const previous = Math.ceil(s.rule.n * 0.6);
-  const base = previous > 20 ? previous * 0.75 : s.rule.n * 0.6;
+  const baseHatches = s.evolutionRequirement.baseHatches;
+  const previous = Math.ceil(baseHatches * 0.6);
+  const base = previous > 20 ? previous * 0.75 : baseHatches * 0.6;
   const threshold = (n) => {
     const full = Math.ceil((n * 6) / 5);
     return hasBenefit('exp-share')

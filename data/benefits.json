@@ -92,7 +92,12 @@
     "Facilita la eclosión de todos los huevos un 25%.",
     null
   ],
-  "magma-stone": ["Piedra Magma", 350, "Potencia las incubadoras", null],
+  "magma-stone": [
+    "Piedra Magma",
+    350,
+    "Duplica la potencia de las incubadoras",
+    null
+  ],
   "groupBenefits": {
     "11": ["soot-sack", "Saco Hollín"],
     "2": ["good-rod", "Caña Buena"],

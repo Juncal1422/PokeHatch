@@ -46,16 +46,16 @@ let dexSignature = '';
 function entries() {
   $('bulkEvolve').hidden = !readyOnly;
   const readyParents = new Set(
-    readyOnly ? species.filter(ready).map((s) => s.p) : [],
+    readyOnly ? species.filter(ready).map((s) => s.evolvesFromId) : [],
   );
   const matches = species.filter(
     (s) =>
       (!only || st.dex.includes(s.id)) &&
       (!shinyOnly || st.shiny.includes(s.id)) &&
       (!readyOnly || readyParents.has(s.id)) &&
-      (!gen || s.gen === gen) &&
+      (!gen || s.generation === gen) &&
       (!filterGroup || dexGroups(s).includes(filterGroup)) &&
-      (s.n.toLowerCase().includes(query.toLowerCase()) ||
+      (s.name.toLowerCase().includes(query.toLowerCase()) ||
         rid(s.id).includes(query)),
   );
   const pages = Math.ceil(matches.length / 64);
@@ -99,7 +99,7 @@ function entries() {
           ) +
           '<h3>' +
           (st.shiny.includes(s.id) ? '✦ ' : '') +
-          s.n +
+          s.name +
           '</h3></button>',
       )
       .join('') +
@@ -168,19 +168,21 @@ function info(i, reset = true) {
         '<div class="evrow" data-evolution="' +
         t.id +
         '"><b>' +
-        t.n +
+        t.name +
         '</b><small>' +
         condition(t) +
         '</small><small>' +
         Math.max(0, progress(t)) +
         ' / ' +
         required(t) +
-        (t.rule.item
-          ? ' · ' + (owned(t.rule.item) ? '✓ ' : 'Falta ') + names[t.rule.item]
+        (t.evolutionRequirement.requiredItem
+          ? ' · ' +
+            (owned(t.evolutionRequirement.requiredItem) ? '✓ ' : 'Falta ') +
+            names[t.evolutionRequirement.requiredItem]
           : '') +
         '</small>' +
         button(
-          st.dex.includes(t.id) ? 'Registrado' : 'Evolucionar a ' + t.n,
+          st.dex.includes(t.id) ? 'Registrado' : 'Evolucionar a ' + t.name,
           'evolve-' + t.id,
           !ready(t),
         ) +
@@ -199,9 +201,9 @@ function info(i, reset = true) {
       '<h2>N.º ' +
       rid(i) +
       ' · ' +
-      s.n +
+      s.name +
       '</h2><p>Generación ' +
-      s.gen +
+      s.generation +
       ' · ' +
       dexGroups(s)
         .map((g) => G[g])
@@ -210,16 +212,16 @@ function info(i, reset = true) {
       '<p>' +
       condition(s) +
       '</p><p>Crías de ' +
-      S[s.root].n +
+      S[s.familyRootId].name +
       ' obtenidas: <span id="detailCount">' +
-      (st.counts[s.root] || 0) +
+      (st.counts[s.familyRootId] || 0) +
       '</span></p>' +
       list,
   );
 }
 function refreshDetail(id) {
   const s = S[id];
-  $('detailCount').textContent = st.counts[s.root] || 0;
+  $('detailCount').textContent = st.counts[s.familyRootId] || 0;
   const tools = $('detailBody').querySelector('.spriteTools');
   if (st.shiny.includes(id) && !tools.querySelector('button'))
     tools.insertAdjacentHTML(
@@ -233,8 +235,10 @@ function refreshDetail(id) {
       Math.max(0, progress(t)) +
       ' / ' +
       required(t) +
-      (t.rule.item
-        ? ' · ' + (owned(t.rule.item) ? '✓ ' : 'Falta ') + names[t.rule.item]
+      (t.evolutionRequirement.requiredItem
+        ? ' · ' +
+          (owned(t.evolutionRequirement.requiredItem) ? '✓ ' : 'Falta ') +
+          names[t.evolutionRequirement.requiredItem]
         : '');
     button.disabled = !ready(t);
   }
