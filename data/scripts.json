@@ -1,0 +1,22 @@
+[
+  "src/config/grupos.js",
+  "src/config/objetos.js",
+  "src/config/beneficios.js",
+  "src/assets/sprites.js",
+  "src/core/recompensas.js",
+  "src/core/seleccion-y-tienda.js",
+  "src/storage/partida.js",
+  "src/core/progreso.js",
+  "src/ui/avisos.js",
+  "src/core/evolucion.js",
+  "src/audio/gritos.js",
+  "src/core/incubacion.js",
+  "src/ui/componentes.js",
+  "src/ui/criadero.js",
+  "src/ui/tienda.js",
+  "src/ui/mochila.js",
+  "src/ui/pokedex.js",
+  "src/ui/actualizar.js",
+  "src/app/controles.js",
+  "src/app/reloj.js"
+]
