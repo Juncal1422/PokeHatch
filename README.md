@@ -1,13 +1,6 @@
 # PokeHatch
-Abre **PokeHatch v1.0.html** para jugar. Es la versión empaquetada que descarga el lanzador.
 
-## Actualizar el juego
-1. Descomprime el ZIP en la raíz de la rama OnlyhtmlVersion.
-2. Edita los archivos fuente según la tabla.
-3. Desde esta carpeta ejecuta `py generar.py` en Windows o `python3 generar.py` en macOS/Linux. Solo necesitas Python 3.
-4. Abre el HTML generado para revisar tu cambio. Sube a GitHub las fuentes modificadas y **PokeHatch v1.0.html** en la raíz de OnlyhtmlVersion. El lanzador existente usa ese nombre exacto.
-
-| Qué quieres cambiar | Dónde editar |
+| Qué cambiar | Dónde editar |
 |---|---|
 | Especies, familias y condiciones evolutivas | data/species.json |
 | Nombres de grupos y objetos | data/groups.json y data/items.json |
