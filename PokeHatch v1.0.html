@@ -3,7 +3,7 @@
 body{font-family:Terminal,monospace;font-size:21px;line-height:1.17}nav button{font-weight:normal;font-size:21px}.headbar p{font-size:22px}.headtools .wallet span{font:18px Terminal,monospace}.cardhead small,.kicker,.stats small,small,.log small{font:17px/1.17 Terminal,monospace}.log li,.entry p,.guide table{font-size:19px}.entry h3{font-size:22px}.btn,.action{font-weight:normal}.guide p{line-height:1.3}.pad b,.care b{font-weight:normal}.stats b{font-family:var(--pixel)}footer{font-size:17px}.headtools button{font-family:system-ui,sans-serif}.entry img{vertical-align:middle}@media(max-width:660px){nav button{font-size:18px}.action{font-size:18px}.headbar p{font-size:19px}.cardhead small,small{font-size:16px}}
 .pasture{position:relative;width:100%;height:clamp(362px,49vh,570px);isolation:isolate;overflow:hidden;background:#cada89}.pasture canvas{width:100%;height:100%;position:absolute;inset:0;image-rendering:pixelated;pointer-events:none}.eggplace{position:absolute;width:clamp(42px,5.8vw,72px);aspect-ratio:28/30;transform:translate(-50%,-50%)}.eggplace>i{position:absolute;left:-6%;bottom:-4%;width:112%;height:24%;background:#94ab61;box-shadow:inset 0 4px #84994e;clip-path:polygon(0 32%,14% 32%,14% 12%,27% 12%,27% 0,73% 0,73% 12%,86% 12%,86% 32%,100% 32%,100% 72%,86% 72%,86% 90%,69% 90%,69% 100%,30% 100%,30% 90%,14% 90%,14% 72%,0 72%);pointer-events:none}.eggplace.current>i{background:#b5a15a}.shell{display:block;position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;clip-path:polygon(42.857% 0.000%,42.857% 3.333%,35.714% 3.333%,35.714% 6.667%,28.571% 6.667%,28.571% 10.000%,25.000% 10.000%,25.000% 13.333%,21.429% 13.333%,21.429% 16.667%,17.857% 16.667%,17.857% 20.000%,14.286% 20.000%,14.286% 23.333%,10.714% 23.333%,10.714% 26.667%,10.714% 26.667%,10.714% 30.000%,7.143% 30.000%,7.143% 33.333%,7.143% 33.333%,7.143% 36.667%,3.571% 36.667%,3.571% 40.000%,3.571% 40.000%,3.571% 43.333%,3.571% 43.333%,3.571% 46.667%,0.000% 46.667%,0.000% 50.000%,0.000% 50.000%,0.000% 53.333%,0.000% 53.333%,0.000% 56.667%,0.000% 56.667%,0.000% 60.000%,0.000% 60.000%,0.000% 63.333%,3.571% 63.333%,3.571% 66.667%,3.571% 66.667%,3.571% 70.000%,3.571% 70.000%,3.571% 73.333%,7.143% 73.333%,7.143% 76.667%,7.143% 76.667%,7.143% 80.000%,10.714% 80.000%,10.714% 83.333%,14.286% 83.333%,14.286% 86.667%,17.857% 86.667%,17.857% 90.000%,21.429% 90.000%,21.429% 93.333%,28.571% 93.333%,28.571% 96.667%,35.714% 96.667%,35.714% 100.000%,64.286% 100.000%,64.286% 96.667%,71.429% 96.667%,71.429% 93.333%,78.571% 93.333%,78.571% 90.000%,82.143% 90.000%,82.143% 86.667%,85.714% 86.667%,85.714% 83.333%,89.286% 83.333%,89.286% 80.000%,92.857% 80.000%,92.857% 76.667%,92.857% 76.667%,92.857% 73.333%,96.429% 73.333%,96.429% 70.000%,96.429% 70.000%,96.429% 66.667%,96.429% 66.667%,96.429% 63.333%,100.000% 63.333%,100.000% 60.000%,100.000% 60.000%,100.000% 56.667%,100.000% 56.667%,100.000% 53.333%,100.000% 53.333%,100.000% 50.000%,100.000% 50.000%,100.000% 46.667%,96.429% 46.667%,96.429% 43.333%,96.429% 43.333%,96.429% 40.000%,96.429% 40.000%,96.429% 36.667%,92.857% 36.667%,92.857% 33.333%,92.857% 33.333%,92.857% 30.000%,89.286% 30.000%,89.286% 26.667%,89.286% 26.667%,89.286% 23.333%,85.714% 23.333%,85.714% 20.000%,82.143% 20.000%,82.143% 16.667%,78.571% 16.667%,78.571% 13.333%,75.000% 13.333%,75.000% 10.000%,71.429% 10.000%,71.429% 6.667%,64.286% 6.667%,64.286% 3.333%,57.143% 3.333%,57.143% 0.000%);touch-action:manipulation;transform-origin:center bottom}.shell img,.flash img{width:100%;height:100%;display:block;object-fit:contain;pointer-events:none}.shell:hover img{filter:brightness(1.08)}.shell:focus-visible img{filter:brightness(1.28) drop-shadow(0 0 3px #4d3219)}.shell.nudge{animation:nudge .2s steps(4)}.flash{position:absolute;inset:0;pointer-events:none}.flash img{position:absolute;inset:0}.crack{animation:breakShell .16s steps(4) forwards}.pop{animation:quickBorn .40s steps(6) both}.eggplace:has(.flash) .shell img{animation:newEgg .4s steps(2)}@keyframes newEgg{0%,85%{opacity:0}100%{opacity:1}}@keyframes nudge{25%{transform:rotate(-10deg)}70%{transform:rotate(8deg)}}@keyframes breakShell{0%{filter:brightness(1.3)}100%{transform:scale(1.16);opacity:0}}@keyframes quickBorn{0%,20%{opacity:0;transform:scale(.7)}40%,85%{opacity:1;transform:translateY(-10%)}100%{opacity:0;transform:translateY(-17%)}}#births{position:fixed;z-index:6;bottom:10px;left:10px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;pointer-events:none}.birth{display:flex;align-items:center;gap:5px;height:29px;padding:2px 8px 2px 4px;font:16px Terminal,monospace;background:#fffbe9f2;border:1px solid #526b4e;box-shadow:1px 1px #79906d;white-space:nowrap}.birth.rare{background:#fff0ba}.birth img{width:23px;height:23px;object-fit:contain}.birth small{font-size:14px}.evrow{border-top:1px dashed #bdc5aa;margin-top:8px;padding-top:7px}.evrow small{display:block}.evrow button{margin:4px 0}dialog{max-height:86vh;overflow:auto}.dex{grid-template-columns:repeat(8,minmax(0,1fr))}.dex .entry{min-width:0;padding:8px 2px}.dex .entry h3{overflow-wrap:anywhere}.guide .catalog{gap:12px}@media(max-width:790px){.dex{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:420px){.dex .entry h3{font-size:17px}.pasture{height:355px}}@media(prefers-reduced-motion:reduce){.flash{display:none}.eggplace:has(.flash) .shell img{animation:none}}
 .pasture{height:clamp(408px,55vh,640px);background:#a8c972}.pasture .landscape{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none}.eggplace{width:clamp(42px,5.7vw,72px)}.crack{animation:breakShell .27s steps(5) forwards}.flash .pop{animation:quickBorn 1s steps(10) both}.eggplace:has(.flash) .shell img{animation:newEgg 1s steps(2)}.gate{display:block;margin-top:6px}.switch{display:inline-flex;align-items:center;gap:8px;border:0;background:none}.switch i{display:inline-block;width:32px;height:17px;border:2px solid #66755b;background:#d1d3bf;position:relative}.switch i:before{content:'';position:absolute;width:9px;height:9px;left:2px;top:2px;background:#fffbe7}.switch[aria-checked=true] i{background:#659055}.switch[aria-checked=true] i:before{left:17px}.bag{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}.bag .entry{padding:12px}.bag .entry img{height:34px}.pasture .eggplace>i{opacity:.65}@media(max-width:600px){.pasture .landscape{object-fit:cover}.pasture{height:375px}}@media(prefers-reduced-motion:reduce){.eggplace:has(.flash) .shell img{animation:none}}
-header{position:sticky;top:0;z-index:4}.bar{height:48px}.brand{font-size:19px}.brand img{height:29px}.headtools .wallet,.headtools button{min-height:29px;padding:4px 9px}.purchase{font-family:Terminal,monospace}.purchase:disabled{opacity:1}.purchase[data-state=available]{background:#c3e99a;border-color:#477041;color:#203e28}.purchase[data-state=poor]{background:#ffdfb0;border-color:#b68c5b;color:#71491f}.purchase[data-state=locked],.purchase[data-state=done]{background:#e2e2d5;border-color:#9da590;color:#59644f}.gate:empty{display:none}.dex small{color:#344b3e}html{scroll-padding-top:52px}#coinToasts{position:fixed;z-index:12;display:flex;align-items:flex-end;flex-direction:column;gap:2px;pointer-events:none}#coinToasts div{font:17px Terminal,monospace;color:#fbe6ae;background:#304838f5;border:1px solid #9ca77e;padding:3px 8px}.badges{display:grid;grid-template-columns:repeat(8,minmax(0,38px));gap:8px}.badges img{width:100%;height:35px;object-fit:contain}.badges:empty{min-height:14px}@media(max-width:420px){.badges{gap:4px}} .badges{width:100%;grid-template-columns:repeat(8,minmax(0,1fr));column-gap:clamp(4px,1.4vw,21px);row-gap:18px;justify-items:center;align-items:center}.badges img{width:100%;height:auto;max-width:90px;aspect-ratio:1;object-fit:contain}.birth{height:36px;font-size:19px;gap:7px;padding:3px 9px}.birth img{width:29px;height:29px}.birth small{font-size:16px}@media(max-width:540px){.badges{column-gap:4px;row-gap:10px}.birth{height:33px}.birth img{width:26px;height:26px}}[hidden]{display:none!important}.eggplace progress{position:absolute;top:100%;left:3%;width:94%;height:10px;box-sizing:border-box;appearance:none;-webkit-appearance:none;padding:1px;border:2px solid #39474e;border-radius:2px;background:#47515a;box-shadow:0 1px #e8e8cb,1px 0 #e8e8cb,-1px 0 #e8e8cb;pointer-events:none;--hp-top:#86edac;--hp-base:#41bb7a}.eggplace progress[data-zone="low"]{--hp-top:#ffab85;--hp-base:#e45a4f}.eggplace progress[data-zone="mid"]{--hp-top:#ffe887;--hp-base:#edb43f}.eggplace progress::-webkit-progress-bar{background:#47515a}.eggplace progress::-webkit-progress-value{background:linear-gradient(to bottom,var(--hp-top) 50%,var(--hp-base) 50%)}.eggplace progress::-moz-progress-bar{background:linear-gradient(to bottom,var(--hp-top) 50%,var(--hp-base) 50%)}.entry img[data-item-icon]{image-rendering:pixelated}
+header{position:sticky;top:0;z-index:4}.bar{height:48px}.brand{font-size:19px}.brand img{height:29px}.headtools .wallet,.headtools button{min-height:29px;padding:4px 9px}.purchase{font-family:Terminal,monospace}.purchase:disabled{opacity:1}.purchase[data-state=available]{background:#c3e99a;border-color:#477041;color:#203e28}.purchase[data-state=poor]{background:#ffdfb0;border-color:#b68c5b;color:#71491f}.purchase[data-state=locked],.purchase[data-state=done]{background:#e2e2d5;border-color:#9da590;color:#59644f}.gate:empty{display:none}.dex small{color:#344b3e}html{scroll-padding-top:52px}#coinToasts{position:fixed;z-index:12;display:flex;align-items:flex-end;flex-direction:column-reverse;gap:2px;pointer-events:none}#coinToasts div{font:17px Terminal,monospace;color:#fbe6ae;background:#304838f5;border:1px solid #9ca77e;padding:3px 8px}.badges{display:grid;grid-template-columns:repeat(8,minmax(0,38px));gap:8px}.badges img{width:100%;height:35px;object-fit:contain}.badges:empty{min-height:14px}@media(max-width:420px){.badges{gap:4px}} .badges{width:100%;grid-template-columns:repeat(8,minmax(0,1fr));column-gap:clamp(4px,1.4vw,21px);row-gap:18px;justify-items:center;align-items:center}.badges img{width:100%;height:auto;max-width:90px;aspect-ratio:1;object-fit:contain}.birth{height:36px;font-size:19px;gap:7px;padding:3px 9px}.birth img{width:29px;height:29px}.birth small{font-size:16px}@media(max-width:540px){.badges{column-gap:4px;row-gap:10px}.birth{height:33px}.birth img{width:26px;height:26px}}[hidden]{display:none!important}.eggplace progress{position:absolute;top:100%;left:3%;width:94%;height:10px;box-sizing:border-box;appearance:none;-webkit-appearance:none;padding:1px;border:2px solid #39474e;border-radius:2px;background:#47515a;box-shadow:0 1px #e8e8cb,1px 0 #e8e8cb,-1px 0 #e8e8cb;pointer-events:none;--hp-top:#86edac;--hp-base:#41bb7a}.eggplace progress[data-zone="low"]{--hp-top:#ffab85;--hp-base:#e45a4f}.eggplace progress[data-zone="mid"]{--hp-top:#ffe887;--hp-base:#edb43f}.eggplace progress::-webkit-progress-bar{background:#47515a}.eggplace progress::-webkit-progress-value{background:linear-gradient(to bottom,var(--hp-top) 50%,var(--hp-base) 50%)}.eggplace progress::-moz-progress-bar{background:linear-gradient(to bottom,var(--hp-top) 50%,var(--hp-base) 50%)}.entry img[data-item-icon]{image-rendering:pixelated}
 #capWallet{color:#795512;background:#fff1ae}
 .birth{height:48px;font-size:24px;gap:9px}.birth img{width:39px;height:39px}.birth small{font-size:20px}.group-progress small{display:block}.group-progress.silver{background:linear-gradient(120deg,#eef2ef,#bac5c5)}.group-progress.gold{background:linear-gradient(120deg,#fff3bd,#dfba58)}.money-icon{display:inline-block!important;vertical-align:middle;flex-shrink:0}.money-icon.coin{width:14px;height:14px}.money-icon.cap{width:20px!important;height:20px!important;object-fit:contain;image-rendering:pixelated;vertical-align:-4px}
 .navwrap{position:sticky;top:52px;z-index:3}.spriteTools{display:flex;align-items:center;gap:12px}html{scroll-padding-top:104px}
@@ -17,6 +17,15 @@ header{position:sticky;top:0;z-index:4}.bar{height:48px}.brand{font-size:19px}.b
 .cry-control input::-moz-range-thumb{width:16px;height:20px;background:#f3c66d;border:2px solid #40513a;box-shadow:2px 2px #8a9179;border-radius:0}
 .cry-control :focus-visible{outline:2px solid #293f32;outline-offset:3px}
 .cry-scale .btn{min-width:48px;padding:4px 8px}
+#coinToasts [data-kind]{color:#1f3026;background:#f6eed4}
+#coinToasts [data-kind="new"]{background:#cceaff}
+#coinToasts [data-kind="repeat"]{background:#d6efcb}
+#coinToasts [data-kind="shiny"]{background:#ffe39a}
+#coinToasts [data-kind="ticket"]{background:#dce0e6}
+#coinToasts [data-kind="evolution"]{background:#ffd0cc}
+#coinToasts [data-kind="real"]{background:#fff}
+.badges .locked{filter:brightness(0)}
+#evolutionReport p{padding:.7em;background:#e2efd9;color:#263c2c;border:1px solid #718671}
 </style><!--Copyright 2011, The VT323 Project Authors (peter.hull@oikoi.com)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -305,6 +314,7 @@ product('flame-orb','Llamasfera',1000,'Potencia las incubadoras.');
 product('toxic-orb','Toxisfera',1000,'Potencia cada toque.');
 product('lustrous-orb','Lustresfera',1000,'Duplica la probabilidad de obtener shinies.');
 const benefits={
+ 'point-card':['Tarjeta de puntos',75,'Conserva tus PC al usar la GS Ball.'],
  'luck-incense':['Incienso Duplo',125,'Aumenta un 100 % la probabilidad de encontrar objetos al eclosionar Pokémon'],
  'oval-charm':['Amuleto Oval',50,'Permite activar y desactivar grupos de huevo'],
  'card-key':['Llave Magnética',150,'Permite bloquear y desbloquear generaciones en el Criadero.'],
@@ -535,7 +545,10 @@ const rateBoost=()=>(1+st.owned.reduce((n,k)=>n+(rateItems[k]||0),0)/100)*(hasBe
 function required(s){
  const previous=Math.ceil(s.rule.n*.6);
  const base=previous>20?previous*.75:s.rule.n*.6;
- const threshold=n=>Math.ceil((hasBenefit('exp-share')?Math.ceil(n*.75):n)*6/5);
+ const threshold=n=>{
+  const full=Math.ceil(n*6/5);
+  return hasBenefit('exp-share')?Math.max(1,Math.min(full-1,Math.ceil(Math.ceil(n*.75)*6/5))):full;
+ };
  const normal=threshold(Math.ceil(base));
  if(!owned('rare-candy'))return normal;
  return Math.max(1,Math.min(normal-1,threshold(Math.ceil(base*90/100))));
@@ -544,11 +557,16 @@ function payout(first,shiny,registeredShiny=false){
  const base=first?10:owned('nugget')?1+Number(owned('pearl'))+2*Number(owned('star-piece')):0;
  const bonus=(owned('amulet-coin')?.5:0)+(owned('stardust')?.5:0)+Number(owned('rare-bone'));return Math.trunc((base+(shiny?10:0))*(1+bonus))*(hasBenefit('blue-card')?2:1)*(!first&&registeredShiny&&owned('iris-ticket')?2:1)
 }
-function earn(amount,label=''){
+function fadingToast(rail,element,duration){
+ rail.append(element);
+ const animation=element.animate([{opacity:1},{opacity:1,offset:.55},{opacity:0}],duration);
+ animation.onfinish=()=>element.remove();
+}
+function earn(amount,label='',kind='other'){
  if(!amount)return;
  st.coins+=amount;const rail=$('coinToasts'),r=document.querySelector('.wallet').getBoundingClientRect();
  rail.style.right=Math.max(4,innerWidth-r.right)+'px';rail.style.top=(r.bottom+4)+'px';
- const toast=document.createElement('div');toast.innerHTML='+'+amount+' '+moneyIcon()+(label?' · '+label:'');if(rail.childElementCount>=6)rail.firstElementChild.remove();rail.append(toast);setTimeout(()=>toast.remove(),2000/3)
+ const toast=document.createElement('div');toast.innerHTML='+'+amount+' '+moneyIcon()+(label?' · '+label:'');toast.dataset.kind=kind;fadingToast(rail,toast,1100)
 }
 function save(){if(broken)return;try{localStorage.setItem(KEY,JSON.stringify(st));storageError=false}catch{storageError=true;notify('El guardado está bloqueado. Exporta una copia desde Configuración.')}}
 function notify(msg){$('toast').textContent=msg;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').textContent='',2600)}
@@ -556,10 +574,38 @@ function addDex(id){if(st.dex.includes(id))return false;st.dex.push(id);st.since
 function progress(s){const rule=s.rule;return (st.counts[s.root]||0)-(rule.extra?(st.since[s.p]||0):0)}
 function ready(s){return s.id!==292&&s.p&&st.dex.includes(s.p)&&!st.dex.includes(s.id)&&progress(s)>=required(s)&&(!s.rule.item||owned(s.rule.item))}
 function inheritShiny(root){for(const id of st.dex)if(S[id].root===root&&!st.shiny.includes(id))st.shiny.push(id);awardShinyItems(st)}
-function evolve(id){const s=S[id];if(!ready(s))return;addDex(id);if(id===291)addDex(292);earn(Math.floor(25*(1+.5*(snackKeys.filter(owned).length+Number(owned('devon-parts'))))*(hasBenefit('everstone')?2:1)));if(st.shiny.includes(s.root))inheritShiny(s.root);detailId=0;if($('detail').open)$('detail').close();save();updateLive();notify('¡'+(id===291?'Ninjask y Shedinja se han registrado':s.n+' se ha registrado')+' en la Pokédex!')}
+function applyEvolution(s){
+ addDex(s.id);
+ if(s.id===291)addDex(292);
+ earn(Math.floor(25*(1+.5*(snackKeys.filter(owned).length+Number(owned('devon-parts'))))*(hasBenefit('everstone')?2:1)),'','evolution');
+ if(st.shiny.includes(s.root))inheritShiny(s.root);
+}
+function evolve(id){
+ const s=S[id];
+ if(!ready(s))return;
+ applyEvolution(s);
+ detailId=0;
+ if($('detail').open)$('detail').close();
+ save();updateLive();
+ notify('¡'+(id===291?'Ninjask y Shedinja se han registrado':s.n+' se ha registrado')+' en la Pokédex!');
+}
+function evolveAll(){
+ const before=new Set(st.dex);
+ let pending=species.filter(ready);
+ while(pending.length){
+  pending.forEach(applyEvolution);
+  pending=species.filter(ready);
+ }
+ const evolved=st.dex.filter(id=>!before.has(id)).map(id=>S[id].n);
+ if(evolved.length){save();updateLive()}
+ const report=$('evolutionReport'),message=document.createElement('p');
+ report.replaceChildren();
+ message.textContent=evolved.length?'Evoluciones ('+evolved.length+'): '+evolved.join(', ')+'.':'Ningún Pokémon está listo para evolucionar.';
+ fadingToast(report,message,Math.max(4500,evolved.length*750));
+}
 function condition(s){if(s.id===292)return 'Se registra al evolucionar a Nincada en Ninjask.';if(!s.p)return s.pool.length?'Nace en '+s.pool.map(g=>G[g]).join(' o ')+'.':'Todavía no tiene un método de obtención.';const r=s.rule;return required(s)+' eclosiones de '+S[s.root].n+(r.extra?' después de registrar a '+S[s.p].n:' en total')+(r.item?' y '+names[r.item]:'')+'.'+(s.id===291?' También registra a Shedinja.':'')}
 function birthToast(s,shiny,items){
- const row=document.createElement('div');row.className='birth'+(shiny?' rare':'');row.innerHTML=image((shiny?'sh':'')+s.id)+'<span>'+(shiny?'✦ ':'')+s.n+'</span>'+items.map(k=>image(k)+'<small>'+names[k]+'</small>').join('');const rail=$('births');if(rail.childElementCount>=16)rail.firstElementChild.remove();rail.append(row);setTimeout(()=>row.remove(),2000)
+ const row=document.createElement('div');row.className='birth'+(shiny?' rare':'');row.innerHTML=image((shiny?'sh':'')+s.id)+'<span>'+(shiny?'✦ ':'')+s.n+'</span>'+items.map(k=>image(k)+'<small>'+names[k]+'</small>').join('');const rail=$('births');fadingToast(rail,row,2000)
 }
 function shinyChance(g){
  const base=(owned('shiny-charm')?.0025:.0005)*(owned('lustrous-orb')?2:1)*(hasBenefit('case')?2:1);
@@ -612,7 +658,9 @@ async function playCry(id){
 }
 function hatch(i,manual=false){
  const e=st.eggs[i],oldGroup=e.g,s=rollSpecies(e.g),shiny=Math.random()<shinyChance(e.g);
- st.counts[s.id]=(st.counts[s.id]||0)+1;st.total++;st.groupHatches[e.g]=(st.groupHatches[e.g]||0)+1;earn(payout(addDex(s.id),shiny,st.shiny.includes(s.id)));if(shiny){st.shinyBirths++;inheritShiny(s.id)}
+ st.counts[s.id]=(st.counts[s.id]||0)+1;st.total++;st.groupHatches[e.g]=(st.groupHatches[e.g]||0)+1;const first=addDex(s.id),registeredShiny=st.shiny.includes(s.id);
+ const ticket=!first&&registeredShiny&&owned('iris-ticket');
+ earn(payout(first,shiny,registeredShiny),'',ticket?'ticket':shiny?'shiny':first?'new':'repeat');if(shiny){st.shinyBirths++;inheritShiny(s.id)}
  const possible=familyDrops(s.id).filter(k=>!owned(k));
  const items=[];
  if(s.id===52&&!owned('amulet-coin')&&Math.random()<.05*dropBonus())items.push('amulet-coin');
@@ -623,7 +671,7 @@ function hatch(i,manual=false){
  st.owned.push(...items);
  if(items.includes('deep-sea-scale')&&!st.boosts.includes(9))st.boosts.push(9);
  if(items.includes('air-balloon')||items.includes('deep-sea-scale'))refreshTargets();
- const real=rollReal(s.id);if(real){if(!owned(real[0]))st.owned.push(real[0]);earn(real[1],names[real[0]]);items.push(real[0])}
+ const real=rollReal(s.id);if(real){if(!owned(real[0]))st.owned.push(real[0]);earn(real[1],names[real[0]],'real');items.push(real[0])}
  st.eggs[i]=egg(st.active,e.lv);if(manual)save();birthToast(s,shiny,items);playCry(s.id);
 
  if(view==='Criadero')reveal(i,oldGroup,s.id,shiny);
@@ -773,7 +821,7 @@ function inventory(){
  const tile=(k,n,desc)=>{const source=unlockSource(k);return '<div class="entry">'+itemArt(k)+'<h3>'+n+'</h3><p>'+desc.replace(/\.$/,'')+'</p>'+(source?'<small class="gate">'+source+'</small>':'')+'</div>'};
  const grid=a=>'<div class="catalog bag">'+a.join('')+'</div>';
  const earned=Math.floor(st.dex.reduce((n,id)=>n+Number(!!S[id].p),0)/8);
- const icons=badges.slice(0,earned).map((k,i)=>'<img src="'+A['badge-'+k]+'" alt="Medalla '+badgeNames[i]+'" title="Medalla '+badgeNames[i]+'">').join('');
+ const icons=badges.map((k,i)=>'<img class="'+(i<earned?'earned':'locked')+'" src="'+A['badge-'+k]+'" alt="Medalla '+badgeNames[i]+'" title="Medalla '+badgeNames[i]+'">').join('');
  const descr=k=>rewards[k]||loot[k]?.[1]||(evoUses[k]?evoText(k)+(k==='deep-sea-scale'?' Facilita la eclosión de los huevos Abisal un 25 %.':''):goods[k][1]);
  const sections=itemSections.map(title=>{
   const keys=st.owned.filter(k=>sectionOf(k)===title).sort(categoryOrder);
@@ -783,9 +831,10 @@ function inventory(){
  return heading('Mochila','Objetos y medallas de la granja.')+sections+permanent+card('Medallas','<div class="badges">'+icons+'</div>');
 
 }
-function dex(){return heading('Pokédex','Consulta las familias y sus condiciones de evolución.',st.dex.length+' / '+species.length)+'<div class="tools"><input id="search" placeholder="Nombre o número" aria-label="Buscar especie"><select id="gen" aria-label="Generación"><option value="0">Todas las generaciones</option>'+[1,2,3,4,5].map(i=>'<option value="'+i+'" '+(i===gen?'selected':'')+'>Generación '+i+'</option>').join('')+'</select><select id="dexGroup" aria-label="Grupo de huevo"><option value="0">Todos los grupos</option>'+groupIDs.map(g=>'<option value="'+g+'" '+(g===filterGroup?'selected':'')+'>'+G[g]+'</option>').join('')+'</select><label><input id="only" type="checkbox" '+(only?'checked':'')+'> Solo registradas</label><label><input id="ready" type="checkbox" '+(readyOnly?'checked':'')+'> Listos para evolucionar</label><label><input id="shinyFilter" type="checkbox" '+(shinyOnly?'checked':'')+'> Solo shinies</label></div><div id="dexlist"></div>'}
+function dex(){return heading('Pokédex','Consulta las familias y sus condiciones de evolución.',st.dex.length+' / '+species.length)+'<div id="evolutionReport" role="status"></div><div class="tools"><input id="search" placeholder="Nombre o número" aria-label="Buscar especie"><select id="gen" aria-label="Generación"><option value="0">Todas las generaciones</option>'+[1,2,3,4,5].map(i=>'<option value="'+i+'" '+(i===gen?'selected':'')+'>Generación '+i+'</option>').join('')+'</select><select id="dexGroup" aria-label="Grupo de huevo"><option value="0">Todos los grupos</option>'+groupIDs.map(g=>'<option value="'+g+'" '+(g===filterGroup?'selected':'')+'>'+G[g]+'</option>').join('')+'</select><label><input id="only" type="checkbox" '+(only?'checked':'')+'> Solo registradas</label><label><input id="ready" type="checkbox" '+(readyOnly?'checked':'')+'> Listos para evolucionar</label><label><input id="shinyFilter" type="checkbox" '+(shinyOnly?'checked':'')+'> Solo shinies</label><button class="btn" id="bulkEvolve" data-act="evolveAll" '+(readyOnly?'':'hidden')+'>Evolucionar todos</button></div><div id="dexlist"></div>'}
 let dexSignature='';
 function entries(){
+ $('bulkEvolve').hidden=!readyOnly;
  const readyParents=new Set(readyOnly?species.filter(ready).map(s=>s.p):[]);const matches=species.filter(s=>(!only||st.dex.includes(s.id))&&(!shinyOnly||st.shiny.includes(s.id))&&(!readyOnly||readyParents.has(s.id))&&(!gen||s.gen===gen)&&(!filterGroup||dexGroups(s).includes(filterGroup))&&(s.n.toLowerCase().includes(query.toLowerCase())||rid(s.id).includes(query)));
  const pages=Math.ceil(matches.length/64);dexPage=Math.min(dexPage,Math.max(0,pages-1));
  const signature=[dexPage,pages,...matches.slice(dexPage*64,dexPage*64+64).map(s=>s.id+':'+Number(st.dex.includes(s.id))+':'+Number(st.shiny.includes(s.id)))].join('|');
@@ -864,6 +913,7 @@ document.addEventListener('click',ev=>{
  if(cmd==='tend'){slot=i;care(i,power(),true)}
  if(cmd==='bay'&&i===st.eggs.length-1&&i<8&&spend(prices[i])){st.eggs.push(egg(st.active));save();draw();notify('Plaza '+(i+2)+' desbloqueada')}
  if(cmd==='evolve')evolve(i);
+ if(cmd==='evolveAll')evolveAll();
  if(a==='cry-volume-0'||a==='cry-volume-100')setCryVolume(a==='cry-volume-0'?0:100);
  if(a==='sprite'&&detailId){showShiny=!showShiny;info(detailId,false)}
  if(cmd==='inc')incubate(i);
@@ -880,7 +930,7 @@ document.addEventListener('click',ev=>{
  if(a==='confirm-prestige'){
   if(gateLabel('gs-ball')||st.coins<1000)return;
   const reward=st.dex.length,next=fresh();
-  Object.assign(next,{trips:st.trips+1,rc:st.rc+reward,keyUnlocked:st.keyUnlocked,generations:[...st.generations],benefits:[...st.benefits],unlockedGroups:[...st.unlockedGroups],shiny:hasBenefit('journal')?[...st.shiny]:[]});
+  Object.assign(next,{coins:hasBenefit('point-card')?st.coins:0,trips:st.trips+1,rc:st.rc+reward,keyUnlocked:st.keyUnlocked,generations:[...st.generations],benefits:[...st.benefits],unlockedGroups:[...st.unlockedGroups],shiny:hasBenefit('journal')?[...st.shiny]:[]});
   st=next;awardShinyItems(st);refreshTargets();slot=0;shopTab='Beneficios Temporales';detailId=0;
   $('births').replaceChildren();$('coinToasts').replaceChildren();$('detail').close();save();go('Criadero');notify('Has vuelto al pasado. +'+reward+' RestauraChapas.');return;
  }
