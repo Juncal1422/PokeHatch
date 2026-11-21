@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#263e35">
+<title>PokeHatch</title>
+<style>
+  :root{color-scheme:light;font:16px system-ui,sans-serif;color:#243e33;background:#eeeeDF}
+  body{min-height:100vh;display:grid;place-items:center;margin:0;padding:24px;box-sizing:border-box}
+  #loader{max-width:620px;padding:24px;background:#fffcf0;border:2px solid #53674f;box-shadow:4px 5px #adb39c}
+  #loader h1{margin:0 0 12px;font-size:1.3rem}
+  #loader p{margin:0;line-height:1.5}
+  #loader.error{border-color:#a54c43;background:#fff3ef}
+</style>
+</head>
+<body>
+<div id="loader" role="status" aria-live="polite">
+  <h1>Cargando PokeHatch…</h1>
+  <p>Conectando con los archivos de la rama <code>develop</code>.</p>
+</div>
+<script>
+(async () => {
+  const repo = 'Juncal1422/PokeHatch';
+  const loader = document.getElementById('loader');
+
+  function mostrarError(error) {
+    loader.classList.add('error');
+    const titulo = document.createElement('h1');
+    titulo.textContent = 'No se pudo cargar PokeHatch';
+    const detalle = document.createElement('p');
+    detalle.textContent = error.message;
+    loader.replaceChildren(titulo, detalle);
+  }
+
+  async function descargar(url, nombre) {
+    let respuesta;
+    try {
+      respuesta = await fetch(url, {cache: 'no-store'});
+    } catch {
+      throw new Error('El navegador no ha podido acceder a ' + nombre + ' en GitHub.');
+    }
+    if (!respuesta.ok) throw new Error('HTTP ' + respuesta.status + ' al cargar ' + nombre + ' en develop.');
+    return respuesta;
+  }
+
+  try {
+    const rama = await (await descargar('https://api.github.com/repos/' + repo + '/branches/develop', 'la rama')).json();
+    const base = 'https://raw.githubusercontent.com/' + repo + '/' + rama.commit.sha + '/';
+    const url = ruta => base + ruta.split('/').map(encodeURIComponent).join('/');
+    const archivo = ruta => descargar(url(ruta), ruta);
+    const datos = ruta => archivo(ruta).then(respuesta => respuesta.json());
+
+    const [html, css, orden, species, groups, items, rutasArte] = await Promise.all([
+      archivo('PokeHatch.html').then(respuesta => respuesta.text()),
+      archivo('styles/juego.css').then(respuesta => respuesta.text()),
+      datos('data/scripts.json'),
+      datos('data/species.json'),
+      datos('data/groups.json'),
+      datos('data/items.json'),
+      datos('data/art.json')
+    ]);
+
+    const pagina = new DOMParser().parseFromString(html, 'text/html');
+    pagina.querySelectorAll('script, #selectorDatos, link[rel="stylesheet"]').forEach(nodo => nodo.remove());
+    const estilo = document.createElement('style');
+    estilo.textContent = css.replace(/url\((['"]?)\.\.\/(assets\/[^)'"]+)\1\)/g, (_, comilla, ruta) => 'url("' + url(ruta) + '")');
+
+    const art = Object.fromEntries(Object.entries(rutasArte).map(([clave, ruta]) => [clave, url(ruta)]));
+    const fuentes = await Promise.all(orden.map(ruta => archivo(ruta).then(respuesta => respuesta.text())));
+    const juego = document.createElement('script');
+    juego.textContent = '"use strict";\nconst DB = ' +
+      JSON.stringify({species, groups, items, art}) + ';\n' + fuentes.join('\n\n');
+
+    document.documentElement.lang = pagina.documentElement.lang;
+    document.head.innerHTML = pagina.head.innerHTML;
+    document.head.append(estilo);
+    document.body.innerHTML = pagina.body.innerHTML;
+    document.body.append(juego);
+  } catch (error) {
+    console.error('PokeHatch Connector:', error);
+    mostrarError(error);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+{
+  "names": {
+    "magnet": "Piedra Imán",
+    "ice-stone": "Piedra Hielo",
+    "soothe-bell": "Cascabel Alivio",
+    "linking-cord": "Cable Link",
+    "black-belt": "Cinturón Negro",
+    "punching-glove": "Guantes de Boxeo",
+    "focus-band": "Banda Foco",
+    "up-grade": "Mejora",
+    "kings-rock": "Roca del Rey",
+    "metal-coat": "Revest. Metálico",
+    "dragon-scale": "Escama Dragón",
+    "prism-scale": "Escama Bella",
+    "deep-sea-tooth": "Diente Marino",
+    "deep-sea-scale": "Escama Marina",
+    "protector": "Protector",
+    "electirizer": "Electrizador",
+    "magmarizer": "Magmatizador",
+    "reaper-cloth": "Tela Terrible",
+    "power-bracer": "Brazal Recio",
+    "macho-brace": "Brazal Firme",
+    "heat-rock": "Roca Calor",
+    "oval-charm": "Amuleto Oval",
+    "black-sludge": "Lodo Negro",
+    "damp-rock": "Roca Lluvia",
+    "silver-powder": "Polvo Plata",
+    "mystic-water": "Agua Mística",
+    "dragon-fang": "Colmillo Dragón",
+    "leftovers": "Restos",
+    "sharp-beak": "Pico Afilado",
+    "soft-sand": "Arena Fina",
+    "metronome": "Metrónomo",
+    "miracle-seed": "Semilla Milagro",
+    "wise-glasses": "Gafas Especiales",
+    "hard-stone": "Piedra Dura"
+  },
+  "drops": [
+    "ice-stone",
+    "kings-rock",
+    "metal-coat",
+    "dragon-scale",
+    "up-grade",
+    "prism-scale",
+    "deep-sea-tooth",
+    "deep-sea-scale",
+    "protector",
+    "electirizer",
+    "magmarizer",
+    "reaper-cloth",
+    "black-belt",
+    "punching-glove",
+    "focus-band"
+  ],
+  "clickItems": {
+    "macho-brace": 1,
+    "lucky-egg": 2,
+    "power-weight": 3,
+    "power-bracer": 2,
+    "power-belt": 1
+  },
+  "rateItems": {
+    "power-lens": 50,
+    "power-band": 50,
+    "power-anklet": 25,
+    "heat-rock": 25,
+    "charcoal": 50,
+    "master-ball": 100,
+    "light-ball": 50
+  },
+  "boostItems": {
+    "11": "black-sludge",
+    "2": "damp-rock",
+    "3": "silver-powder",
+    "9": "deep-sea-scale",
+    "12": "mystic-water",
+    "14": "dragon-fang",
+    "1": "leftovers",
+    "4": "sharp-beak",
+    "5": "soft-sand",
+    "6": "metronome",
+    "7": "miracle-seed",
+    "8": "wise-glasses",
+    "10": "hard-stone"
+  },
+  "choiceItems": { "choice-scarf": 10, "choice-specs": 15, "choice-band": 25 },
+  "potions": [
+    "potion",
+    "super-potion",
+    "hyper-potion",
+    "max-potion",
+    "full-restore"
+  ],
+  "flutes": [
+    "blue-flute",
+    "yellow-flute",
+    "red-flute",
+    "black-flute",
+    "white-flute",
+    "azure-flute",
+    "poke-flute",
+    "eon-flute"
+  ],
+  "fluteNames": [
+    "Flauta Azul",
+    "Flauta Amarilla",
+    "Flauta Roja",
+    "Flauta Negra",
+    "Flauta Blanca",
+    "Flauta Azur",
+    "Poké Flauta",
+    "Flauta Eón"
+  ],
+  "scentRules": {
+    "sea-incense": [
+      298,
+      [12, 2],
+      "Facilita la eclosión de los huevos Marino y Costa un 100 %."
+    ],
+    "rock-incense": [
+      438,
+      [5, 10],
+      "Facilita la eclosión de los huevos Campo y Mineral un 100 %."
+    ],
+    "rose-incense": [
+      440,
+      [6, 7],
+      "Facilita la eclosión de los huevos Hada y Planta un 100 %."
+    ],
+    "wave-incense": [
+      458,
+      [12, 2, 9],
+      "Facilita la eclosión de los huevos Marino, Costa y Abisal un 100 %."
+    ],
+    "lax-incense": [
+      360,
+      [],
+      "Facilita la eclosión de todos los huevos un 25 %."
+    ],
+    "full-incense": [
+      446,
+      [10, 1, 14],
+      "Dificulta la eclosión de Bicho, Hada y Volador un 200 % y facilita la de Mineral, Monstruo y Dragón un 100 %."
+    ],
+    "pure-incense": [
+      433,
+      [],
+      "Reduce un 50 % la probabilidad de eclosionar una especie sin evolución."
+    ]
+  },
+  "scents": [
+    "sea-incense",
+    "lax-incense",
+    "rock-incense",
+    "rose-incense",
+    "pure-incense",
+    "wave-incense",
+    "full-incense"
+  ],
+  "scarves": {
+    "green-scarf": ["Pañuelo Verde", [3, 7, 5]],
+    "blue-scarf": ["Pañuelo Azul", [12, 2, 9]],
+    "pink-scarf": ["Pañuelo Rosa", [6, 8, 11]],
+    "yellow-scarf": ["Pañuelo Amarillo", [4, 10, 1]],
+    "red-scarf": ["Pañuelo Rojo", [14]]
+  },
+  "snacks": [
+    "Limonada",
+    "Caramelo Furia",
+    "Galleta Lava",
+    "Barrita Plus",
+    "Porcelanita"
+  ],
+  "balls": [
+    "Poké Ball",
+    "Super Ball",
+    "Ultra Ball",
+    "Gloria Ball",
+    "Ensueño Ball"
+  ],
+  "ballKeys": [
+    "poke-ball",
+    "great-ball",
+    "ultra-ball",
+    "cherish-ball",
+    "dream-ball"
+  ],
+  "snackKeys": [
+    "lemonade",
+    "rage-candy-bar",
+    "lava-cookie",
+    "old-gateau",
+    "casteliacone"
+  ],
+  "loot": {
+    "amulet-coin": [
+      "Moneda Amuleto",
+      "Aumenta un 50 % las PC por eclosión. Meowth puede traerla al eclosionar."
+    ],
+    "rare-bone": ["Hueso Raro", "Aumenta un 100 % las PC por eclosión."],
+    "air-balloon": [
+      "Globo Helio",
+      "Facilita la eclosión de huevos Volador un 100 %."
+    ],
+    "light-ball": [
+      "Bola Luminosa",
+      "Aumenta un 50 % el ritmo de todas las incubadoras."
+    ]
+  },
+  "iceHatchlings": [131, 215, 220, 225, 238, 361, 363, 459, 582, 613, 615],
+  "fossils": [138, 140, 345, 347, 408, 410, 564, 566]
+}
