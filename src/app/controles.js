@@ -182,7 +182,7 @@ document.addEventListener('click', (ev) => {
     );
   if (a === 'confirm-prestige') {
     if (describeShopGate('gs-ball') || st.coins < 1000) return;
-    const reward = st.dex.length,
+    const reward = st.dex.length + st.shiny.length,
       next = createFreshSave();
     Object.assign(next, {
       coins: hasBenefit('point-card') ? st.coins : 0,
