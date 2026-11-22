@@ -18,10 +18,7 @@ function purchaseButton(action) {
   return '<button class="btn purchase" data-act="' + action + '"></button>';
 }
 function updateShop() {
-  const evos = st.dex.reduce(
-    (n, id) => n + Number(!!S[id].evolvesFromId),
-    0,
-  );
+  const evos = st.dex.reduce((n, id) => n + Number(!!S[id].evolvesFromId), 0);
   for (const b of document.querySelectorAll('.purchase')) {
     const [kind, ...parts] = b.dataset.act.split('-'),
       key = parts.join('-'),

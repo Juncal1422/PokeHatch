@@ -4,9 +4,7 @@ function awardShinyItems(a) {
   const give = (key) => {
     if (!a.owned.includes(key)) a.owned.push(key);
   };
-  const shinyGroups = new Set(
-    a.shiny.flatMap((id) => dexGroups(S[id])),
-  );
+  const shinyGroups = new Set(a.shiny.flatMap((id) => dexGroups(S[id])));
   if (groupIDs.every((g) => shinyGroups.has(g))) give('iris-ticket');
   for (const [key, [, groups]] of Object.entries(scarves)) {
     const count = a.shiny.filter((id) =>
@@ -17,10 +15,7 @@ function awardShinyItems(a) {
 }
 function awardMilestones(a) {
   const registered = new Set(a.dex),
-    evolutions = a.dex.reduce(
-      (n, id) => n + Number(!!S[id].evolvesFromId),
-      0,
-    );
+    evolutions = a.dex.reduce((n, id) => n + Number(!!S[id].evolvesFromId), 0);
   for (const g of groupIDs)
     if (
       !a.unlockedGroups.includes(g) &&
@@ -86,9 +81,9 @@ const dropBonus = () => (hasBenefit('luck-incense') ? 2 : 1);
 function rollReal(id) {
   if (!fossils.has(id)) return null;
   const roll = Math.random() / (dropBonus() * (hasBenefit('talisman') ? 2 : 1));
-  if (roll < 0.0001) return ['relic-gold', 2000];
-  if (roll < 0.0006) return ['relic-silver', 1000];
-  if (roll < 0.0016) return ['relic-copper', 500];
+  if (roll < 0.0006) return ['relic-gold', 2000];
+  if (roll < 0.0011) return ['relic-silver', 1000];
+  if (roll < 0.0021) return ['relic-copper', 500];
   return null;
 }
 function purchaseCount() {

@@ -92,7 +92,7 @@ product(
 product(
   'nugget',
   'Pepita',
-  50,
+  25,
   'Obtienes 1 PC por cada eclosión de un Pokémon ya registrado',
 );
 product(

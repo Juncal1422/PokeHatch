@@ -117,16 +117,15 @@ let debugShinyChanceEnabled = false;
 function calculateShinyChance(g) {
   if (window.debug === true && debugShinyChanceEnabled) return 0.5;
   const base =
-    (owned('shiny-charm') ? 0.0025 : 0.0005) *
-    (owned('lustrous-orb') ? 2 : 1) *
-    (hasBenefit('case') ? 2 : 1);
+    (owned('shiny-charm') ? 0.0025 : 0.0005) * (owned('lustrous-orb') ? 2 : 1);
   return (
-    base +
-    (Object.entries(scarves).some(
-      ([k, [, groups]]) => owned(k) && groups.includes(g),
-    )
-      ? 0.001
-      : 0)
+    (base +
+      (Object.entries(scarves).some(
+        ([k, [, groups]]) => owned(k) && groups.includes(g),
+      )
+        ? 0.001
+        : 0)) *
+    (hasBenefit('case') ? 2 : 1)
   );
 }
 function changeIncubatorLevel(i) {
